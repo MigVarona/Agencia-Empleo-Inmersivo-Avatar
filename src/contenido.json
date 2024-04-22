@@ -1,0 +1,141 @@
+{
+    "actividades": [
+        {
+            "imagen": "./assets/fotos agenda/saurav-mahto-ijWb7URJQyo-unsplash.jpg",
+            "titulo": "CONOCE LAS ACTIVIDADES",
+            "subtitulo": "MIGRACIÓN DE AVES",
+            "descripcion": "En primavera, Madrid es testigo de la migración de diversas especies de aves que viajan desde África hacia sus áreas de reproducción en Europa.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+        {
+            "imagen": "./assets/fotos agenda/pexels-eugenio-felix-17070731.jpg",
+            "titulo": "CONOCE LAS ACTIVIDADES",
+            "subtitulo": "PASEOS EN BARCA",
+            "descripcion": "Ya sea que estés buscando una actividad romántica para disfrutar en pareja o simplemente deseas relajarte y desconectar del bullicio de la ciudad.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+        {
+            "imagen": "./assets/fotos agenda/emma-simpson-mNGaaLeWEp0-unsplash.jpg",
+            "titulo": "CONOCE LAS ACTIVIDADES",
+            "subtitulo": "CAMINA POR EL RETIRO",
+            "descripcion": "Ya sea que estés buscando una actividad romántica para disfrutar en pareja o simplemente deseas relajarte y desconectar del bullicio de la ciudad.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+        {
+            "imagen": "./assets/fotos agenda/pexels-alina-skazka-19225767.jpg",
+            "titulo": "CONOCE LAS ACTIVIDADES",
+            "subtitulo": "CONOCE LOS MONUMENTOS",
+            "descripcion": "Esta actividad está diseñada para aquellos que desean descubrir los monumentos emblemáticos y las historias fascinantes que se esconden detrás de cada estructura.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+        {
+            "imagen": "./assets/fotos agenda/jm-lova-RRaTDuKHPH8-unsplash.jpg",
+            "titulo": "CONOCE LAS ACTIVIDADES",
+            "subtitulo": "CLASES DE RELAJACIÓN",
+            "descripcion": "Esta actividad esta dirigida a todos aquellos que quieran tener unos momentos desconexión en el mejor entorno del paque del Retiro, las actividades son de una hora de duración.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+        {
+            "imagen": "./assets/fotos agenda/shalev-cohen-V4SQ38VqV58-unsplash.jpg",
+            "titulo": "CONOCE LAS ACTIVIDADES",
+            "subtitulo": "HISTORIA DE LOS JARDINES",
+            "descripcion": "Haz una ruta turística y descubre la historía que se esconde detras de los jardines del retiro, y cuales son sus plantas y cuidados, de la mano de expertos en botánica",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+        {
+            "imagen": "./assets/fotos agenda/pexels-bruno-storchi-bergmann-17705630.jpg",
+            "titulo": "CONOCE LAS EXPOSICIONES",
+            "subtitulo": "PALACIO DE CRISTAL",
+            "descripcion": "Este mes os traemos una expsoción sobre la historia del palacio de cristal, bajo la mirada de los artistas más influyentes de nuestra comunidad",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+
+        {
+            "imagen": "./assets/fotos agenda/stale-grut-f5MWSw11jjo-unsplash.jpg",
+            "titulo": "CONOCE LAS EXPOSICIONES",
+            "subtitulo": "MUSEO REINA SOFÍA",
+            "descripcion": "Ven a descubrir una experiencia única en el corazón de Madrid: el Museo Reina Sofía. Sumérgete en un viaje fascinante a través del arte contemporáneo y moderno,",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+        {
+            "imagen": "./assets/fotos agenda/taisia-karaseva-iQfj0i7-x_k-unsplash.jpg",
+            "titulo": "CONOCE LAS EXPOSICIONES",
+            "subtitulo": "JARDÍN ATOCHA",
+            "descripcion": "Ya sea que busques un momento de paz y reflexión o simplemente quieras disfrutar de un espacio verde en el corazón de la urbe, el Jardín Interior de Atocha te invita a explorar, relajarte.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+
+        {
+            "imagen": "./assets/fotos agenda/puerta-velazquez.png",
+            "titulo": "CONOCE LAS EXPOSICIONES",
+            "subtitulo": "MUSEO DEAL PRADO",
+            "descripcion": " un tesoro cultural en el corazón de Madrid. Sumérgete en siglos de historia y creatividad mientras exploras las vastas colecciones de obras maestras de artistas legendarios como Velázquez, Goya, El Greco y muchos más.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+
+        {
+            "imagen": "./assets/fotos agenda/eugene-B6LhAwLYlHk-unsplash.jpg",
+            "titulo": "CONOCE LAS EXPOSICIONES",
+            "subtitulo": "CONOCE LOS ARBOLES",
+            "descripcion": "Explora la maravillosa sinfonía de la naturaleza en los árboles del Retiro, un santuario verde en el corazón de Madrid. Déjate envolver por la serenidad y la belleza mientras paseas entre imponentes robles, majestuosos plátanos y antiguos cedros.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+
+        {
+            "imagen": "./assets/fotos agenda/jazmin-quaynor-8ioenvmof-I-unsplash.jpg",
+            "titulo": "CONOCE LAS EXPOSICIONES",
+            "subtitulo": "JARDIN BOTÁNICO",
+            "descripcion": "Adéntrate en un mundo de maravillas botánicas en el Jardín Botánico de Madrid, un paraíso verde donde la ciencia y la belleza se encuentran en perfecta armonía. Déjate fascinar por la diversidad de la flora mundial",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+
+        {
+            "imagen": "./assets/fotos agenda/www-zanda-photography-RBdE3jv5y68-unsplash.jpg",
+            "titulo": "CONOCE LAS RUTAS",
+            "subtitulo": "HUERTOS DEL RETIRO",
+            "descripcion": "Pasea entre las hileras de cultivos, cada una cuidadosamente plantada y cultivada con amor y dedicación. Respira el aire perfumado con el aroma de las hierbas y las flores en flor,",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+
+        {
+            "imagen": "./assets/fotos agenda/__-drz-__-CK7rdTauhDE-unsplash.jpg",
+            "titulo": "CONOCE LAS RUTAS",
+            "subtitulo": "MARIPOSAS DEL RETIRO",
+            "descripcion": "Explora un entorno cuidadosamente diseñado para atraer y proteger a estas coloridas y delicadas criaturas mientras revolotean en torno a ti.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+
+        {
+            "imagen": "./assets/fotos agenda/sebastian-latorre-xGiqiL483Oc-unsplash.webp",
+            "titulo": "CONOCE LAS RUTAS",
+            "subtitulo": "ARDILLAS EN EL PARQUE",
+            "descripcion": " Explora los parques y jardines de la ciudad, hogar de estas pequeñas acróbatas de la naturaleza, mientras corren ágilmente entre los árboles.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+
+        {
+            "imagen": "./assets/fotos agenda/lee-soo-hyun-c7bfOg6yQ0w-unsplash.jpg",
+            "titulo": "CONOCE LAS RUTAS",
+            "subtitulo": "FLORES EN EL LAGO",
+            "descripcion": "  Explora las orillas del lago, adornadas con una exuberante variedad de flores que bailan suavemente con la brisa y reflejan su esplendor en las tranquilas aguas.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+
+        {
+            "imagen": "./assets/fotos agenda/josue-michel-oJ_Reviogx8-unsplash.webp",
+            "titulo": "CONOCE LAS RUTAS",
+            "subtitulo": "PATOS EN EL RETIRO",
+            "descripcion": "Observa con deleite cómo los patos nadan grácilmente en las aguas cristalinas, creando ondas suaves que reflejan la luz del sol y dan vida al entorno.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        },
+
+        
+        {
+            "imagen": "./assets/fotos agenda/aj-McsNra2VRQQ-unsplash.webp",
+            "titulo": "CONOCE LAS RUTAS",
+            "subtitulo": "CEREZOS EN FLOR",
+            "descripcion": " Déjate maravillar por la vista de los cerezos cubiertos de delicadas flores rosadas y blancas, que adornan los parques y jardines de la ciudad con su esplendor efímero.",
+            "mas_actividades": "MAS ACTIVIDADES EN EL RETIRO"
+        }
+    ]
+}

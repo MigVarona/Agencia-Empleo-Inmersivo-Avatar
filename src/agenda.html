@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.8.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="agenda.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poiret+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header style="max-width: 1215px; margin: 0 auto;">
+        <div class="flex justify-between items-center">
+            <a href="puertalcala.html">
+                <h1 class="mt-10">Retiro 360</h1>
+            </a>
+            <a href="entrada.html">
+                <p style="margin-left: 37px; display: none;" class=" mt-4">PASEO VIRTUAL</p>
+            </a>
+            <div class="right-container flex items-center">
+                <a href="login.html">
+                    <h2 class="text-sm mt-3">LOGIN</h2>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <hr style="max-width: 1230px; margin: 0 auto;" class="custom-hr">
+
+    <div style="max-width: 1215px; margin: 0 auto;" class=" flex actividades">
+        <p style="font-size: 12px;" class="mov font-bold ml-2  mt-4">ACTIVIDADES</p>
+        <p class="mov  mt-4" style="margin-left: 25px; font-size: 12px;">FILTRAR POR:</p>
+        <div class="mov vertical-line"></div>
+        <a href="exposiciones.html">
+            <p style="margin-left: 37px;" class="izq font-bold  mt-4 ">EXPOSICIONES</p>
+        </a>
+        <div class="vertical-line"></div>
+        <a href="rutas.html">
+            <p style="margin-left: 37px;" class="izq font-bold mt-4 ">RUTAS TURÍSTICAS</p>
+        </a>
+        <div class="vertical-line"></div>
+        <a href="agenda.html">
+            <p style="margin-left: 37px; text-decoration: underline;  text-decoration-color: rgba(0, 0, 0, 0.8);"
+                class="izq font-bold mt-4 th">ACTIVIDADES</p>
+        </a>
+        <div class=" vertical-line"></div>
+        <a href="entrada.html">
+            <p style="margin-left: 37px;" class="izq mt-4">PASEO VIRTUAL</p>
+        </a>
+        <img style="margin-left: 3px; opacity: 70%; margin-top: 20px;" class="location "
+            src="./assets/location-sign_17736.png" alt="  ">
+    </div>
+
+
+    <hr style="max-width: 1230px; margin: 0 auto;" class="custom-hr">
+
+
+    <main style="max-width: 1250px; margin: 0 auto;">
+        <div id="contenido" style="margin-top: 1rem;" class="flex justify-center items-center flex-wrap">
+        </div>
+    </main>
+
+    <footer class="mt-20">
+        <div class="flex justify-center items-center">
+            <ul class="flex flex-wrap justify-center flex-row md:justify-between">
+                <li class="text-center">© 2024 Retiro 360</li>
+                <a href="index.html">
+                    <li class="text-center">Visita virtual</li>
+                </a>
+                <a href="exposiciones.html">
+                    <li class="text-center">Exposiciones</li>
+                </a>
+                <a href="rutas.html">
+                    <li class="text-center">Rutas turísticas</li>
+                </a>
+                <a href="agenda.html">
+                    <li class="text-center">Actividades</li>
+                </a>
+                <a href="register.html">
+                    <li class="text-center">Registro</li>
+                </a>
+                <li class="text-center">Contacto</li>
+                <a href="login.html">
+                    <li style="margin-bottom: 60px;" class="text-center">Login</li>
+                </a>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        fetch('contenido.json')
+            .then(response => response.json())
+            .then(data => {
+                const contenedor = document.getElementById('contenido');
+
+                data.actividades.slice(0, 6).forEach(actividad => {
+                    const tarjeta = document.createElement('div');
+                    tarjeta.innerHTML = `
+                        <div class="flex-1 p-2 ">
+                            <img class="fotos-w" width="365px" src="${actividad.imagen}" alt="" style="vertical-align: top;">
+                            <p class="font-bold text-left" style="margin-top: 12px; font-size: 13px;">${actividad.titulo}</p>
+                            <p style="margin-top: 6px; font-size: 20px;" class="text-left font-bold">${actividad.subtitulo}</p>
+                            <p class="text-container text-left" style="margin-top: 12px; font-size: 13px;">${actividad.descripcion}</p>
+                            <p class="font-bold text-left underline" style="margin-top: 40px; font-size: 12px;">${actividad.mas_actividades}</p>
+                            <button style="margin-top: 20px; margin-bottom: 40px;" class="px-3 py-2">
+                                <a href="" target="_blank">RESERVAR</a>
+                            </button>
+                        </div>
+                    `;
+                    contenedor.appendChild(tarjeta);
+                });
+            })
+            .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+    </script>
+
+</body>
+
+</html>

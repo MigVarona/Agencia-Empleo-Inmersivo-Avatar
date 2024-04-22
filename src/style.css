@@ -1,0 +1,201 @@
+h1 {
+  font-size: 2rem;
+  color: white;
+  left: 60px;
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem !important;
+    left: 20px;
+  }
+
+}
+
+.flechas {
+  z-index: 999;
+  position: absolute;
+  left: 60px;
+  
+  top: 90%;
+  color: white !important;
+  font-size: 1rem;
+  opacity: 90%;
+}
+
+@media (max-width: 768px) {
+  .flechas {
+    font-size: 0.7rem;
+    left: 20px;
+    gap: 0.5rem;
+  }
+
+}
+
+.flecha2 {
+  transform: rotate(180deg);
+}
+
+.nab {
+  z-index: 999;
+  position: absolute;
+}
+
+h2 {
+  z-index: 999;
+  position: absolute;
+  top: 55%;
+  color: white;
+  left: 60px;
+  font-size: 3rem !important;
+  font-family: "Montserrat", sans-serif;
+  opacity: 90%;
+
+}
+
+h4 {
+  z-index: 999;
+  position: absolute;
+  color: white;
+  right: 60px;
+  font-size: 1.1rem !important;
+  font-family: "Montserrat", sans-serif;
+  opacity: 85%;
+}
+
+@media (max-width: 768px) {
+  h4 {
+    font-size: 0.8rem !important;
+    right: 30px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem !important;
+    left: 20px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .flecha1  {
+    width: 0.95rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .flecha2  {
+    width: 0.95rem;
+  }
+
+}
+
+#black-overlay {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.uk-button {
+  z-index: 999;
+  position: absolute;
+  top: 65%;
+  color: white;
+  left: 60px;
+  opacity: 90%;
+}
+
+@media (max-width: 768px) {
+  .uk-button {
+
+    left: 20px;
+   }
+}
+
+@media (max-width: 768px) {
+  .btnmg {
+margin-top: 30px !important;
+   
+  }
+
+}
+
+.uk-modal-full {
+  z-index: 999;
+  position: absolute;
+}
+
+a:hover h3  {
+  color: #FEA162; 
+  text-decoration: none;
+}
+
+a {
+  color: white;
+  text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+a:hover {
+  text-decoration: none; /* Quita el subrayado del enlace al hacer hover */
+}
+
+a:hover svg path {
+  fill: #FEA162; /* Cambia el color del SVG al hacer hover */
+}
+
+.uk-button:hover {
+  color: #FEA162; 
+}
+
+.swipe {
+  z-index: 999;
+  position: absolute;
+  width: 60px;
+  left: 45%;
+  top: 30%
+}
+
+
+@media (max-width: 768px) {
+  .swipe {
+
+    left:35%;
+   }
+}
+
+a-scene img.visible {
+  display: block;
+}
+
+
+.hand-icon {
+  position: relative;
+  background-image: url('https://i.postimg.cc/8556gm60/hand.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+animation: spin 2s infinite;
+  transform-origin: 50% 50%; /* Ajustar el punto de origen de la rotación */
+}
+
+@keyframes spin {
+  0% { transform: rotate(30deg) translateX(20px); }
+  50% { transform: rotate(-15deg) translateX(-20px); }
+  100% { transform: rotate(0deg) translateX(20px); }
+}
+
+
+

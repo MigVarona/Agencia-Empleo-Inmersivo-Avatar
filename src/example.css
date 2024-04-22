@@ -1,0 +1,179 @@
+@media (max-width: 1300px) {
+    .botanico {
+        font-size: 90px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .botanico {
+        font-size: 75px !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .botanico {
+        font-size: 65px !important;
+        
+    }
+}
+
+@media (max-width: 875px) {
+    .botanico {
+        font-size: 55px !important;
+        
+    }
+}
+
+@media (max-width: 785px) {
+    .botanico {
+        font-size: 50px !important;
+        
+    }
+}
+
+@media (max-width: 600px) {
+    .botanico {
+        font-size: 45px !important;
+        letter-spacing: -5px !important;
+        
+    }
+}
+
+@media (max-width: 1260px) {
+    .diversidad {
+        font-size: 25px !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .diversidad {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 1040px) {
+    .diversidad {
+        font-size: 20px !important;
+        margin-bottom: 4px;
+
+        
+    }
+}
+
+@media (max-width: 785px) {
+    .diversidad {
+        font-size: 15px !important;
+        margin-bottom: 4px;
+    }
+}
+
+
+@media (max-width: 1225px) {
+    .numeros {
+        font-size: 70px !important;
+    }
+}
+
+@media (max-width: 1150px) {
+    .numeros {
+        font-size: 60px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .numeros {
+        font-size: 55px !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .numeros {
+        font-size: 50px !important;
+    }
+}
+
+@media (max-width: 785px) {
+    .numeros {
+        font-size: 45px !important;
+    }
+}
+
+@media (max-width: 1250px) {
+    img {
+        width: 600px;
+    }
+}
+
+@media (max-width: 1100px) {
+    img {
+        width: 550px;
+    }
+}
+
+@media (max-width: 925px) {
+    img {
+        width: 500px;
+    }
+}
+
+@media (max-width: 875px) {
+    img {
+        width: 425px;
+    }
+}
+
+@media (max-width: 785px) {
+    img {
+        width: 400px;
+    }
+}
+
+@media (max-width: 775px) {
+    img {
+        width: 775px;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .jardin {
+        font-size: 45px !important;
+        margin-bottom: 5px;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .jardin {
+        font-size: 40px !important;
+        margin-bottom: 10px;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .vuelo {
+        font-size: 40px !important;
+        margin-bottom: 10px;
+
+    }
+}
+
+
+@media (max-width: 875px) {
+    .margen {
+        margin-top: 1px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .arriba {
+      flex-direction: column-reverse;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .caja {
+padding: 10px;    }
+  }
+
