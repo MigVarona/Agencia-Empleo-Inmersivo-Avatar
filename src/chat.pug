@@ -1,0 +1,57 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Chat con IA
+    link(rel="stylesheet", href="chat.css")
+
+  body
+    .chat-container
+      .chat-header Agencia
+      .chat-body#chatBody
+      .chat-form#chatForm
+        input(type="text", id="questionInput", placeholder="Escribe tu pregunta...")
+        button(type="button", id="submitButton", style="margin-top: 10px;") Enviar
+
+    script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")
+    script.
+      const chatForm = document.getElementById('chatForm');
+      const questionInput = document.getElementById('questionInput');
+      const chatBody = document.getElementById('chatBody');
+      const submitButton = document.getElementById('submitButton');
+
+      submitButton.addEventListener('click', async () => {
+        const question = questionInput.value.trim();
+        if (question === '') return;
+
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.classList.add('chat-message', 'user-message');
+        userMessageDiv.textContent = `Tú: ${question}`;
+        chatBody.appendChild(userMessageDiv);
+
+        try {
+          const response = await axios.get(`https://webextendida.es/chatProdAgencia.php?question=${question}`);
+          const data = response.data;
+          if (data) {
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.classList.add('chat-message', 'bot-message');
+            botMessageDiv.textContent = `Agencia: ${data}`;
+            chatBody.appendChild(botMessageDiv);
+          } else {
+            const errorMessageDiv = document.createElement('div');
+            errorMessageDiv.classList.add('chat-message', 'bot-message');
+            errorMessageDiv.textContent = 'Bot: No se recibió respuesta';
+            chatBody.appendChild(errorMessageDiv);
+          }
+        } catch (error) {
+          console.error('Hubo un error:', error);
+          const errorMessageDiv = document.createElement('div');
+          errorMessageDiv.classList.add('chat-message', 'bot-message');
+          errorMessageDiv.textContent = 'Bot: Hubo un error al obtener la respuesta';
+          chatBody.appendChild(errorMessageDiv);
+        }
+
+        questionInput.value = '';
+      });
