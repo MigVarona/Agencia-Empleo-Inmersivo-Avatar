@@ -197,5 +197,32 @@ animation: spin 2s infinite;
   100% { transform: rotate(0deg) translateX(20px); }
 }
 
+.menu-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  cursor: pointer;
+  color: black;
+  font-size: 24px;
+}
 
+.menu {
+  display: none;
+  position: absolute;
+  top: 60px; /* Ajuste la posición superior para que el menú esté más abajo */
+  right: 20px;
+  background-color: #333;
+  padding: 20px; /* Aumente el espacio interior para que el menú sea más grande */
+  border-radius: 5px;
+  z-index: 9998;
+  width: 200px; /* Ajuste el ancho del menú según sea necesario */
+}
 
+.menu a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 10px; /* Ajuste el margen inferior entre elementos de menú */
+  font-size: 18px; /* Ajuste el tamaño de fuente de los elementos de menú */
+}

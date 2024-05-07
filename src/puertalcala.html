@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Retiro 360</title>
+  <title>Agencia de Empleo</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
@@ -25,6 +25,17 @@
 </head>
 
 <body class="bg-black" onload="startVideo()">
+
+
+  <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+  <div class="menu" id="menu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+  </div>
+
+
   <a-scene vr-mode-ui="enabled: false" class="" cursor="rayOrigin: mouse" id="camera" position="0 1.6 0">
     <a-camera>
       <a-look-controls pitchEnabled="false"></a-look-controls>
@@ -33,20 +44,20 @@
 
     <a-videosphere src="#video" rotation="0 270 0"></a-videosphere>
 
-    <div id="black-overlay"></div>
+ 
+
+ 
 
     <video id="video" loop muted autoplay crossorigin="anonymous" webkit-playsinline="true" playsinline="true"
       onloadedmetadata="this.currentTime=0">
-      <source type="video/mp4" src="assets/videos/fachada_1.mp4">
+      <source type="video/mp4" src="assets/videos/fachada_hires.mp4">
       
     </video>
 
-    <h1 class="mt-6 nab">Retiro 360</h1>
+    <img src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png" style="z-index: 999;
+    position: absolute; display: block; margin-left: 40px; margin-top: 30px;" width="300px"></img>
     <h2 class=""> Parque del Buen Retiro </h2>
-    <a href="agenda.html">
-      <h4 class="mt-6">Actividades</h4>
-    </a>
-
+    
 
     <section class="weather-container sm:gap-2 text-white gap-4 flex items-center justify-between">
       <div class="section__content">
@@ -92,7 +103,13 @@
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  
   <script>
+
+
+
     $(document).ready(function () {
       cargarContenidoMarkdown();
 
@@ -126,6 +143,16 @@
       }, 5000);
     });
   </script>
+
+<script>
+  $(document).ready(function () {
+      $('.menu-toggle').click(function () {
+          $('.menu').toggle();
+      });
+  });
+</script>
+
+
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
 
