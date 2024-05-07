@@ -1,5 +1,7 @@
 doctype html
 html
+include head.pug
+
   body.bg-black(onload="startVideo()")
     a-scene#camera(cursor="rayOrigin: mouse", onclick="startVideo()", position="0 1.6 0")
       a-camera
