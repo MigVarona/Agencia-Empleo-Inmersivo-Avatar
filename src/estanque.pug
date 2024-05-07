@@ -1,0 +1,53 @@
+doctype html
+html
+  body.bg-black(onload="startVideo()")
+    a-scene#camera(cursor="rayOrigin: mouse", onclick="startVideo()", position="0 1.6 0")
+      a-camera
+        a-look-controls(pitchEnabled="false")
+      a-videosphere(src="#video", rotation="0 -100 0")
+      #black-overlay
+      video#video(loop, muted, autoplay, crossorigin="anonymous", webkit-playsinline="true", playsinline="true", onloadedmetadata="this.currentTime=0")
+        source(type="video/mp4", src="assets/videos editados 360/Estanque.webm")
+        source(type="video/mp4", src="assets/videos editados 360/Estanque.mp4")
+      a(href="puertalcala.html")
+        h1.mt-6.nab Retiro 360
+      h2 Estanque
+      a(href="agenda.html")
+        h4.mt-6 Actividades
+      .flechas.sm.gap-2.text-white.gap-4.flex.items-center.justify-between
+        a(href="entrada.html")
+          svg.flecha2.justify-start.w-5(type="button", xmlns="http://www.w3.org/2000/svg", viewBox="0 0 126.667 89.067")
+            path(d="M0 50.933h101.201L72.667 79.467l9.466 9.6 44.534-44.534L82.133 0h-.001l-9.465 9.6 27.868 27.867H0z", fill="white")
+        a(href="entrada.html")
+          h3.text-white ACCESO PRINCIPAL
+        a(href="monumento.html")
+          h3.text-white ALFONSO XII
+        a(href="monumento.html")
+          svg.flecha1.justify-start.w-5(type="button", xmlns="http://www.w3.org/2000/svg", viewBox="0 0 126.667 89.067")
+            path(d="M0 50.933h101.201L72.667 79.467l9.466 9.6 44.534-44.534L82.133 0h-.001l-9.465 9.6 27.868 27.867H0z", fill="white")
+      a.uk-button.uk-button-default(href="#modal-overflow", uk-toggle) Conoce +
+      #modal-overflow(style="opacity: 0.8;", uk-modal)
+        #Embarcadero.uk-modal-dialog
+          button.uk-modal-close-default(type="button", uk-close)
+          .uk-modal-body(uk-overflow-auto)
+            p#contenido-embarcadero
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+    script.
+      $(document).ready(function () {
+        cargarContenidoMarkdown();
+  
+        function cargarContenidoMarkdown() {
+          $.ajax({
+            url: 'contenido.md',
+            success: function (data) {
+              var start = data.indexOf('# Embarcadero');
+              var end = data.indexOf('##', start + 1);
+              var contenido = data.substring(start, end != -1 ? end : data.length).trim();
+              contenido = contenido.replace(/^# Embarcadero\s*/gm, '');
+              $('#contenido-embarcadero').html(contenido);
+            }
+          });
+        }
+      });
+    script(src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js")
