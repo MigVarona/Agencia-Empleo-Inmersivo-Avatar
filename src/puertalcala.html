@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Retiro 360</title>
+  <title>Agencia de Empleo</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
@@ -25,6 +25,17 @@
 </head>
 
 <body class="bg-black" onload="startVideo()">
+
+
+  <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+  <div class="menu" id="menu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+  </div>
+
+
   <a-scene vr-mode-ui="enabled: false" class="" cursor="rayOrigin: mouse" id="camera" position="0 1.6 0">
     <a-camera>
       <a-look-controls pitchEnabled="false"></a-look-controls>
@@ -33,20 +44,20 @@
 
     <a-videosphere src="#video" rotation="0 270 0"></a-videosphere>
 
-    <div id="black-overlay"></div>
+ 
+
+ 
 
     <video id="video" loop muted autoplay crossorigin="anonymous" webkit-playsinline="true" playsinline="true"
       onloadedmetadata="this.currentTime=0">
-      <source type="video/mp4" src="assets/videos/fachada_1.mp4">
+      <source type="video/mp4" src="assets/videos/fachada_hires.mp4">
       
     </video>
 
-    <h1 class="mt-6 nab">Retiro 360</h1>
-    <h2 class=""> Parque del Buen Retiro </h2>
-    <a href="agenda.html">
-      <h4 class="mt-6">Actividades</h4>
-    </a>
-
+    <img src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png" style="z-index: 999;
+    position: absolute; display: block; margin-left: 40px; margin-top: 30px;" width="300px"></img>
+    <h2 style="color: black;" class=""> Sede Áncora </h2>
+    
 
     <section class="weather-container sm:gap-2 text-white gap-4 flex items-center justify-between">
       <div class="section__content">
@@ -58,19 +69,19 @@
 
     <div class="flechas sm:gap-2 text-white gap-4 flex items-center justify-between">
       <a href="entrada.html">
-        <h3 class="text-white flex ">ACCESO PRINCIPAL</h3>
+        <h3 class="text-black flex ">ACCESO PRINCIPAL</h3>
       </a>
 
       <a href="entrada.html">
         <svg type="button" xmlns="http://www.w3.org/2000/svg" class="flecha1 justify-start w-5"
           viewBox="0 0 126.667 89.067">
           <path d="M0 50.933h101.201L72.667 79.467l9.466 9.6 44.534-44.534L82.133 0h-.001l-9.465 9.6 27.868 27.867H0z"
-            fill="white"></path>
+            fill="black"></path>
         </svg>
       </a>
     </div>
 
-    <a class="uk-button btnmg uk-button-default" href="#modal-overflow" uk-toggle>Conoce +</a>
+    <a style="color: black;"  class="uk-button btnmg uk-button-default " href="#modal-overflow" uk-toggle>Conoce +</a>
     <img class="visible" src="assets/white-swipe.png" alt="">
     <div id="modal-overflow" style="opacity: 0.8;" uk-modal>
       <div id="alcala" class="uk-modal-dialog">
@@ -92,7 +103,13 @@
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  
   <script>
+
+
+
     $(document).ready(function () {
       cargarContenidoMarkdown();
 
@@ -126,6 +143,16 @@
       }, 5000);
     });
   </script>
+
+<script>
+  $(document).ready(function () {
+      $('.menu-toggle').click(function () {
+          $('.menu').toggle();
+      });
+  });
+</script>
+
+
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
 
