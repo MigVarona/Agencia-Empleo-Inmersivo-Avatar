@@ -112,7 +112,7 @@ h4 {
   z-index: 999;
   position: absolute;
   top: 65%;
-  color: white;
+  color: black !important;
   left: 60px;
   opacity: 90%;
 }
