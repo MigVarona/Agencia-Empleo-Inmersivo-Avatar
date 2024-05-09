@@ -1,7 +1,7 @@
 doctype html
-html
-include head.pug
-
+html(lang="en")
+  head
+    include head.pug
   body.bg-black(onload="startVideo()")
     .menu-toggle(onclick="toggleMenu()") &#9776;
     .menu#menu
@@ -9,15 +9,14 @@ include head.pug
       a(href="#") About
       a(href="#") Services
       a(href="#") Contact
-      
     a-scene(vr-mode-ui="enabled: false", cursor="rayOrigin: mouse", id="camera", position="0 1.6 0")
       a-camera
         a-look-controls(pitchEnabled="false")
       a-videosphere(src="#video", rotation="0 270 0")
-      video#video(loop, muted, autoplay, crossorigin="anonymous", webkit-playsinline="true", playsinline="true", onloadedmetadata="this.currentTime=0")
-        source(type="video/mp4", src="assets/videos/fachada_hires.mp4")
-      img(src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png", style="z-index: 999; position: absolute; display: block; margin-left: 40px; margin-top: 30px;", width="300px")
-      h2(style="color: black;") Sede Áncora
+      video#video(loop muted autoplay crossorigin="anonymous" webkit-playsinline="true" playsinline="true" onloadedmetadata="this.currentTime=0")
+        source(type="video/mp4", src="../assets/videos/intermediacion.mp4")
+      img(src="../assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png", style="z-index: 999; position: absolute; display: block; margin-left: 40px; margin-top: 30px;", width="300px")
+      h2(style="color: black;") Agencia
       section.weather-container.sm.gap-2.text-white.gap-4.flex.items-center.justify-between
         .section__content
           .visible.weather__temp#js_w_temp
@@ -27,22 +26,22 @@ include head.pug
           h3.text-black.flex ACCESO PRINCIPAL
         a(href="entrada.html")
           svg.flecha1.justify-start.w-5(type="button", xmlns="http://www.w3.org/2000/svg", viewBox="0 0 126.667 89.067")
-            path(d="M0 50.933h101.201L72.667 79.467l9.466 9.6 44.534-44.534L82.133 0h-.001l-9.465 9.6 27.868 27.867H0z", fill="black")
+            path(fill="black", d="M0 50.933h101.201L72.667 79.467l9.466 9.6 44.534-44.534L82.133 0h-.001l-9.465 9.6 27.868 27.867H0z")
       a.uk-button.btnmg.uk-button-default(href="#modal-overflow", uk-toggle) Conoce +
       img.visible(src="assets/white-swipe.png", alt="")
       #modal-overflow(style="opacity: 0.8;", uk-modal)
-        #alcala.uk-modal-dialog
+        .uk-modal-dialog#alcala
           button.uk-modal-close-default(type="button", uk-close)
           .uk-modal-body(uk-overflow-auto)
             p#contenido-alcala
-      #icon-container.oculto.swipe
+      .oculto.swipe#icon-container
         .path
         .hand-icon
     script(src="https://code.jquery.com/jquery-3.6.0.min.js")
     script.
       $(document).ready(function () {
         cargarContenidoMarkdown();
-    
+
         function cargarContenidoMarkdown() {
           $.ajax({
             url: 'contenido.md',
@@ -57,15 +56,15 @@ include head.pug
           });
         }
       });
-    
+
       function startVideo() {
         var video = document.getElementById('video');
         video.play();
       }
-    
+
       document.addEventListener("DOMContentLoaded", function () {
         var iconContainer = document.getElementById("icon-container");
-    
+
         setTimeout(function () {
           iconContainer.style.display = "none";
         }, 5000);
