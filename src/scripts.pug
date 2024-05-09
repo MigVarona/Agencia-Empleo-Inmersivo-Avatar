@@ -1,0 +1,42 @@
+script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+script.
+  $(document).ready(function () {
+      cargarContenidoMarkdown();
+
+      function cargarContenidoMarkdown() {
+        $.ajax({
+          url: 'contenido.md',
+          success: function (data) {
+            var start = data.indexOf('# alcala');
+            var end = data.indexOf('##', start + 1);
+            var contenido = data.substring(start, end != -1 ? end : data.length).trim();
+            // Eliminar el título '# alcala'
+            contenido = contenido.replace(/^# alcala\s*/gm, '');
+            $('#contenido-alcala').html(contenido);
+          }
+        });
+      }
+    });
+
+    function startVideo() {
+      var video = document.getElementById('video');
+      video.play();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var iconContainer = document.getElementById("icon-container");
+
+      setTimeout(function () {
+        iconContainer.style.display = "none";
+      }, 5000);
+    });
+
+script.
+  $(document).ready(function () {
+      $('.menu-toggle').click(function () {
+        $('.menu').toggle();
+      });
+    });
+
+script(src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js")
+script(src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js")
