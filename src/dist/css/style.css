@@ -1,100 +1,91 @@
 h1 {
   font-size: 2rem;
-  color: white;
+  color: #fff;
   left: 60px;
   font-family: "Poiret One", sans-serif;
   font-weight: 400;
-  font-style: normal;
-
+  font-style: normal
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   h1 {
     font-size: 1.5rem !important;
-    left: 20px;
+    left: 20px
   }
-
 }
 
 .flechas {
   z-index: 999;
   position: absolute;
   left: 60px;
-  
   top: 90%;
   color: white !important;
   font-size: 1rem;
-  opacity: 90%;
+  opacity: 90%
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   .flechas {
-    font-size: 0.7rem;
+    font-size: .7rem;
     left: 20px;
-    gap: 0.5rem;
+    gap: .5rem
   }
-
 }
 
 .flecha2 {
-  transform: rotate(180deg);
+  transform: rotate(180deg)
 }
 
 .nab {
   z-index: 999;
-  position: absolute;
+  position: absolute
 }
 
 h2 {
   z-index: 999;
   position: absolute;
   top: 55%;
-  color: white;
+  color: #fff;
   left: 60px;
   font-size: 3rem !important;
   font-family: "Montserrat", sans-serif;
-  opacity: 90%;
-
+  opacity: 90%
 }
 
 h4 {
   z-index: 999;
   position: absolute;
-  color: white;
+  color: #fff;
   right: 60px;
   font-size: 1.1rem !important;
   font-family: "Montserrat", sans-serif;
-  opacity: 85%;
+  opacity: 85%
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   h4 {
     font-size: 0.8rem !important;
-    right: 30px;
+    right: 30px
   }
-
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   h2 {
     font-size: 2rem !important;
-    left: 20px;
+    left: 20px
   }
-
 }
 
-@media (max-width: 768px) {
-  .flecha1  {
-    width: 0.95rem;
+@media (max-width:768px) {
+  .flecha1 {
+    width: .95rem
   }
-
 }
 
-@media (max-width: 768px) {
-  .flecha2  {
-    width: 0.95rem;
+@media (max-width:768px) {
+  .flecha2 {
+    width: .95rem
   }
-
 }
 
 #black-overlay {
@@ -104,8 +95,8 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  pointer-events: none;
+  background-color: rgb(0 0 0 / .4);
+  pointer-events: none
 }
 
 .uk-button {
@@ -114,49 +105,46 @@ h4 {
   top: 65%;
   color: black !important;
   left: 60px;
-  opacity: 90%;
+  opacity: 90%
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   .uk-button {
-
-    left: 20px;
-   }
+    left: 20px
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   .btnmg {
-margin-top: 30px !important;
-   
+    margin-top: 30px !important
   }
-
 }
 
 .uk-modal-full {
   z-index: 999;
-  position: absolute;
+  position: absolute
 }
 
-a:hover h3  {
-  color: #FEA162; 
-  text-decoration: none;
+a:hover h3 {
+  color: #FEA162;
+  text-decoration: none
 }
 
 a {
-  color: white;
-  text-decoration: none; /* Quita el subrayado del enlace */
+  color: #fff;
+  text-decoration: none
 }
 
 a:hover {
-  text-decoration: none; /* Quita el subrayado del enlace al hacer hover */
+  text-decoration: none
 }
 
 a:hover svg path {
-  fill: #FEA162; /* Cambia el color del SVG al hacer hover */
+  fill: #FEA162
 }
 
 .uk-button:hover {
-  color: #FEA162; 
+  color: #FEA162
 }
 
 .swipe {
@@ -167,34 +155,39 @@ a:hover svg path {
   top: 30%
 }
 
-
-@media (max-width: 768px) {
+@media (max-width:768px) {
   .swipe {
-
-    left:35%;
-   }
+    left: 35%
+  }
 }
 
 a-scene img.visible {
-  display: block;
+  display: block
 }
-
 
 .hand-icon {
   position: relative;
-  background-image: url('https://i.postimg.cc/8556gm60/hand.png');
+  background-image: url(https://i.postimg.cc/8556gm60/hand.png);
   background-repeat: no-repeat;
   background-position: center;
   width: 100px;
   height: 100px;
-animation: spin 2s infinite;
-  transform-origin: 50% 50%; /* Ajustar el punto de origen de la rotación */
+  animation: spin 2s infinite;
+  transform-origin: 50% 50%
 }
 
 @keyframes spin {
-  0% { transform: rotate(30deg) translateX(20px); }
-  50% { transform: rotate(-15deg) translateX(-20px); }
-  100% { transform: rotate(0deg) translateX(20px); }
+  0% {
+    transform: rotate(30deg) translateX(20px)
+  }
+
+  50% {
+    transform: rotate(-15deg) translateX(-20px)
+  }
+
+  100% {
+    transform: rotate(0deg) translateX(20px)
+  }
 }
 
 .menu-toggle {
@@ -203,26 +196,26 @@ animation: spin 2s infinite;
   right: 20px;
   z-index: 9999;
   cursor: pointer;
-  color: black;
-  font-size: 24px;
+  color: #000;
+  font-size: 24px
 }
 
 .menu {
   display: none;
   position: absolute;
-  top: 60px; /* Ajuste la posición superior para que el menú esté más abajo */
+  top: 60px;
   right: 20px;
   background-color: #333;
-  padding: 20px; /* Aumente el espacio interior para que el menú sea más grande */
+  padding: 20px;
   border-radius: 5px;
   z-index: 9998;
-  width: 200px; /* Ajuste el ancho del menú según sea necesario */
+  width: 200px
 }
 
 .menu a {
   display: block;
   color: #fff;
   text-decoration: none;
-  margin-bottom: 10px; /* Ajuste el margen inferior entre elementos de menú */
-  font-size: 18px; /* Ajuste el tamaño de fuente de los elementos de menú */
+  margin-bottom: 10px;
+  font-size: 18px
 }
