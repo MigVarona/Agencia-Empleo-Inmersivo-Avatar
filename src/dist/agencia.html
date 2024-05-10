@@ -22,7 +22,7 @@
 </head>
 
 <body class="bg-black" onload="startVideo()">
-  <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">&#9776;</button>
   <div class="menu" id="menu"><a href="#">Home</a><a href="#">About</a><a href="#">Services</a><a href="#">Contact</a>
   </div><a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera"
     position="0 1.6 0"><a-camera><a-look-controls pitchEnabled="false"></a-look-controls></a-camera><a-videosphere
