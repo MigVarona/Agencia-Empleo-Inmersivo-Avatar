@@ -122,11 +122,11 @@ a-scene img.visible {
 
 .hand-icon {
   position: relative;
-  background-image: url(../assets/hand.png);
+  background-image: url(https://i.postimg.cc/8556gm60/hand.png);
   background-repeat: no-repeat;
   background-position: center;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   animation: spin 2s infinite;
   transform-origin: 50% 50%; }
 
@@ -139,18 +139,18 @@ a-scene img.visible {
     transform: rotate(0deg) translateX(20px); } }
 .menu-toggle {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  right: 30px;
   z-index: 9999;
   cursor: pointer;
   color: #000;
-  font-size: 24px; }
+  font-size: 35px; }
 
 .menu {
   display: none;
   position: absolute;
-  top: 60px;
-  right: 20px;
+  top: 90px;
+  right: 50px;
   background-color: #333;
   padding: 20px;
   border-radius: 5px;
@@ -166,6 +166,11 @@ a-scene img.visible {
 @media only screen and (max-width: 600px) {
   .imagen {
     width: 225px !important; } }
+@media only screen and (max-width: 600px) {
+  .menu {
+    width: 225px !important;
+    top: 100px;
+    right: 30px; } }
 @media only screen and (max-width: 600px) {
   .imagen-container {
     margin-left: 15px !important; } }
