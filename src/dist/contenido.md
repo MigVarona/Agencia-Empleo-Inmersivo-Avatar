@@ -1,7 +1,7 @@
 # Entrada
 
-“Bienvenidos a la experiencia de realidad aumentada y virtual de la Agencia para el Empleo del Ayuntamiento de Madrid. <br><br>
-Prepárate para descubrir cómo te podemos ayudar a encontrar tu camino profesional o a encontrar el talento ideal para tu empresa.”<br><br>
+Bienvenidos a la experiencia de realidad aumentada y virtual de la Agencia para el Empleo del Ayuntamiento de Madrid. <br><br>
+Prepárate para descubrir cómo te podemos ayudar a encontrar tu camino profesional o a encontrar el talento ideal para tu empresa.<br><br>
 
 
 ## Agencia
