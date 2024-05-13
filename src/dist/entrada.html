@@ -68,7 +68,7 @@
 
       function cargarContenidoMarkdown() {
         $.ajax({
-          url: 'contenido.md',
+          url: 'assets/contenido.md',
           success: function (data) {
             var start = data.indexOf('# Entrada');
             var end = data.indexOf('##', start + 1);

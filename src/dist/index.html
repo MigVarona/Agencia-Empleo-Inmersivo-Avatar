@@ -51,9 +51,9 @@
         </svg></a></div><a class="uk-button btnmg uk-button-default" href="#modal-overflow" uk-toggle>Conoce +</a><img
       class="visible" src="assets/white-swipe.png" alt="">
     <div id="modal-overflow" style="opacity: 0.8;" uk-modal>
-      <div class="uk-modal-dialog" id="alcala"><button class="uk-modal-close-default" type="button" uk-close></button>
+      <div class="uk-modal-dialog" id="formacion"><button class="uk-modal-close-default" type="button" uk-close></button>
         <div class="uk-modal-body" uk-overflow-auto>
-          <p id="contenido-alcala"></p>
+          <p id="contenido-formacion"></p>
         </div>
       </div>
     </div>
@@ -68,14 +68,14 @@
 
       function cargarContenidoMarkdown() {
         $.ajax({
-          url: 'contenido.md',
+          url: 'assets/contenido.md',
           success: function (data) {
-            var start = data.indexOf('# alcala');
+            var start = data.indexOf('# Formacion');
             var end = data.indexOf('##', start + 1);
             var contenido = data.substring(start, end != -1 ? end : data.length).trim();
             // Eliminar el título '# alcala'
-            contenido = contenido.replace(/^# alcala\s*/gm, '');
-            $('#contenido-alcala').html(contenido);
+            contenido = contenido.replace(/^# Formacion\s*/gm, '');
+            $('#contenido-formacion').html(contenido);
           }
         });
       }
