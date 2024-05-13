@@ -1,7 +1,12 @@
-# Entrada
+# Ancora
 
 Bienvenidos a la experiencia de realidad aumentada y virtual de la Agencia para el Empleo del Ayuntamiento de Madrid. <br><br>
 Prepárate para descubrir cómo te podemos ayudar a encontrar tu camino profesional o a encontrar el talento ideal para tu empresa.<br><br>
+
+## Entrada
+
+Desde sus inicios en 1956, como Organismo Autónomo del Ayuntamiento de Madrid, la Agencia para el Empleo es una entidad comprometida con el desarrollo económico y social de la ciudad.<br><br>
+Su labor se centra en gestionar las políticas municipales de empleo, facilitando la inserción laboral de personas desempleadas o en proceso de mejora de empleo, así como brindando apoyo a empresas en la búsqueda de talento y recursos humanos calificados.<br><br>
 
 
 ## Agencia
