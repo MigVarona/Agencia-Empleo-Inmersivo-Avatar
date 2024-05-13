@@ -155,7 +155,7 @@ a-scene img.visible {
   padding: 20px;
   border-radius: 5px;
   z-index: 9998;
-  width: 200px; }
+  width: 150px; }
   .menu a {
     display: block;
     color: #fff;
@@ -168,7 +168,7 @@ a-scene img.visible {
     width: 150px !important; } }
 @media only screen and (max-width: 600px) {
   .menu {
-    width: 225px !important;
+    width: 160px !important;
     top: 100px;
     right: 30px; } }
 @media only screen and (max-width: 600px) {
