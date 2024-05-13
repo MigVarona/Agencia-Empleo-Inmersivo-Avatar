@@ -122,11 +122,11 @@ a-scene img.visible {
 
 .hand-icon {
   position: relative;
-  background-image: url(https://i.postimg.cc/8556gm60/hand.png);
+  background-image: url(../assets/hand.png);
   background-repeat: no-repeat;
   background-position: center;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   animation: spin 2s infinite;
   transform-origin: 50% 50%; }
 
