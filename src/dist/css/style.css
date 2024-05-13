@@ -80,7 +80,8 @@ h4 {
   top: 65%;
   color: black !important;
   left: 60px;
-  opacity: 90%; }
+  opacity: 90%;
+  background-color: #fff !important; }
 
 @media (max-width: 768px) {
   .uk-button {
@@ -164,8 +165,10 @@ a-scene img.visible {
 
 @media only screen and (max-width: 600px) {
   .imagen {
-    width: 200px;
-    height: auto; } }
+    width: 225px !important; } }
+@media only screen and (max-width: 600px) {
+  .imagen-container {
+    margin-left: 15px !important; } }
 .imagen-container {
   position: absolute;
   z-index: 998;
