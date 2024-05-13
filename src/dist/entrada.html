@@ -30,6 +30,7 @@
     position="0 1.6 0"><a-camera><a-look-controls pitchEnabled="false"></a-look-controls></a-camera><a-videosphere
       src="#video" rotation="0 270 0"></a-videosphere><video id="video" loop muted autoplay crossorigin="anonymous"
       webkit-playsinline="true" playsinline="true" onloadedmetadata="this.currentTime=0">
+      <source type="video/mp4" src="assets/videos/entrada_hall.webm">
       <source type="video/mp4" src="assets/videos/entrada_hall.mp4">
     </video><img src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png"
       style="z-index: 999; position: absolute; display: block; margin-left: 40px; margin-top: 30px;" width="300px">
@@ -52,7 +53,7 @@
     <div id="modal-overflow" style="opacity: 0.8;" uk-modal>
       <div class="uk-modal-dialog" id="alcala"><button class="uk-modal-close-default" type="button" uk-close></button>
         <div class="uk-modal-body" uk-overflow-auto>
-          <p id="contenido-alcala"></p>
+          <p id="contenido-entrada"></p>
         </div>
       </div>
     </div>
@@ -69,12 +70,12 @@
         $.ajax({
           url: 'contenido.md',
           success: function (data) {
-            var start = data.indexOf('# alcala');
+            var start = data.indexOf('# Entrada');
             var end = data.indexOf('##', start + 1);
             var contenido = data.substring(start, end != -1 ? end : data.length).trim();
             // Eliminar el título '# alcala'
-            contenido = contenido.replace(/^# alcala\s*/gm, '');
-            $('#contenido-alcala').html(contenido);
+            contenido = contenido.replace(/^# Entrada\s*/gm, '');
+            $('#contenido-entrada').html(contenido);
           }
         });
       }
