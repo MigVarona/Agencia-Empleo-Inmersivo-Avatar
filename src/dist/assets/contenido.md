@@ -8,12 +8,8 @@ Prepárate para descubrir cómo te podemos ayudar a encontrar tu camino profesio
 
  La Agencia para el Empleo de Madrid refuerza la empleabilidad mediante un diagnóstico exhaustivo y la creación de itinerarios personalizados de intervención. Estos itinerarios están diseñados para superar barreras y mejorar competencias clave para el empleo<br><br>
 Gracias a nuestra transformación digital y la plataforma SALTA, facilitamos el acceso a nuestros servicios tanto presencial como virtualmente. Ofrecemos entrevistas de diagnóstico, seminarios de competencias laborales y atención especializada a colectivoscon dificultades de empleabilidad.<br><br>
-<<<<<<< HEAD:src/dist/assets/contenido.md
 Además, proporcionamos información sobre autoempleo y economía social, y contamos con programas como Emplea+ y Viaje al Empleo Web para fortalecer las competencias digitales y transversales, impulsando el desarrollo profesional y la motivación en la búsqueda de empleo.
 <br><br>
-=======
-Además, proporcionamos información sobre autoempleo y economía social, y contamos con programas como Emplea+ y Viaje al Empleo Web para fortalecer las competencias digitales y transversales, impulsando el desarrollo profesional y la motivación en la búsqueda de empleo.<br><br>
->>>>>>> 7aa4c50743dafec8e036c293c428b010d216dffa:src/dist/contenido.md
 
 ## Formacion
 
