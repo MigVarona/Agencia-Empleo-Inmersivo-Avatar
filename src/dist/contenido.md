@@ -1,43 +1,38 @@
-# Embarcadero
+# Entrada
 
-El Estanque Grande del Buen Retiro, conocido popularmente como el Estanque del Retiro, es una extensión de agua de origen artificial, que se encuentra en el Parque del Retiro, en la ciudad española de Madrid.<br><br>
-Fue creado en la primera mitad del siglo xvii como uno de los elementos paisajísticos más relevantes del Buen Retiro, una antigua posesión de la Corona española surgida durante el reinado de Felipe IV (1605-1665). Su titularidad corresponde, desde el año 1868, al Ayuntamiento de Madrid, al igual que los espacios ajardinados sobre los que se conformó el parque público actual.<br><br>
-Con una superficie de 37 240 m² y un volumen de agua de 55 150 m³, dispone de un embarcadero que posibilita la navegación recreativa y la celebración de competiciones de remo y piragüismo. En sus orillas se encuentran el Monumento a Alfonso XII y la Fuente Egipcia.<br><br>
+“Bienvenidos a la experiencia de realidad aumentada y virtual de la Agencia para el Empleo del Ayuntamiento de Madrid. <br><br>
+Prepárate para descubrir cómo te podemos ayudar a encontrar tu camino profesional o a encontrar el talento ideal para tu empresa.”<br><br>
 
-## buenretiro
 
-Construido en la primera mitad del siglo xvii dentro del proyecto paisajístico desarrollado
-para el Palacio del Buen Retiro, una antigua posesión real creada por el conde-duque de Olivares (1587-1645) para disfrute de Felipe IV (1605-1665),​ de quien era su valido.<br><br>
-Su uso como parque urbano se remonta a 1767, año en el que Carlos III (1716-1788) permitió la entrada del público a efectos recreativos3​ y, ya definitivamente, a partir de 1868, cuando quedó bajo latitularidad del Ayuntamiento de Madrid, cuenta Con 125 hectáreas y más de 15 000 árboles.<br><br>
-Entre sus elementos arquitectónicos e históricos más importantes se encuentran: el Estanque Grande,
-que ofrece varias actividades, como barcas de remo, barco y aula solar y la Escuela Municipal de Piragüismo,dirigida a niños y jóvenes entre 7 y 17 años; el Palacio de Velázquez y el Palacio de Cristal,ambos utilizados actualmente como salas de exposiciones del Museo Reina Sofía.<br><br>
+## Agencia
 
-## entrada
+ "La Agencia para el Empleo de Madrid refuerza la empleabilidad mediante un diagnóstico exhaustivo y la creación de itinerarios personalizados de intervención. Estos itinerarios están diseñados para superar barreras y mejorar competencias clave para el empleo<br><br>
+Gracias a nuestra transformación digital y la plataforma SALTA, facilitamos el acceso a nuestros servicios tanto presencial como virtualmente. Ofrecemos entrevistas de diagnóstico, seminarios de competencias laborales y atención especializada a colectivoscon dificultades de empleabilidad.<br><br>
+Además, proporcionamos información sobre autoempleo y economía social, y contamos con programas como Emplea+ y Viaje al Empleo Web para fortalecer las competencias digitales y transversales, impulsando el desarrollo profesional y la motivación en la búsqueda de empleo."
+<br><br>
 
-En 1865, se abre en El Retiro una nueva calle que une la Puerta de Alcalá con la Ronda de Atocha y la estación de ferrocarril allí existente desde 1851. En la margen Oeste de la calle, se crea así un nuevo barrio en el que hoy encontramos el Museo del Prado, el Botánico, la Academia Española de la Lengua, el Casón del Buen Retiro y la Bolsa, además de otros edificios oficiales o particulares.<br><br>
-Al Este, se construyó una verja de hierro que separó la calle de los jardines. Esta calle, de nombre inicial Calle de Granada, es la actual Calle de Alfonso XII.
-Se inicia así la construcción de una reja que, junto a las diferentes puertas que se le van añadiendo a lo largo de este siglo y medio, delimitará y cerrará El Retiro.<br><br>
+## Formacion
 
-## cristal
+"La Agencia para el Empleo de Madrid es una Agencia de Colocación sin ánimo de lucro autorizada por el Sistema Nacional de Empleo. La intermediación laboral es clave en la búsqueda de empleo, conectando ofertas con demandantes y empresas<br><br>
+Hemos fortalecido nuestros servicios con el Centro de Personas & Empresas, estableciendo alianzas directas con empresas y utilizando nuevas herramientas de evaluación. Captamos talento a través de diferentes medios y ofrecemos capacitación en competencias laborales. <br><br>
 
-El Palacio de Cristal es una estructura emblemática ubicada en el corazón del Parque del Retiro en Madrid, España. Su historia se remonta a finales del siglo XIX, cuando fue construido como parte de la Exposición de las Islas Filipinas, celebrada en 1887.<br><br>
+## Intermediacion
 
-Diseñado por el arquitecto español Ricardo Velázquez Bosco, el Palacio de Cristal fue concebido como un pabellón para albergar una muestra de flora y fauna de Filipinas, que en ese momento eran territorios coloniales de España. Está inspirado en el Crystal Palace de Londres, diseñado por Joseph Paxton, aunque a una escala mucho más pequeña.<br><br>
+Innovamos en procesos de selección, utilizando gamificación y adaptándonos a las demandas del mercado laboral. <br><br>
 
-La estructura del Palacio de Cristal está compuesta principalmente por hierro y cristal, lo que le confiere su aspecto característico y transparente. Destaca por su elegancia neoclásica y su diseño cuidadosamente elaborado, que incluye una impresionante cúpula de cristal.<br><br>
+Nuestro compromiso es continuar entregando valor tanto a ciudadanos como a empresas, promoviendo el desarrollo sostenible y la actualización de competencias en un contexto laboral cambiante."
+<br><br>
 
-## explanada
 
-Esta puerta fue una de las últimas en instalarse en 1999. Por ella se accede al Paseo de Uruguay y mediante éste se puede llegar a la Rosaleda y a la fuente del Ángel Caído.
-Uno de los nueve accesos ubicados a lo largo de la  Calle Menéndez Pelayo.<br><br>
+## Salta
 
-Antes de su construcción, y cuando la circulación de vehiculos estaba permitida, era el paso de vehiculos para cruzar el parque y salir por la puerta del Angel Caído, hacia la Cuesta de Moyano.<br><br>
+"Como parte de nuestra estrategia de implementación tecnológica, hemos lanzado la plataforma de empleo SALTA. Esta iniciativa busca promover la participación activa de los usuarios, permitiéndoles gestionar su perfil, adjuntar documentos relevantes y actualizar sus objetivos profesionales e intereses formativos de forma automática.<br><br>
+Nos comprometemos a ofrecer un servicio integral y accesible que satisfaga las necesidades tanto de empleadores como de buscadores de empleo. SALTA está disponible las 24 horas del día, los 7 días de la semana y los 365 días del año,permitiendo a los usuarios acceder a nuestros servicios, consultar información y programar citas virtuales desde la comodidad de sus hogares. <br><br>
 
-## monumento
+## Talento
 
-El conjunto monumental, de imponentes dimensiones (30m de alto, 86m de largo y 58m de ancho), fue elaborado por más de veinte escultores destacados, incluyendo a Mariano Benlliure, Josep Clarà y Mateo Inurria. <br><br>
-Destacan la majestuosa estatua ecuestre del rey, obra de Benlliure en 1904, junto con La Paz, La Libertad y El Progreso en el basamento central. Cuatro leones de piedra adornan las escalinatas hacia el estanque, acompañados de sirenas en bronce. <br><br>
-Dos leones con amorcillos flanquean los accesos laterales, mientras que en la columna central se destacan El Ejército y La Marina. En la cara interna, frente al estanque, se representan en bronce Las Ciencias, La Agricultura, Las Artes y La Industria, obras magistrales que enriquecen el simbolismo y la belleza de este monumento.<br><br>
+"En la Agencia para el Empleo, nos dedicamos a proporcionar formación que responde a las necesidades del mercado laboral. Ofrecemos una variedad de cursos que llevan a la obtención de titulaciones y certificaciones oficiales. Nuestro catálogo incluye Certificados de Profesionalidad de todos los niveles, módulos formativos independientes en áreas como ofimática y recursos humanos, y formaciones especializadas para adaptarse o progresar en el ámbito profesional <br><br>
+También proporcionamos cursos en lenguas extranjeras y capacitaciones para el ejercicio de actividades profesionales específicas, como socorrismo o Prevención de Riesgos Laborales. Estas formaciones son diseñadas para mejorar competencias, facilitar la recualificación y fomentar la formación continua, clave para el éxito en el mercado laboral."<br><br>
 
 ## lagocristal
 
