@@ -1,16 +1,15 @@
-# Embarcadero
+# Entrada
 
-El Estanque Grande del Buen Retiro, conocido popularmente como el Estanque del Retiro, es una extensión de agua de origen artificial, que se encuentra en el Parque del Retiro, en la ciudad española de Madrid.<br><br>
-Fue creado en la primera mitad del siglo xvii como uno de los elementos paisajísticos más relevantes del Buen Retiro, una antigua posesión de la Corona española surgida durante el reinado de Felipe IV (1605-1665). Su titularidad corresponde, desde el año 1868, al Ayuntamiento de Madrid, al igual que los espacios ajardinados sobre los que se conformó el parque público actual.<br><br>
-Con una superficie de 37 240 m² y un volumen de agua de 55 150 m³, dispone de un embarcadero que posibilita la navegación recreativa y la celebración de competiciones de remo y piragüismo. En sus orillas se encuentran el Monumento a Alfonso XII y la Fuente Egipcia.<br><br>
+“Bienvenidos a la experiencia de realidad aumentada y virtual de la Agencia para el Empleo del Ayuntamiento de Madrid. <br><br>
+Prepárate para descubrir cómo te podemos ayudar a encontrar tu camino profesional o a encontrar el talento ideal para tu empresa.”<br><br>
 
-## buenretiro
 
-Construido en la primera mitad del siglo xvii dentro del proyecto paisajístico desarrollado
-para el Palacio del Buen Retiro, una antigua posesión real creada por el conde-duque de Olivares (1587-1645) para disfrute de Felipe IV (1605-1665),​ de quien era su valido.<br><br>
-Su uso como parque urbano se remonta a 1767, año en el que Carlos III (1716-1788) permitió la entrada del público a efectos recreativos3​ y, ya definitivamente, a partir de 1868, cuando quedó bajo latitularidad del Ayuntamiento de Madrid, cuenta Con 125 hectáreas y más de 15 000 árboles.<br><br>
-Entre sus elementos arquitectónicos e históricos más importantes se encuentran: el Estanque Grande,
-que ofrece varias actividades, como barcas de remo, barco y aula solar y la Escuela Municipal de Piragüismo,dirigida a niños y jóvenes entre 7 y 17 años; el Palacio de Velázquez y el Palacio de Cristal,ambos utilizados actualmente como salas de exposiciones del Museo Reina Sofía.<br><br>
+## Agencia
+
+"La Agencia para el Empleo de Madrid refuerza la empleabilidad mediante un diagnóstico exhaustivo y la creación de itinerarios personalizados de intervención.<br><br>
+Estos itinerarios están diseñados para superar barreras y mejorar competencias clave para el empleo. Gracias a nuestra transformación digital y la plataforma SALTA, facilitamos el acceso a nuestros servicios tanto presencial como virtualmente.<br><br>
+Ofrecemos entrevistas de diagnóstico, seminarios de competencias laborales y atención especializada a colectivoscon dificultades de empleabilidad. Además, proporcionamos información sobre autoempleo y economía social, y contamos con programas como Emplea+ y Viaje al Empleo Web para fortalecer las competencias digitales y transversales, impulsando el desarrollo profesional y la motivación en la búsqueda de empleo."
+<br><br>
 
 ## entrada
 
