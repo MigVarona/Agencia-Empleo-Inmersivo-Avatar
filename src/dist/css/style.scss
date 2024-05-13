@@ -5,10 +5,8 @@ h1 {
   font-family: "Poiret One", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
 
-@media (max-width: 768px) {
-  h1 {
+  @media (max-width: 768px) {
     font-size: 1.5rem !important;
     left: 20px;
   }
@@ -22,10 +20,8 @@ h1 {
   color: white !important;
   font-size: 1rem;
   opacity: 90%;
-}
 
-@media (max-width: 768px) {
-  .flechas {
+  @media (max-width: 768px) {
     font-size: .7rem;
     left: 20px;
     gap: 0.5rem;
@@ -50,6 +46,11 @@ h2 {
   font-size: 3rem !important;
   font-family: "Montserrat", sans-serif;
   opacity: 90%;
+
+  @media (max-width: 768px) {
+    font-size: 2rem !important;
+    left: 20px;
+  }
 }
 
 h4 {
@@ -60,30 +61,16 @@ h4 {
   font-size: 1.1rem !important;
   font-family: "Montserrat", sans-serif;
   opacity: 85%;
-}
 
-@media (max-width: 768px) {
-  h4 {
+  @media (max-width: 768px) {
     font-size: 0.8rem !important;
     right: 30px;
   }
 }
 
-@media (max-width: 768px) {
-  h2 {
-    font-size: 2rem !important;
-    left: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .flecha1 {
-    width: 0.95rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .flecha2 {
+.flecha1,
+.flecha2 {
+  @media (max-width: 768px) {
     width: 0.95rem;
   }
 }
@@ -107,16 +94,14 @@ h4 {
   left: 60px;
   opacity: 90%;
   background-color: #fff !important;
-}
 
-@media (max-width: 768px) {
-  .uk-button {
+  @media (max-width: 768px) {
     left: 20px;
   }
 }
 
-@media (max-width: 768px) {
-  .btnmg {
+.btnmg {
+  @media (max-width: 768px) {
     margin-top: 30px !important;
   }
 }
@@ -129,14 +114,14 @@ h4 {
 a {
   &:hover {
     h3 {
-      color: #FEA162;
+      color: #fea162;
       text-decoration: none;
     }
 
     text-decoration: none;
 
     svg path {
-      fill: #FEA162;
+      fill: #fea162;
     }
   }
 
@@ -145,7 +130,7 @@ a {
 }
 
 .uk-button:hover {
-  color: #FEA162;
+  color: #fea162;
 }
 
 .swipe {
@@ -154,10 +139,8 @@ a {
   width: 60px;
   left: 45%;
   top: 30%;
-}
 
-@media (max-width: 768px) {
-  .swipe {
+  @media (max-width: 768px) {
     left: 35%;
   }
 }
@@ -175,19 +158,17 @@ a-scene img.visible {
   height: 100px;
   animation: spin 2s infinite;
   transform-origin: 50% 50%;
-}
 
-@keyframes spin {
-  0% {
-    transform: rotate(30deg) translateX(20px);
-  }
-
-  50% {
-    transform: rotate(-15deg) translateX(-20px);
-  }
-
-  100% {
-    transform: rotate(0deg) translateX(20px);
+  @keyframes spin {
+    0% {
+      transform: rotate(30deg) translateX(20px);
+    }
+    50% {
+      transform: rotate(-15deg) translateX(-20px);
+    }
+    100% {
+      transform: rotate(0deg) translateX(20px);
+    }
   }
 }
 
@@ -223,22 +204,13 @@ a-scene img.visible {
 
 @media only screen and (max-width: 600px) {
   .imagen {
-    width: 150px !important; 
+    width: 150px !important;
   }
-}
 
-@media only screen and (max-width: 600px) {
   .menu {
-    width: 160px !important; 
+    width: 160px !important;
     top: 100px;
     right: 30px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .imagen-container {
-    margin-left: 15px !important;
-
   }
 }
 
