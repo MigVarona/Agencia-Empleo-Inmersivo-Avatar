@@ -166,5 +166,17 @@ a-scene img.visible {
   .imagen {
     width: 200px;
     height: auto; } }
+.imagen-container {
+  position: absolute;
+  z-index: 998;
+  margin-left: 40px;
+  margin-top: 30px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px; }
+
+.imagen {
+  width: 300px;
+  display: block; }
 
 /*# sourceMappingURL=style.css.map */
