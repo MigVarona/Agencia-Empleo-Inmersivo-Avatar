@@ -26,10 +26,9 @@
   <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">&#9776;</button>
 
   <div class="menu" id="menu"><a href="index.html">Ancora</a><a href="entrada.html">Entrada</a><a
-    href="agencia.html">Agencia</a><a href="intermediacion.html">Intermediacion</a><a href="salta.html">Salta</a><a
-    href="talento.html">Talento</a><a
-    href="formacion.html">Formacion</a>
-</div><a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera"
+      href="agencia.html">Agencia</a><a href="intermediacion.html">Intermediacion</a><a href="salta.html">Salta</a><a
+      href="talento.html">Talento</a><a href="formacion.html">Formacion</a>
+  </div><a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera"
     position="0 1.6 0"><a-camera><a-look-controls pitchEnabled="false"></a-look-controls></a-camera><a-videosphere
       src="#video" rotation="0 270 0"></a-videosphere><video id="video" loop muted autoplay crossorigin="anonymous"
       webkit-playsinline="true" playsinline="true" onloadedmetadata="this.currentTime=0">
@@ -43,8 +42,8 @@
       </a>
     </div>
 
-   <a class="uk-button btnmg uk-button-default" href="#modal-overflow" uk-toggle>Conoce +</a><img
-      class="visible" src="assets/white-swipe.png" alt="">
+    <a class="uk-button btnmg uk-button-default" href="#modal-overflow" uk-toggle>Conoce +</a><img class="visible"
+      src="assets/white-swipe.png" alt="">
 
 
     <div id="modal-overflow" style="opacity: 0.8;" uk-modal>
@@ -56,11 +55,14 @@
       </div>
     </div>
 
-    
+
     <div class="oculto swipe" id="icon-container">
       <div class="path"></div>
       <div class="hand-icon"></div>
     </div>
+    <footer class="footer">
+      <p style="color: black; font-size: 0.7rem;">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
+    </footer>
   </a-scene>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>$(document).ready(function () {
