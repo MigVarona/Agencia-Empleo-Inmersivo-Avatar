@@ -165,7 +165,7 @@ a-scene img.visible {
   position: absolute;
   top: 90px;
   right: 50px;
-  background-color: #333;
+  background-color: whitesmoke;
   padding: 20px;
   border-radius: 5px;
   z-index: 9998;
@@ -173,7 +173,7 @@ a-scene img.visible {
 
   a {
     display: block;
-    color: #fff;
+    color: black;
     text-decoration: none;
     margin-bottom: 10px;
     font-size: 18px;
@@ -205,4 +205,15 @@ a-scene img.visible {
 .imagen {
   width: 300px;
   display: block;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  z-index: 999; /* Asegúrate de que el footer esté por encima de otros elementos */
 }
