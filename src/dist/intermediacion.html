@@ -57,6 +57,8 @@
       <div class="path"></div>
       <div class="hand-icon"></div>
     </div>
+    <button  id="voiceButton"  class="voice-button" onclick="playVoice()" aria-label="Reproducir voz" uk-icon="icon: rss; ratio: 2"></button>
+
     <footer class="footer">
       <p style="color: black; font-size: 0.7rem;">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
     </footer>
@@ -72,7 +74,6 @@
             var start = data.indexOf('# Intermediacion');
             var end = data.indexOf('##', start + 1);
             var contenido = data.substring(start, end != -1 ? end : data.length).trim();
-            // Eliminar el título '# alcala'
             contenido = contenido.replace(/^# Intermediacion\s*/gm, '');
             $('#contenido-intermediacion').html(contenido);
           }
@@ -92,6 +93,15 @@
         iconContainer.style.display = "none";
       }, 5000);
     });
+
+    function playVoice() {
+    var voiceText = "Innovamos en procesos de selección, utilizando gamificación y adaptándonos a las demandas del mercado laboral.";
+
+    var synth = window.speechSynthesis;
+    var utterance = new SpeechSynthesisUtterance(voiceText);
+
+    synth.speak(utterance);
+  }
   </script>
   <script>$(document).ready(function () {
       $('.menu-toggle').click(function () {

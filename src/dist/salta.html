@@ -53,6 +53,8 @@
       <div class="path"></div>
       <div class="hand-icon"></div>
     </div>
+    <button  id="voiceButton"  class="voice-button" onclick="playVoice()" aria-label="Reproducir voz" uk-icon="icon: rss; ratio: 2"></button>
+
     <footer class="footer">
       <p style="color: black; font-size: 0.7rem;">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
     </footer>
@@ -68,7 +70,6 @@
             var start = data.indexOf('# Salta');
             var end = data.indexOf('##', start + 1);
             var contenido = data.substring(start, end != -1 ? end : data.length).trim();
-            // Eliminar el título '# alcala'
             contenido = contenido.replace(/^# Salta\s*/gm, '');
             $('#contenido-salta').html(contenido);
           }
@@ -88,6 +89,15 @@
         iconContainer.style.display = "none";
       }, 5000);
     });
+
+    function playVoice() {
+    var voiceText = "Como parte de nuestra estrategia tecnológica, hemos lanzado la plataforma SALTA para promover la participación activa de los usuarios. Permite gestionar perfiles, adjuntar documentos y actualizar objetivos profesionales automáticamente. Ofrecemos un servicio integral y accesible para empleadores y buscadores de empleo. SALTA está disponible 24/7, permitiendo a los usuarios acceder a servicios, consultar información y programar citas virtuales desde sus hogares.";
+
+    var synth = window.speechSynthesis;
+    var utterance = new SpeechSynthesisUtterance(voiceText);
+
+    synth.speak(utterance);
+  }
   </script>
   <script>$(document).ready(function () {
       $('.menu-toggle').click(function () {
