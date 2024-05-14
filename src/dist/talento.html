@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <link href="css/output.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Notable&amp;display=swap"
     rel="stylesheet">
@@ -25,32 +25,25 @@
 
 <body class="bg-black" onload="startVideo()">
   <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">&#9776;</button>
-  <div class="menu" id="menu"><a href="#">Home</a><a href="#">About</a><a href="#">Services</a><a href="#">Contact</a>
+  <div class="menu" id="menu"><a href="index.html">Ancora</a><a href="entrada.html">Entrada</a><a
+      href="agencia.html">Agencia</a><a href="intermediacion.html">Intermediacion</a><a href="salta.html">Salta</a><a
+      href="talento.html">Talento</a><a href="formacion.html">Formacion</a>
   </div><a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera"
     position="0 1.6 0"><a-camera><a-look-controls pitchEnabled="false"></a-look-controls></a-camera><a-videosphere
       src="#video" rotation="0 270 0"></a-videosphere><video id="video" loop muted autoplay crossorigin="anonymous"
       webkit-playsinline="true" playsinline="true" onloadedmetadata="this.currentTime=0">
       <source type="video/mp4" src="assets/videos/talento.webm">
       <source type="video/mp4" src="assets/videos/talento.mp4">
-    </video><img src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png"
-      style="z-index: 999; position: absolute; display: block; margin-left: 40px; margin-top: 30px;" width="300px">
-    <h2 style="color: black;">Talento</h2>
-    <section class="weather-container sm gap-2 text-white gap-4 flex items-center justify-between">
-      <div class="section__content">
-        <div class="visible weather__temp" id="js_w_temp"></div>
-        <div class="visible weather__icon" id="js_w_icon"></div>
-      </div>
-    </section>
-    <div class="flechas sm gap-2 text-white gap-4 flex items-center justify-between"><a href="entrada.html">
-        <h3 class="text-black flex">ACCESO PRINCIPAL</h3>
-      </a><a href="entrada.html"><svg class="flecha1 justify-start w-5" type="button" xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 126.667 89.067">
-          <path fill="black"
-            d="M0 50.933h101.201L72.667 79.467l9.466 9.6 44.534-44.534L82.133 0h-.001l-9.465 9.6 27.868 27.867H0z">
-          </path>
-        </svg></a></div><a class="uk-button btnmg uk-button-default" href="#modal-overflow" uk-toggle>Conoce +</a><img
-      class="visible" src="assets/white-swipe.png" alt="">
-    <div id="modal-overflow" style="opacity: 0.8;" uk-modal>
+    </video>
+
+    <div class="imagen-container">
+      <a href="index.html">
+        <img class="imagen" src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png" width="300px">
+      </a>
+    </div>
+    <a class="uk-button btnmg uk-button-default" href="#modal-overflow" uk-toggle>Conoce +</a><img class="visible"
+      src="assets/white-swipe.png" alt="">
+    <div id="modal-overflow" style="opacity: 0.9;" uk-modal>
       <div class="uk-modal-dialog" id="talento"><button class="uk-modal-close-default" type="button" uk-close></button>
         <div class="uk-modal-body" uk-overflow-auto>
           <p id="contenido-talento"></p>
@@ -61,6 +54,9 @@
       <div class="path"></div>
       <div class="hand-icon"></div>
     </div>
+    <footer class="footer">
+      <p style="color: black; font-size: 0.7rem;">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
+    </footer>
   </a-scene>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>$(document).ready(function () {

@@ -1,19 +1,28 @@
-@charset "UTF-8";
+
+
+
+
+
 h1 {
   font-size: 2rem;
   color: #fff;
   left: 60px;
   font-family: "Poiret One", sans-serif;
   font-weight: 400;
-  font-style: normal; }
+  font-style: normal;
+
   @media (max-width: 768px) {
-    h1 {
-      font-size: 1.5rem !important;
-      left: 20px; } }
+    font-size: 1.5rem !important;
+    left: 20px;
+  }
+}
+
+
 
 .nab {
   z-index: 999;
-  position: absolute; }
+  position: absolute;
+}
 
 h2 {
   z-index: 999;
@@ -23,11 +32,13 @@ h2 {
   left: 60px;
   font-size: 3rem !important;
   font-family: "Montserrat", sans-serif;
-  opacity: 90%; }
+  opacity: 90%;
+
   @media (max-width: 768px) {
-    h2 {
-      font-size: 2rem !important;
-      left: 20px; } }
+    font-size: 2rem !important;
+    left: 20px;
+  }
+}
 
 h4 {
   z-index: 999;
@@ -36,11 +47,14 @@ h4 {
   right: 60px;
   font-size: 1.1rem !important;
   font-family: "Montserrat", sans-serif;
-  opacity: 85%; }
+  opacity: 85%;
+
   @media (max-width: 768px) {
-    h4 {
-      font-size: 0.8rem !important;
-      right: 30px; } }
+    font-size: 0.8rem !important;
+    right: 30px;
+  }
+}
+
 
 #black-overlay {
   position: fixed;
@@ -50,7 +64,8 @@ h4 {
   width: 100%;
   height: 100%;
   background-color: black;
-  pointer-events: none; }
+  pointer-events: none;
+}
 
 .uk-button {
   z-index: 999;
@@ -59,45 +74,61 @@ h4 {
   color: black !important;
   left: 60px;
   opacity: 90%;
-  background-color: #fff !important; }
-  @media (max-width: 768px) {
-    .uk-button {
-      left: 20px; } }
+  background-color: #fff !important;
 
-@media (max-width: 768px) {
-  .btnmg {
-    margin-top: 30px !important; } }
+  @media (max-width: 768px) {
+    left: 20px;
+  }
+}
+
+.btnmg {
+  @media (max-width: 768px) {
+    margin-top: 30px !important;
+  }
+}
 
 .uk-modal-full {
   z-index: 999;
-  position: absolute; }
+  position: absolute;
+}
 
 a {
-  color: #fff;
-  text-decoration: none; }
-  a:hover {
-    text-decoration: none; }
-    a:hover h3 {
+  &:hover {
+    h3 {
       color: #fea162;
-      text-decoration: none; }
-    a:hover svg path {
-      fill: #fea162; }
+      text-decoration: none;
+    }
+
+    text-decoration: none;
+
+    svg path {
+      fill: #fea162;
+    }
+  }
+
+  color: #fff;
+  text-decoration: none;
+}
 
 .uk-button:hover {
-  color: #fea162; }
+  color: #fea162;
+}
 
 .swipe {
   z-index: 999;
   position: absolute;
   width: 60px;
   left: 45%;
-  top: 30%; }
+  top: 30%;
+
   @media (max-width: 768px) {
-    .swipe {
-      left: 35%; } }
+    left: 35%;
+  }
+}
 
 a-scene img.visible {
-  display: block; }
+  display: block;
+}
 
 .hand-icon {
   position: relative;
@@ -107,14 +138,21 @@ a-scene img.visible {
   width: 100px;
   height: 100px;
   animation: spin 2s infinite;
-  transform-origin: 50% 50%; }
-@keyframes spin {
-  0% {
-    transform: rotate(30deg) translateX(20px); }
-  50% {
-    transform: rotate(-15deg) translateX(-20px); }
-  100% {
-    transform: rotate(0deg) translateX(20px); } }
+  transform-origin: 50% 50%;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(30deg) translateX(20px);
+    }
+    50% {
+      transform: rotate(-15deg) translateX(-20px);
+    }
+    100% {
+      transform: rotate(0deg) translateX(20px);
+    }
+  }
+}
+
 .menu-toggle {
   position: absolute;
   top: 30px;
@@ -122,7 +160,8 @@ a-scene img.visible {
   z-index: 9999;
   cursor: pointer;
   color: #000;
-  font-size: 35px; }
+  font-size: 35px;
+}
 
 .menu {
   display: none;
@@ -133,22 +172,29 @@ a-scene img.visible {
   padding: 20px;
   border-radius: 5px;
   z-index: 9998;
-  width: 150px; }
-  .menu a {
+  width: 150px;
+
+  a {
     display: block;
     color: black;
     text-decoration: none;
     margin-bottom: 10px;
-    font-size: 18px; }
+    font-size: 18px;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .imagen {
-    width: 150px !important; }
+    width: 150px !important;
+  }
 
   .menu {
     width: 160px !important;
     top: 100px;
-    right: 30px; } }
+    right: 30px;
+  }
+}
+
 .imagen-container {
   position: absolute;
   z-index: 998;
@@ -156,11 +202,13 @@ a-scene img.visible {
   margin-top: 30px;
   background-color: white;
   padding: 10px;
-  border-radius: 10px; }
+  border-radius: 10px;
+}
 
 .imagen {
   width: 300px;
-  display: block; }
+  display: block;
+}
 
 .footer {
   position: fixed;
@@ -170,10 +218,11 @@ a-scene img.visible {
   color: white;
   padding: 10px;
   text-align: center;
-  z-index: 999;
-  /* Asegúrate de que el footer esté por encima de otros elementos */ }
+  z-index: 999; /* Asegúrate de que el footer esté por encima de otros elementos */
+}
+
+
 
 .a-enter-vr-button {
-  margin-bottom: 40px; }
-
-/*# sourceMappingURL=style.css.map */
+  margin-bottom: 40px;
+}
