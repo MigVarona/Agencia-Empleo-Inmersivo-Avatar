@@ -10,23 +10,6 @@ h1 {
       font-size: 1.5rem !important;
       left: 20px; } }
 
-.flechas {
-  z-index: 999;
-  position: absolute;
-  left: 60px;
-  top: 90%;
-  color: white !important;
-  font-size: 1rem;
-  opacity: 90%; }
-  @media (max-width: 768px) {
-    .flechas {
-      font-size: .7rem;
-      left: 20px;
-      gap: 0.5rem; } }
-
-.flecha2 {
-  transform: rotate(180deg); }
-
 .nab {
   z-index: 999;
   position: absolute; }
@@ -57,11 +40,6 @@ h4 {
     h4 {
       font-size: 0.8rem !important;
       right: 30px; } }
-
-@media (max-width: 768px) {
-  .flecha1,
-  .flecha2 {
-    width: 0.95rem; } }
 
 #black-overlay {
   position: fixed;
