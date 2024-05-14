@@ -1,4 +1,3 @@
-@charset "UTF-8";
 h1 {
   font-size: 2rem;
   color: #fff;
@@ -170,8 +169,7 @@ a-scene img.visible {
   color: white;
   padding: 10px;
   text-align: center;
-  z-index: 999;
-  /* Asegúrate de que el footer esté por encima de otros elementos */ }
+  z-index: 999; }
 
 .a-enter-vr-button {
   margin-bottom: 40px; }
