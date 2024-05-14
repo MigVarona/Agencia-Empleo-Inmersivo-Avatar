@@ -54,7 +54,8 @@
       <div class="path"></div>
       <div class="hand-icon"></div>
     </div>
-    <button  id="voiceButton"  class="voice-button" onclick="playVoice()" aria-label="Reproducir voz" uk-icon="icon: rss; ratio: 2"></button>
+    <button id="voiceButton" class="voice-button" onclick="playVoice()" aria-label="Reproducir voz"
+      uk-icon="icon: rss; ratio: 2"></button>
 
     <footer class="footer">
       <p style="color: black; font-size: 0.7rem;">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
@@ -92,13 +93,13 @@
     });
 
     function playVoice() {
-    var voiceText = "La Agencia para el Empleo ofrece formación adaptada al mercado laboral, con cursos que otorgan certificaciones oficiales y Certificados de Profesionalidad. Su catálogo incluye módulos en áreas como ofimática y recursos humanos, además de capacitaciones en lenguas extranjeras y actividades específicas como socorrismo y Prevención de Riesgos Laborales. Estas formaciones mejoran competencias, facilitan la recualificación y promueven la formación continua para el éxito profesional.";
+      var voiceText = "La Agencia para el Empleo ofrece formación adaptada al mercado laboral, con cursos que otorgan certificaciones oficiales y Certificados de Profesionalidad. Su catálogo incluye módulos en áreas como ofimática y recursos humanos, además de capacitaciones en lenguas extranjeras y actividades específicas como socorrismo y Prevención de Riesgos Laborales. Estas formaciones mejoran competencias, facilitan la recualificación y promueven la formación continua para el éxito profesional.";
 
-    var synth = window.speechSynthesis;
-    var utterance = new SpeechSynthesisUtterance(voiceText);
+      var synth = window.speechSynthesis;
+      var utterance = new SpeechSynthesisUtterance(voiceText);
 
-    synth.speak(utterance);
-  }
+      synth.speak(utterance);
+    }
   </script>
   <script>$(document).ready(function () {
       $('.menu-toggle').click(function () {

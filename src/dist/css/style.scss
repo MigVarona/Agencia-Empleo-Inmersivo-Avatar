@@ -226,3 +226,17 @@ a-scene img.visible {
 .a-enter-vr-button {
   margin-bottom: 40px;
 }
+
+.voice-button {
+  position: absolute;
+  bottom: 60px;
+  left: 30px;
+  z-index: 9999;
+  cursor: pointer;
+  color: white;
+  font-size: 35px; }
+
+  .uk-modal-dialog {
+
+    margin-top: 100px !important;
+  }
