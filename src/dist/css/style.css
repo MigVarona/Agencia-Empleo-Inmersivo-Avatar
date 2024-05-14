@@ -173,4 +173,7 @@ a-scene img.visible {
   z-index: 999;
   /* Asegúrate de que el footer esté por encima de otros elementos */ }
 
+.a-enter-vr-button {
+  margin-bottom: 40px; }
+
 /*# sourceMappingURL=style.css.map */
