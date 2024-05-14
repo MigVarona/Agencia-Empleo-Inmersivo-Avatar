@@ -11,9 +11,8 @@ Su labor se centra en gestionar las políticas municipales de empleo, facilitand
 
 ## Agencia
 
- La Agencia para el Empleo de Madrid refuerza la empleabilidad mediante un diagnóstico exhaustivo y la creación de itinerarios personalizados de intervención. Estos itinerarios están diseñados para superar barreras y mejorar competencias clave para el empleo<br><br>
-Gracias a nuestra transformación digital y la plataforma SALTA, facilitamos el acceso a nuestros servicios tanto presencial como virtualmente. Ofrecemos entrevistas de diagnóstico, seminarios de competencias laborales y atención especializada a colectivoscon dificultades de empleabilidad.<br><br>
-Además, proporcionamos información sobre autoempleo y economía social, y contamos con programas como Emplea+ y Viaje al Empleo Web para fortalecer las competencias digitales y transversales, impulsando el desarrollo profesional y la motivación en la búsqueda de empleo.
+ La Agencia para el Empleo de Madrid mejora la empleabilidad mediante diagnósticos y itinerarios personalizados para superar barreras y mejorar competencias clave.<br><br>
+ Gracias la plataforma SALTA, y a la transformacion digital, facilitamos el acceso a nuestros servicios, ofreciendo entrevistas de diagnóstico, seminarios laborales y atención a colectivos con dificultades. Proporcionamos información sobre autoempleo, programas como Emplea+ y Viaje al Empleo Web para fortalecer competencias digitales y transversales, impulsando el desarrollo profesional y la motivación.
 <br><br>
 
 ## Formacion
@@ -31,11 +30,11 @@ Nuestro compromiso es continuar entregando valor tanto a ciudadanos como a empre
 
 ## Salta
 
-Como parte de nuestra estrategia de implementación tecnológica, hemos lanzado la plataforma de empleo SALTA. Esta iniciativa busca promover la participación activa de los usuarios, permitiéndoles gestionar su perfil, adjuntar documentos relevantes y actualizar sus objetivos profesionales e intereses formativos de forma automática.<br><br>
-Nos comprometemos a ofrecer un servicio integral y accesible que satisfaga las necesidades tanto de empleadores como de buscadores de empleo. SALTA está disponible las 24 horas del día, los 7 días de la semana y los 365 días del año,permitiendo a los usuarios acceder a nuestros servicios, consultar información y programar citas virtuales desde la comodidad de sus hogares. <br><br>
+Como parte de nuestra estrategia tecnológica, hemos lanzado la plataforma SALTA para promover la participación activa de los usuarios. Permite gestionar perfiles, adjuntar documentos y actualizar objetivos profesionales automáticamente.<br><br>
+Ofrecemos un servicio integral y accesible para empleadores y buscadores de empleo. SALTA está disponible 24/7, permitiendo a los usuarios acceder a servicios, consultar información y programar citas virtuales desde sus hogares. <br><br>
 
 ## Talento
 
-En la Agencia para el Empleo, nos dedicamos a proporcionar formación que responde a las necesidades del mercado laboral. Ofrecemos una variedad de cursos que llevan a la obtención de titulaciones y certificaciones oficiales. Nuestro catálogo incluye Certificados de Profesionalidad de todos los niveles, módulos formativos independientes en áreas como ofimática y recursos humanos, y formaciones especializadas para adaptarse o progresar en el ámbito profesional <br><br>
-También proporcionamos cursos en lenguas extranjeras y capacitaciones para el ejercicio de actividades profesionales específicas, como socorrismo o Prevención de Riesgos Laborales. Estas formaciones son diseñadas para mejorar competencias, facilitar la recualificación y fomentar la formación continua, clave para el éxito en el mercado laboral.<br><br>
+La Agencia para el Empleo ofrece formación adaptada al mercado laboral, con cursos que otorgan certificaciones oficiales y Certificados de Profesionalidad. Su catálogo incluye módulos en áreas como ofimática y recursos humanos, además de capacitaciones en lenguas extranjeras y actividades específicas como socorrismo y Prevención de Riesgos Laborales.  <br><br>
+Estas formaciones mejoran competencias, facilitan la recualificación y promueven la formación continua para el éxito profesional.<br><br>
 
