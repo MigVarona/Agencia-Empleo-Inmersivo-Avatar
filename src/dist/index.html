@@ -55,6 +55,8 @@
       <div class="path"></div>
       <div class="hand-icon"></div>
     </div>
+    <button  id="voiceButton"  class="voice-button" onclick="playVoice()" aria-label="Reproducir voz" uk-icon="icon: rss; ratio: 2"></button>
+
     <footer class="footer">
       <p style="color: black; font-size: 0.7rem;">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
     </footer>
@@ -70,7 +72,6 @@
             var start = data.indexOf('# Ancora');
             var end = data.indexOf('##', start + 1);
             var contenido = data.substring(start, end != -1 ? end : data.length).trim();
-            // Eliminar el título '# alcala'
             contenido = contenido.replace(/^# Ancora\s*/gm, '');
             $('#contenido-ancora').html(contenido);
           }
@@ -90,6 +91,15 @@
         iconContainer.style.display = "none";
       }, 5000);
     });
+
+    function playVoice() {
+    var voiceText = "Bienvenidos a la experiencia de realidad aumentada y virtual de la Agencia para el Empleo del Ayuntamiento de Madrid. Prepárate para descubrir cómo te podemos ayudar a encontrar tu camino profesional o a encontrar el talento ideal para tu empresa.";
+
+    var synth = window.speechSynthesis;
+    var utterance = new SpeechSynthesisUtterance(voiceText);
+
+    synth.speak(utterance);
+  }
   </script>
   <script>$(document).ready(function () {
       $('.menu-toggle').click(function () {

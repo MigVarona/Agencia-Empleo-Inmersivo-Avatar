@@ -62,6 +62,8 @@
       <div class="path"></div>
       <div class="hand-icon"></div>
     </div>
+    <button  id="voiceButton"  class="voice-button" onclick="playVoice()" aria-label="Reproducir voz" uk-icon="icon: rss; ratio: 2"></button>
+
     <footer class="footer">
       <p style="color: black; font-size: 0.7rem;">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
     </footer>
@@ -77,7 +79,6 @@
             var start = data.indexOf('# Agencia');
             var end = data.indexOf('##', start + 1);
             var contenido = data.substring(start, end != -1 ? end : data.length).trim();
-            // Eliminar el título '# alcala'
             contenido = contenido.replace(/^# Agencia\s*/gm, '');
             $('#contenido-agencia').html(contenido);
           }
@@ -97,6 +98,15 @@
         iconContainer.style.display = "none";
       }, 5000);
     });
+
+    function playVoice() {
+    var voiceText = "La Agencia para el Empleo de Madrid mejora la empleabilidad mediante diagnósticos y itinerarios personalizados para superar barreras y mejorar competencias clave.";
+
+    var synth = window.speechSynthesis;
+    var utterance = new SpeechSynthesisUtterance(voiceText);
+
+    synth.speak(utterance);
+  }
   </script>
   <script>$(document).ready(function () {
       $('.menu-toggle').click(function () {

@@ -55,6 +55,8 @@
       <div class="path"></div>
       <div class="hand-icon"></div>
     </div>
+    <button  id="voiceButton"  class="voice-button" onclick="playVoice()" aria-label="Reproducir voz" uk-icon="icon: rss; ratio: 2"></button>
+
     <footer class="footer">
       <p style="color: black; font-size: 0.7rem;">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
     </footer>
@@ -91,6 +93,15 @@
         iconContainer.style.display = "none";
       }, 5000);
     });
+
+    function playVoice() {
+    var voiceText = "Desde sus inicios en 1956, como Organismo Autónomo del Ayuntamiento de Madrid, la Agencia para el Empleo es una entidad comprometida con el desarrollo económico y social de la ciudad. Su labor se centra en gestionar las políticas municipales de empleo, facilitando la inserción laboral de personas desempleadas o en proceso de mejora de empleo, así como brindando apoyo a empresas en la búsqueda de talento y recursos humanos calificados.";
+
+    var synth = window.speechSynthesis;
+    var utterance = new SpeechSynthesisUtterance(voiceText);
+
+    synth.speak(utterance);
+  }
   </script>
   <script>$(document).ready(function () {
       $('.menu-toggle').click(function () {
