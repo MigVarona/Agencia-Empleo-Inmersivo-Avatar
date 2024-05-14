@@ -62,6 +62,8 @@
       <div class="path"></div>
       <div class="hand-icon"></div>
     </div>
+    <button  id="voiceButton"  class="voice-button" onclick="playVoice()" aria-label="Reproducir voz" uk-icon="icon: rss; ratio: 2"></button>
+
     <footer class="footer">
       <p style="color: black; font-size: 0.7rem;">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
     </footer>
@@ -77,7 +79,6 @@
             var start = data.indexOf('# Agencia');
             var end = data.indexOf('##', start + 1);
             var contenido = data.substring(start, end != -1 ? end : data.length).trim();
-            // Eliminar el título '# alcala'
             contenido = contenido.replace(/^# Agencia\s*/gm, '');
             $('#contenido-agencia').html(contenido);
           }
@@ -97,6 +98,15 @@
         iconContainer.style.display = "none";
       }, 5000);
     });
+
+    function playVoice() {
+    var voiceText = "La Agencia para el Empleo de Madrid es una Agencia de Colocación sin ánimo de lucro autorizada por el Sistema Nacional de Empleo. La intermediación laboral es clave en la búsqueda de empleo, conectando ofertas con demandantes y empresas. Hemos fortalecido nuestros servicios con el Centro de Personas & Empresas, estableciendo alianzas directas con empresas y utilizando nuevas herramientas de evaluación. Captamos talento a través de diferentes medios y ofrecemos capacitación en competencias laborales.";
+
+    var synth = window.speechSynthesis;
+    var utterance = new SpeechSynthesisUtterance(voiceText);
+
+    synth.speak(utterance);
+  }
   </script>
   <script>$(document).ready(function () {
       $('.menu-toggle').click(function () {
