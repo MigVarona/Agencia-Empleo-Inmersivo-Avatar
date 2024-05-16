@@ -50,15 +50,22 @@
 
 
 
-    </svg></a></div><a class="uk-button btnmg uk-button-default" href="#modal-overflow" uk-toggle>Conoce +</a><img
-      class="visible" alt="">
+    </svg></a></div>
+    
+    
+    <a class="uk-button btnmg uk-button-default" href="#modal-overflow" uk-toggle>Conoce +</a>
+    <img class="visible" src="assets/white-swipe.png" alt="">
     <div id="modal-overflow" style="opacity: 0.8;" uk-modal>
-      <div class="uk-modal-dialog" id="agencia"><button class="uk-modal-close-default" type="button" uk-close></button>
+      <div class="uk-modal-dialog" id="ancora">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
         <div class="uk-modal-body" uk-overflow-auto>
-          <p id="contenido-agencia"></p>
+          <p id="2"></p> 
         </div>
       </div>
     </div>
+
+
+
     <div class="oculto swipe" id="icon-container">
       <div class="path"></div>
       <div class="hand-icon"></div>
@@ -70,22 +77,7 @@
     </footer>
   </a-scene>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>$(document).ready(function () {
-      cargarContenidoMarkdown();
-
-      function cargarContenidoMarkdown() {
-        $.ajax({
-          url: 'assets/contenido.md',
-          success: function (data) {
-            var start = data.indexOf('# Agencia');
-            var end = data.indexOf('##', start + 1);
-            var contenido = data.substring(start, end != -1 ? end : data.length).trim();
-            contenido = contenido.replace(/^# Agencia\s*/gm, '');
-            $('#contenido-agencia').html(contenido);
-          }
-        });
-      }
-    });
+  <script>
 
     function startVideo() {
       var video = document.getElementById('video');
@@ -109,7 +101,6 @@
     synth.speak(utterance);
   }
 
-// Cargar el archivo JSON
 fetch('assets/videos.json')
     .then(response => response.json())
     .then(data => {
@@ -121,6 +112,25 @@ fetch('assets/videos.json')
         videoElement.load();
     })
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+
+    function obtenerDatos() {
+    fetch('assets/videos.json')
+      .then(response => response.json())
+      .then(data => {
+        const objeto = data.find(item => item.id === "2"); 
+        if (objeto) {
+          document.getElementById('2').innerText = objeto.description; 
+        } else {
+          console.error('No se encontró ningún objeto con el ID "1" en el JSON.');
+        }
+      })
+      .catch(error => console.error('Error al obtener los datos:', error));
+  }
+
+  document.getElementById('modal-overflow').addEventListener('shown', function () {
+    obtenerDatos();
+  });
 
 
   </script>
