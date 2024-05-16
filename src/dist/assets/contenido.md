@@ -1,7 +1,8 @@
 # Ancora
 
-Bienvenidos a la experiencia de realidad aumentada y virtual de la Agencia para el Empleo del Ayuntamiento de Madrid. <br><br>
-Prepárate para descubrir cómo te podemos ayudar a encontrar tu camino profesional o a encontrar el talento ideal para tu empresa.<br><br>
+¡Te damos la bienvenida a la emocionante experiencia de realidad aumentada y virtual de la Agencia para el Empleo del Ayuntamiento de Madrid!<br><br>
+Aquí, te guiamos para descubrir tu camino profesional o encontrar el talento perfecto para tu empresa.<br><br>
+¡Prepárate para una experiencia inmersiva única de desarrollo laboral y crecimiento empresarial!<br><br>
 
 ## Entrada
 
@@ -22,9 +23,8 @@ Hemos fortalecido nuestros servicios con el Centro de Personas & Empresas, estab
 
 ## Intermediacion
 
-Innovamos en procesos de selección, utilizando gamificación y adaptándonos a las demandas del mercado laboral. <br><br>
-
-Nuestro compromiso es continuar entregando valor tanto a ciudadanos como a empresas, promoviendo el desarrollo sostenible y la actualización de competencias en un contexto laboral cambiante.
+En nuestra constante búsqueda de excelencia, innovamos en procesos de selección, incorporando la gamificación y adaptándonos ágilmente a las demandas del mercado laboral en evolución<br><br>
+Nos comprometemos a seguir proporcionando valor tanto a ciudadanos como a empresas, fomentando el desarrollo sostenible y la actualización continua de competencias en un contexto laboral dinámico y cambiante.
 <br><br>
 
 
