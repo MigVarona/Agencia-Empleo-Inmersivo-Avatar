@@ -1,0 +1,42 @@
+[
+    {
+      "id": "1",
+      "title": "ancora",
+      "sources": ["assets/videos/fachada.webm", "assets/videos/fachada.mp4"]
+    },
+    {
+      "id": "2",
+      "title": "agencia",
+      "sources": ["assets/videos/agencia_zona.webm", "assets/videos/agencia_zona.mp4"]
+    },
+    {
+      "id": "3",
+      "title": "entrada",
+      "sources": ["assets/videos/entrada_hall.webm", "assets/videos/entrada_hall.mp4"]
+    },
+
+    {
+        "id": "4",
+        "title": "formacion",
+        "sources": ["assets/videos/formacion.webm", "assets/videos/formacion.mp4"]
+      },
+
+      {
+        "id": "5",
+        "title": "intermediacion",
+        "sources": ["assets/videos/intermediacion.webm", "assets/videos/intermediacion.mp4"]
+      },
+
+      {
+        "id": "6",
+        "title": "salta",
+        "sources": ["assets/videos/salta.webm", "assets/videos/salta.mp4"]
+      },
+
+      {
+        "id": "7",
+        "title": "talento",
+        "sources": ["assets/videos/talento.webm", "assets/videos/talento.mp4"]
+      }
+  ]
+  

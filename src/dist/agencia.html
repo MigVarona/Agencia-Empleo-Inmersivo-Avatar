@@ -35,11 +35,12 @@
 
   <a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera"
     position="0 1.6 0"><a-camera><a-look-controls pitchEnabled="false"></a-look-controls></a-camera><a-videosphere
-      src="#video" rotation="0 270 0"></a-videosphere><video id="video" loop muted autoplay crossorigin="anonymous"
-      webkit-playsinline="true" playsinline="true" onloadedmetadata="this.currentTime=0">
-      <source type="video/mp4" src="assets/videos/agencia_zona.webm">
-      <source type="video/mp4" src="assets/videos/agencia_zona.mp4">
+      src="#video" rotation="0 270 0"></a-videosphere>
+
+      <video id="video" loop muted autoplay crossorigin="anonymous" webkit-playsinline="true" playsinline="true" onloadedmetadata="this.currentTime=0">
+        <source type="video/mp4" src=""></source>
     </video>
+    
 
     <div class="imagen-container">
       <a href="index.html">
@@ -107,6 +108,21 @@
 
     synth.speak(utterance);
   }
+
+// Cargar el archivo JSON
+fetch('assets/videos.json')
+    .then(response => response.json())
+    .then(data => {
+        const desiredVideoId = "2"; 
+        const desiredVideo = data.find(video => video.id === desiredVideoId);
+        
+        const videoElement = document.getElementById('video');
+        videoElement.querySelector('source').setAttribute('src', desiredVideo.sources[0]);
+        videoElement.load();
+    })
+    .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+
   </script>
   <script>$(document).ready(function () {
       $('.menu-toggle').click(function () {

@@ -29,11 +29,13 @@
       href="talento.html">Talento</a><a href="formacion.html">Formacion</a>
   </div><a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera"
     position="0 1.6 0"><a-camera><a-look-controls pitchEnabled="false"></a-look-controls></a-camera><a-videosphere
-      src="#video" rotation="0 270 0"></a-videosphere><video id="video" loop muted autoplay crossorigin="anonymous"
-      webkit-playsinline="true" playsinline="true" onloadedmetadata="this.currentTime=0">
-      <source type="video/mp4" src="assets/videos/salta.webm">
-      <source type="video/mp4" src="assets/videos/salta.mp4">
+      src="#video" rotation="0 270 0"></a-videosphere>
+
+      <video id="video" loop muted autoplay crossorigin="anonymous" webkit-playsinline="true" playsinline="true" onloadedmetadata="this.currentTime=0">
+        <source type="video/mp4" src=""></source>
     </video>
+
+
     <div class="imagen-container">
       <a href="index.html">
         <img class="imagen" src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png" width="300px">
@@ -53,7 +55,8 @@
       <div class="path"></div>
       <div class="hand-icon"></div>
     </div>
-    <button  id="voiceButton"  class="voice-button" onclick="playVoice()" aria-label="Reproducir voz" uk-icon="icon: rss; ratio: 2"></button>
+    <button id="voiceButton" class="voice-button" onclick="playVoice()" aria-label="Reproducir voz"
+      uk-icon="icon: rss; ratio: 2"></button>
 
     <footer class="footer">
       <p style="color: black; font-size: 0.7rem;">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
@@ -91,13 +94,26 @@
     });
 
     function playVoice() {
-    var voiceText = "Como parte de nuestra estrategia tecnológica, hemos lanzado la plataforma SALTA para promover la participación activa de los usuarios. Permite gestionar perfiles, adjuntar documentos y actualizar objetivos profesionales automáticamente. Ofrecemos un servicio integral y accesible para empleadores y buscadores de empleo. SALTA está disponible 24/7, permitiendo a los usuarios acceder a servicios, consultar información y programar citas virtuales desde sus hogares.";
+      var voiceText = "Como parte de nuestra estrategia tecnológica, hemos lanzado la plataforma SALTA para promover la participación activa de los usuarios. Permite gestionar perfiles, adjuntar documentos y actualizar objetivos profesionales automáticamente. Ofrecemos un servicio integral y accesible para empleadores y buscadores de empleo. SALTA está disponible 24/7, permitiendo a los usuarios acceder a servicios, consultar información y programar citas virtuales desde sus hogares.";
 
-    var synth = window.speechSynthesis;
-    var utterance = new SpeechSynthesisUtterance(voiceText);
+      var synth = window.speechSynthesis;
+      var utterance = new SpeechSynthesisUtterance(voiceText);
 
-    synth.speak(utterance);
-  }
+      synth.speak(utterance);
+    }
+
+    fetch('assets/videos.json')
+    .then(response => response.json())
+    .then(data => {
+        const desiredVideoId = "6"; 
+        const desiredVideo = data.find(video => video.id === desiredVideoId);
+        
+        const videoElement = document.getElementById('video');
+        videoElement.querySelector('source').setAttribute('src', desiredVideo.sources[0]);
+        videoElement.load(); 
+    })
+    .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
   </script>
   <script>$(document).ready(function () {
       $('.menu-toggle').click(function () {
