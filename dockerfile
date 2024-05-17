@@ -5,7 +5,7 @@ FROM nginx:alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copia todo el contenido de la carpeta "src/dist" a la carpeta de Nginx
-COPY src/dist /usr/share/nginx/html
+COPY dist /usr/share/nginx/html
 
 # Expone el puerto 80
 EXPOSE 80
