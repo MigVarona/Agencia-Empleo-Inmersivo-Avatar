@@ -1,20 +1,13 @@
-# Usa una imagen base de Node.js
-FROM node:alpine
+# Usa una imagen base de Nginx
+FROM nginx:alpine
 
-# Establece el directorio de trabajo dentro del contenedor
-WORKDIR /app
+# Copia tu configuración personalizada de Nginx
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copia el archivo package.json y package-lock.json
-COPY package*.json ./
+# Copia todo el contenido de la carpeta "src/dist" a la carpeta de Nginx
+COPY src/dist /usr/share/nginx/html
 
-# Instala las dependencias
-RUN npm install
+# Expone el puerto 80
+EXPOSE 80
 
-# Copia todo el código fuente
-COPY . .
-
-# Expone el puerto en el que la aplicación se ejecutará dentro del contenedor
-EXPOSE 3000
-
-# Comando para iniciar la aplicación
-CMD ["node", "app.js"]
+# No es necesario especificar el comando CMD ya que la imagen de Nginx lo tiene por defecto

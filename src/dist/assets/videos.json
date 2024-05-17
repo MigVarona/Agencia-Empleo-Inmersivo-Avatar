@@ -1,55 +1,65 @@
 [
     {
-      "id": "1",
-      "title": "ancora",
-      "sources": ["assets/videos/fachada.webm", "assets/videos/fachada.mp4"],
-      "description": "¡Te damos la bienvenida a la emocionante experiencia de realidad aumentada y virtual de la Agencia para el Empleo del Ayuntamiento de Madrid! Aquí, te guiamos para descubrir tu camino profesional o encontrar el talento perfecto para tu empresa.\n\n¡Prepárate para una experiencia inmersiva única de desarrollo laboral y crecimiento empresarial!"
+        "id": "1",
+        "title": "ancora",
+        "sources": [
+            "assets/videos/fachada.webm",
+            "assets/videos/fachada.mp4"
+        ],
+        "description": "¡Te damos la bienvenida a la emocionante experiencia de realidad aumentada y virtual de la Agencia para el Empleo del Ayuntamiento de Madrid! Aquí, te guiamos para descubrir tu camino profesional o encontrar el talento perfecto para tu empresa.\n\n¡Prepárate para una experiencia inmersiva única de desarrollo laboral y crecimiento empresarial!"
     },
     {
-      "id": "2",
-      "title": "agencia",
-      "sources": ["assets/videos/agencia_zona.webm", "assets/videos/agencia_zona.mp4"],
-      "description": "La Agencia para el Empleo de Madrid mejora la empleabilidad mediante diagnósticos y itinerarios personalizados para superar barreras y mejorar competencias clave.\n\nGracias a la plataforma SALTA, y a la transformación digital, facilitamos el acceso a nuestros servicios, ofreciendo entrevistas de diagnóstico, seminarios laborales y atención a colectivos con dificultades. Proporcionamos información sobre autoempleo, programas como Emplea+ y Viaje al Empleo Web para fortalecer competencias digitales y transversales, impulsando el desarrollo profesional y la motivación."
-      
-      
+        "id": "2",
+        "title": "agencia",
+        "sources": [
+            "assets/videos/agencia_zona.webm",
+            "assets/videos/agencia_zona.mp4"
+        ],
+        "description": "La Agencia para el Empleo de Madrid mejora la empleabilidad mediante diagnósticos y itinerarios personalizados para superar barreras y mejorar competencias clave.\n\nGracias a la plataforma SALTA, y a la transformación digital, facilitamos el acceso a nuestros servicios, ofreciendo entrevistas de diagnóstico, seminarios laborales y atención a colectivos con dificultades. Proporcionamos información sobre autoempleo, programas como Emplea+ y Viaje al Empleo Web para fortalecer competencias digitales y transversales, impulsando el desarrollo profesional y la motivación."
     },
     {
-      "id": "3",
-      "title": "entrada",
-      "sources": ["assets/videos/entrada_hall.webm", "assets/videos/entrada_hall.mp4"],
-      "description": "Desde sus inicios en 1956, como Organismo Autónomo del Ayuntamiento de Madrid, la Agencia para el Empleo es una entidad comprometida con el desarrollo económico y social de la ciudad.\n\nSu labor se centra en gestionar las políticas municipales de empleo, facilitando la inserción laboral de personas desempleadas o en proceso de mejora de empleo, así como brindando apoyo a empresas en la búsqueda de talento y recursos humanos calificados."
-
+        "id": "3",
+        "title": "entrada",
+        "sources": [
+            "assets/videos/entrada_hall.webm",
+            "assets/videos/entrada_hall.mp4"
+        ],
+        "description": "Desde sus inicios en 1956, como Organismo Autónomo del Ayuntamiento de Madrid, la Agencia para el Empleo es una entidad comprometida con el desarrollo económico y social de la ciudad.\n\nSu labor se centra en gestionar las políticas municipales de empleo, facilitando la inserción laboral de personas desempleadas o en proceso de mejora de empleo, así como brindando apoyo a empresas en la búsqueda de talento y recursos humanos calificados."
     },
-
     {
         "id": "4",
         "title": "formacion",
-        "sources": ["assets/videos/formacion.webm", "assets/videos/formacion.mp4"],
+        "sources": [
+            "assets/videos/formacion.webm",
+            "assets/videos/formacion.mp4"
+        ],
         "description": "La Agencia para el Empleo de Madrid es una Agencia de Colocación sin ánimo de lucro autorizada por el Sistema Nacional de Empleo. La intermediación laboral es clave en la búsqueda de empleo, conectando ofertas con demandantes y empresas.\n\nHemos fortalecido nuestros servicios con el Centro de Personas & Empresas, estableciendo alianzas directas con empresas y utilizando nuevas herramientas de evaluación. Captamos talento a través de diferentes medios y ofrecemos capacitación en competencias laborales."
-
-      },
-
-      {
+    },
+    {
         "id": "5",
         "title": "intermediacion",
-        "sources": ["assets/videos/intermediacion.webm", "assets/videos/intermediacion.mp4"],
+        "sources": [
+            "assets/videos/intermediacion.webm",
+            "assets/videos/intermediacion.mp4"
+        ],
         "description": "En nuestra constante búsqueda de excelencia, innovamos en procesos de selección, incorporando la gamificación y adaptándonos ágilmente a las demandas del mercado laboral en evolución.\n\nNos comprometemos a seguir proporcionando valor tanto a ciudadanos como a empresas, fomentando el desarrollo sostenible y la actualización continua de competencias en un contexto laboral dinámico y cambiante."
-
-      },
-
-      {
+    },
+    {
         "id": "6",
         "title": "salta",
-        "sources": ["assets/videos/salta.webm", "assets/videos/salta.mp4"],
+        "sources": [
+            "assets/videos/salta.webm",
+            "assets/videos/salta.mp4"
+        ],
         "description": "Como parte de nuestra estrategia tecnológica, hemos lanzado la plataforma SALTA para promover la participación activa de los usuarios. Permite gestionar perfiles, adjuntar documentos y actualizar objetivos profesionales automáticamente.\n\nOfrecemos un servicio integral y accesible para empleadores y buscadores de empleo. SALTA está disponible 24/7, permitiendo a los usuarios acceder a servicios, consultar información y programar citas virtuales desde sus hogares."
-
-      },
-
-      {
+    },
+    {
         "id": "7",
         "title": "talento",
-        "sources": ["assets/videos/talento.webm", "assets/videos/talento.mp4"],
+        "sources": [
+            "assets/videos/talento.webm",
+            "assets/videos/talento.mp4"
+        ],
         "description": "La Agencia para el Empleo ofrece formación adaptada al mercado laboral, con cursos que otorgan certificaciones oficiales y Certificados de Profesionalidad. Su catálogo incluye módulos en áreas como ofimática y recursos humanos, además de capacitaciones en lenguas extranjeras y actividades específicas como socorrismo y Prevención de Riesgos Laborales.\n\nEstas formaciones mejoran competencias, facilitan la recualificación y promueven la formación continua para el éxito profesional."
-
-      }
-  ]
+    }
+]
