@@ -1,40 +1,103 @@
 doctype html
 html(lang="en")
-  head
+head
     include head.pug
-  body.bg-black(onload="startVideo()")
-    .menu-toggle(onclick="toggleMenu()") &#9776;
+body.bg-black(onload="startVideo()")
+    button.menu-toggle(onclick="toggleMenu()", aria-label="Toggle Menu") &#9776;
     .menu#menu
-      a(href="#") Home
-      a(href="#") About
-      a(href="#") Services
-      a(href="#") Contact
-    a-scene(vr-mode-ui="enabled: true", cursor="rayOrigin: mouse", id="camera", position="0 1.6 0")
+      a(href="index.html") Ancora
+      a(href="entrada.html") Entrada
+      a(href="agencia.html") Agencia
+      a(href="intermediacion.html") Intermediacion
+      a(href="salta.html") Salta
+      a(href="talento.html") Talento
+      a(href="formacion.html") Formacion
+
+    a-scene(vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera" position="0 1.6 0")
       a-camera
         a-look-controls(pitchEnabled="false")
-      a-videosphere(src="#video", rotation="0 270 0")
+      a-videosphere(src="#video" rotation="0 270 0")
       video#video(loop muted autoplay crossorigin="anonymous" webkit-playsinline="true" playsinline="true" onloadedmetadata="this.currentTime=0")
-        source(type="video/mp4", src="../assets/videos/agencia_zona.mp4")
-      img(src="../assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png", style="z-index: 999; position: absolute; display: block; margin-left: 40px; margin-top: 30px;", width="300px")
-      h2(style="color: black;") Agencia
-      section.weather-container.sm.gap-2.text-white.gap-4.flex.items-center.justify-between
-        .section__content
-          .visible.weather__temp#js_w_temp
-          .visible.weather__icon#js_w_icon
-      .flechas.sm.gap-2.text-white.gap-4.flex.items-center.justify-between
-        a(href="entrada.html")
-          h3.text-black.flex ACCESO PRINCIPAL
-        a(href="entrada.html")
-          svg.flecha1.justify-start.w-5(type="button", xmlns="http://www.w3.org/2000/svg", viewBox="0 0 126.667 89.067")
-            path(fill="black", d="M0 50.933h101.201L72.667 79.467l9.466 9.6 44.534-44.534L82.133 0h-.001l-9.465 9.6 27.868 27.867H0z")
-      a.uk-button.btnmg.uk-button-default(href="#modal-overflow", uk-toggle) Conoce +
-      img.visible(src="assets/white-swipe.png", alt="")
-      #modal-overflow(style="opacity: 0.8;", uk-modal)
-        .uk-modal-dialog#alcala
+        source(type="video/mp4" src="")
+      
+      .imagen-container
+        a(href="index.html")
+          img.imagen(src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png")
+
+      #modal-overflow.uk-modal(style="opacity: 0.8;")
+        .uk-modal-dialog#ancora
           button.uk-modal-close-default(type="button", uk-close)
           .uk-modal-body(uk-overflow-auto)
-            p#contenido-alcala
+            p#2
+
       .oculto.swipe#icon-container
         .path
         .hand-icon
-    include scripts.pug
+
+      button.voice-button#voiceButton(onclick="playVoice()", aria-label="Reproducir voz", uk-icon="icon: rss; ratio: 2")
+
+      footer.footer
+        p(style="color: black; font-size: 0.7rem;") © 2024 Agencia Empleo. Todos los derechos reservados.
+
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+    script.
+      function startVideo() {
+        var video = document.getElementById('video');
+        video.play();
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var iconContainer = document.getElementById("icon-container");
+
+        setTimeout(function () {
+          iconContainer.style.display = "none";
+        }, 5000);
+      });
+
+      function playVoice() {
+        var voiceText = "La Agencia para el Empleo de Madrid mejora la empleabilidad mediante diagnósticos y itinerarios personalizados para superar barreras y mejorar competencias clave.";
+
+        var synth = window.speechSynthesis;
+        var utterance = new SpeechSynthesisUtterance(voiceText);
+
+        synth.speak(utterance);
+      }
+
+      fetch('assets/videos.json')
+        .then(response => response.json())
+        .then(data => {
+          const desiredVideoId = "2"; 
+          const desiredVideo = data.find(video => video.id === desiredVideoId);
+          
+          const videoElement = document.getElementById('video');
+          videoElement.querySelector('source').setAttribute('src', desiredVideo.sources[0]);
+          videoElement.load();
+        })
+        .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+      function obtenerDatos() {
+        fetch('assets/videos.json')
+          .then(response => response.json())
+          .then(data => {
+            const objeto = data.find(item => item.id === "2"); 
+            if (objeto) {
+              document.getElementById('2').innerText = objeto.description; 
+            } else {
+              console.error('No se encontró ningún objeto con el ID "1" en el JSON.');
+            }
+          })
+          .catch(error => console.error('Error al obtener los datos:', error));
+      }
+
+      document.getElementById('modal-overflow').addEventListener('shown', function () {
+        obtenerDatos();
+      });
+
+      $(document).ready(function () {
+        $('.menu-toggle').click(function () {
+          $('.menu').toggle();
+        });
+      });
+    script(src="https://servpub.madrid.es/FWIAM_FTP/assets/js/cookie-manager.js")
+    script(src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js")
