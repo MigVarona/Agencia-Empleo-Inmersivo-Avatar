@@ -43,8 +43,8 @@
       <a href="index.html">Ancora</a><a href="entrada.html">Entrada</a
       ><a href="agencia.html">Agencia</a
       ><a href="intermediacion.html">Intermediacion</a
-      ><a href="salta.html">Salta</a><a href="/talento.html">Talento</a
-      ><a href="/formacion.html">Formacion</a>
+      ><a href="salta.html">Salta</a><a href="talento.html">Talento</a
+      ><a href="formacion.html">Formacion</a>
     </div>
     <a-scene
       vr-mode-ui="enabled: true"
@@ -117,10 +117,12 @@
     </a-scene>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        function startVideo() {
-    var video = document.getElementById("video");
+       function startVideo() {
+  var video = document.getElementById("video");
+  video.addEventListener('loadedmetadata', function() {
     video.play();
-  }
+  });
+}
       function n() {
         var e = window.speechSynthesis,
           n = new SpeechSynthesisUtterance(

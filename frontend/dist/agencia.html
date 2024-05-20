@@ -66,9 +66,11 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     function startVideo() {
-      var video = document.getElementById("video");
-      video.play();
-    }
+  var video = document.getElementById("video");
+  video.addEventListener('loadedmetadata', function() {
+    video.play();
+  });
+}
     function n() {
       var e = window.speechSynthesis,
         n = new SpeechSynthesisUtterance(

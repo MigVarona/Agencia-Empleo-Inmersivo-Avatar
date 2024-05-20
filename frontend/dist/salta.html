@@ -39,11 +39,11 @@
       &#9776;
     </button>
     <div class="menu" id="menu">
-      <a href="/index.html">Ancora</a><a href="/entrada.html">Entrada</a
-      ><a href="/agencia.html">Agencia</a
-      ><a href="/intermediacion.html">Intermediacion</a
-      ><a href="/salta.html">Salta</a><a href="/talento.html">Talento</a
-      ><a href="/formacion.html">Formacion</a>
+      <a href="index.html">Ancora</a><a href="entrada.html">Entrada</a
+      ><a href="agencia.html">Agencia</a
+      ><a href="intermediacion.html">Intermediacion</a
+      ><a href="salta.html">Salta</a><a href="talento.html">Talento</a
+      ><a href="formacion.html">Formacion</a>
     </div>
     <a-scene
       vr-mode-ui="enabled: true"
@@ -66,10 +66,10 @@
         <source type="video/mp4" src="" />
       </video>
       <div class="imagen-container">
-        <a href="/index.html">
+        <a href="index.html">
           <img
             class="imagen"
-            src="/submarca_agenciaempleo_vertical_madrid_negro.ad578610.ad578610.ad578610.png"
+            src="submarca_agenciaempleo_vertical_madrid_negro.ad578610.ad578610.ad578610.png"
             width="300px"
           />
         </a>
@@ -82,7 +82,7 @@
       >
       <img
         class="visible"
-        src="/white-swipe.0efe607c.0efe607c.0efe607c.png"
+        src="white-swipe.0efe607c.0efe607c.0efe607c.png"
         alt=""
       />
       <div id="modal-overflow" style="opacity: 0.8" uk-modal="">
@@ -117,9 +117,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       function startVideo() {
-    var video = document.getElementById("video");
+  var video = document.getElementById("video");
+  video.addEventListener('loadedmetadata', function() {
     video.play();
-  }
+  });
+}
       function t() {
         var e = window.speechSynthesis,
           t = new SpeechSynthesisUtterance(
