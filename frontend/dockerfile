@@ -1,0 +1,11 @@
+# Usar una imagen base de Nginx
+FROM nginx:alpine
+
+# Copiar los archivos del frontend al directorio de trabajo de Nginx
+COPY dist /usr/share/nginx/html
+
+# Exponer el puerto 80 para que Nginx pueda servir el contenido
+EXPOSE 80
+
+# Comando para iniciar Nginx
+CMD ["nginx", "-g", "daemon off;"]
