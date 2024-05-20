@@ -1,13 +1,17 @@
-# Usa una imagen base de Nginx
+# Etapa de producción con Nginx
 FROM nginx:alpine
 
-# Copia tu configuración personalizada de Nginx
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copia los archivos estáticos del frontend construidos en la etapa anterior
+COPY frontend/dist /usr/share/nginx/html
 
-# Copia todo el contenido de la carpeta "src/dist" a la carpeta de Nginx
-COPY dist /usr/share/nginx/html
+# Copia el código del backend
+COPY backend /app/backend
 
-# Expone el puerto 80
+# Copia la configuración personalizada de Nginx
+COPY frontend/nginx.conf /etc/nginx/nginx.conf
+
+# Exponer el puerto 80 para que pueda ser accesible desde el exterior
 EXPOSE 80
 
-# No es necesario especificar el comando CMD ya que la imagen de Nginx lo tiene por defecto
+# Comando para iniciar Nginx en primer plano
+CMD ["nginx", "-g", "daemon off;"]
