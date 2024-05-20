@@ -7,10 +7,9 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 // Middlewares
-app.use(cors()); // Configurar CORS para permitir cualquier origen
+app.use(cors()); 
 app.use(bodyParser.json());
 
-// Conectar a MongoDB Atlas
 mongoose.connect('mongodb+srv://miguel:MIKy1969@cluster0.3hlzcty.mongodb.net/agenciaEmpleo?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -26,7 +25,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Definir el esquema y modelo de Video
 const videoSchema = new mongoose.Schema({
   id: String,
   title: String,
