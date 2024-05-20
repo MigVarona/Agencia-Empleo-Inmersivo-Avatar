@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Agencia Empleo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css" />
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <link href="css/output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Poiret+One&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;display=swap" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+  <style></style>
+</head>
+
+<body class="bg-black" onload="startVideo()">
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+    &#9776;
+  </button>
+  <div class="menu" id="menu">
+    <a href="index.html">Ancora</a><a href="entrada.html">Entrada</a><a href="agencia.html">Agencia</a><a
+      href="intermediacion.html">Intermediacion</a><a href="salta.html">Salta</a><a href="talento.html">Talento</a><a
+      href="formacion.html">Formacion</a>
+  </div>
+  <a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera" position="0 1.6 0">
+    <a-camera>
+      <a-look-controls pitchEnabled="false"></a-look-controls>
+    </a-camera>
+    <a-videosphere src="#video" rotation="0 270 0"></a-videosphere>
+    <video id="video" loop muted autoplay crossorigin webkit-playsinline="true" playsinline="true"
+      onloadedmetadata="this.currentTime=0">
+      <source type="video/mp4" src="" />
+    </video>
+    <div class="imagen-container">
+      <a href="index.html">
+        <img class="imagen" src="submarca_agenciaempleo_vertical_madrid_negro.ad578610.ad578610.ad578610.png" />
+      </a>
+    </div>
+    <a class="btnmg uk-button uk-button-default" href="#modal-overflow" uk-toggle="">Conoce +</a>
+    <img class="visible" src="white-swipe.0efe607c.0efe607c.0efe607c.png" alt="" />
+    <div id="modal-overflow" style="opacity: 0.8" uk-modal="">
+      <div class="uk-modal-dialog" id="ancora">
+        <button class="uk-modal-close-default" type="button" uk-close=""></button>
+        <div class="uk-modal-body" uk-overflow-auto="">
+          <p id="2"></p>
+        </div>
+      </div>
+    </div>
+    <div class="oculto swipe" id="icon-container">
+      <div class="path"></div>
+      <div class="hand-icon"></div>
+    </div>
+    <button id="voiceButton" class="voice-button" onclick="playVoice()" aria-label="Reproducir voz"
+      uk-icon="icon: rss; ratio: 2"></button>
+    <footer class="footer">
+      <p style="color: #000; font-size: 0.7rem">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
+    </footer>
+  </a-scene>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function startVideo() {
+  var video = document.getElementById("video");
+  video.addEventListener('loadedmetadata', function() {
+    video.play();
+  });
+}
+    function n() {
+      var e = window.speechSynthesis,
+        n = new SpeechSynthesisUtterance(
+          "La Agencia para el Empleo de Madrid mejora la empleabilidad mediante diagnósticos y itinerarios personalizados para superar barreras y mejorar competencias clave."
+        );
+      e.speak(n);
+    }
+    function t() {
+      fetch("https://aceback-1.onrender.com/videos/2")
+        .then(function (e) {
+          return e.json();
+        })
+        .then(function (e) {
+          document.getElementById("2").innerText = e.description;
+        })
+        .catch(function (e) {
+          return console.error("Error al obtener los datos:", e);
+        });
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      var e = document.getElementById("icon-container");
+      setTimeout(function () {
+        e.style.display = "none";
+      }, 5e3);
+    }),
+      fetch("https://aceback-1.onrender.com/videos/2")
+        .then(function (e) {
+          return e.json();
+        })
+        .then(function (e) {
+          var n = document.getElementById("video");
+          n.querySelector("source").setAttribute("src", e.sources[0]),
+            n.load();
+        })
+        .catch(function (e) {
+          return console.error("Error al cargar el archivo JSON:", e);
+        }),
+      document
+        .getElementById("modal-overflow")
+        .addEventListener("shown", function () {
+          t();
+        }),
+      $(document).ready(function () {
+        $(".menu-toggle").click(function () {
+          $(".menu").toggle();
+        });
+      });
+  </script>
+  <script src="https://servpub.madrid.es/FWIAM_FTP/assets/js/cookie-manager.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
+</body>
+
+</html>
