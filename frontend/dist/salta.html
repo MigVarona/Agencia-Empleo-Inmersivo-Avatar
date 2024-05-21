@@ -113,6 +113,32 @@
           © 2024 Agencia Empleo. Todos los derechos reservados.
         </p>
       </footer>
+
+      <a-light 
+        intensity="6" 
+        type="point" 
+        light="intensity: 25; color: #ffffff; angle: 100" 
+        position="1.23066 2.44986 13.26301" 
+        rotation="-4.42 -2.2 -6.94">
+      </a-light>
+  
+      <a-entity
+        class="frame"
+        position="3 2 -7"
+        gltf-model="/dist/3D/rectangle_frame.glb"
+        scale="1 1 1"
+        geometry="primitive: box" 
+        material="transparent: true; opacity: 0.5">
+      </a-entity>
+  
+      <a-video 
+        src="assets/videos/salta_video.mp4" 
+        width="25" 
+        height="15" 
+        position="3 2 -7" 
+        scale="0.2 0.2 0.2">
+      </a-video>
+
     </a-scene>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
