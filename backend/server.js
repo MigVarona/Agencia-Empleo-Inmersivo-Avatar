@@ -34,7 +34,6 @@ const videoSchema = new mongoose.Schema({
 
 const Video = mongoose.model('Video', videoSchema);
 
-// Servir archivos estáticos desde la carpeta frontend/dist
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // Rutas de la API
@@ -97,10 +96,10 @@ app.delete('/videos/:id', async (req, res) => {
   }
 });
 
-// Ruta para servir el archivo agencia.html
-app.get('/agencia.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../Agencia Front/dist', 'agencia.html'));
-});
+
+//app.get('/agencia.html', (req, res) => {
+//  res.sendFile(path.join(__dirname, '../Agencia Front/dist', 'agencia.html'));
+//});
 
 // Iniciar el servidor
 app.listen(PORT, () => {
