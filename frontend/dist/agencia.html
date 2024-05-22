@@ -57,8 +57,13 @@
       <div class="path"></div>
       <div class="hand-icon"></div>
     </div>
-    <button id="voiceButton" class="voice-button" onclick="playVoice()" aria-label="Reproducir voz"
-      uk-icon="icon: rss; ratio: 2"></button>
+    <button
+    id="voiceButton"
+    class="voice-button"
+    onclick="playVoice()"
+    aria-label="Reproducir voz"
+    uk-icon="icon: rss; ratio: 2"
+  ></button>
     <footer class="footer">
       <p style="color: #000; font-size: 0.7rem">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
     </footer>
@@ -71,12 +76,11 @@
     video.play();
   });
 }
-    function n() {
-      var e = window.speechSynthesis,
-        n = new SpeechSynthesisUtterance(
-          "La Agencia para el Empleo de Madrid mejora la empleabilidad mediante diagnósticos y itinerarios personalizados para superar barreras y mejorar competencias clave."
-        );
-      e.speak(n);
+function playVoice() {
+      var speechSynthesis = window.speechSynthesis;
+      var speechText = "La Agencia para el Empleo de Madrid mejora la empleabilidad mediante diagnósticos y itinerarios personalizados para superar barreras y mejorar competencias clave.";
+      var utterance = new SpeechSynthesisUtterance(speechText);
+      speechSynthesis.speak(utterance);
     }
     function t() {
       fetch("https://aceback-1.onrender.com/videos/2")

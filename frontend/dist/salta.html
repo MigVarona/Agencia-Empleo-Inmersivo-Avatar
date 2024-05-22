@@ -102,12 +102,12 @@
         <div class="hand-icon"></div>
       </div>
       <button
-        id="voiceButton"
-        class="voice-button"
-        onclick="playVoice()"
-        aria-label="Reproducir voz"
-        uk-icon="icon: rss; ratio: 2"
-      ></button>
+    id="voiceButton"
+    class="voice-button"
+    onclick="n()"
+    aria-label="Reproducir voz"
+    uk-icon="icon: rss; ratio: 2"
+  ></button>
       <footer class="footer">
         <p style="color: #000; font-size: 0.7rem">
           © 2024 Agencia Empleo. Todos los derechos reservados.
@@ -152,13 +152,13 @@
     video.play();
   });
 }
-      function t() {
-        var e = window.speechSynthesis,
-          t = new SpeechSynthesisUtterance(
-            "Como parte de nuestra estrategia tecnológica, hemos lanzado la plataforma SALTA para promover la participación activa de los usuarios. Permite gestionar perfiles, adjuntar documentos y actualizar objetivos profesionales automáticamente. Ofrecemos un servicio integral y accesible para empleadores y buscadores de empleo. SALTA está disponible 24/7, permitiendo a los usuarios acceder a servicios, consultar información y programar citas virtuales desde sus hogares."
-          );
-        e.speak(t);
-      }
+function n() {
+      var e = window.speechSynthesis;
+      var t = new SpeechSynthesisUtterance(
+        "Como parte de nuestra estrategia tecnológica, hemos lanzado la plataforma SALTA para promover la participación activa de los usuarios. Permite gestionar perfiles, adjuntar documentos y actualizar objetivos profesionales automáticamente. Ofrecemos un servicio integral y accesible para empleadores y buscadores de empleo. SALTA está disponible 24/7, permitiendo a los usuarios acceder a servicios, consultar información y programar citas virtuales desde sus hogares."
+      );
+      e.speak(t);
+    }
       function o() {
         fetch("https://aceback-1.onrender.com/videos/6")
           .then(function (e) {
