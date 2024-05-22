@@ -103,12 +103,12 @@
         <div class="hand-icon"></div>
       </div>
       <button
-        id="voiceButton"
-        class="voice-button"
-        onclick="playVoice()"
-        aria-label="Reproducir voz"
-        uk-icon="icon: rss; ratio: 2"
-      ></button>
+      id="voiceButton"
+      class="voice-button"
+      onclick="playVoice()"
+      aria-label="Reproducir voz"
+      uk-icon="icon: rss; ratio: 2"
+    ></button>
       <footer class="footer">
         <p style="color: #000; font-size: 0.7rem">
           © 2024 Agencia Empleo. Todos los derechos reservados.
@@ -123,13 +123,14 @@
     video.play();
   });
 }
-      function n() {
-        var e = window.speechSynthesis,
-          n = new SpeechSynthesisUtterance(
-            "Desde sus inicios en 1956, como Organismo Autónomo del Ayuntamiento de Madrid, la Agencia para el Empleo es una entidad comprometida con el desarrollo económico y social de la ciudad. Su labor se centra en gestionar las políticas municipales de empleo, facilitando la inserción laboral de personas desempleadas o en proceso de mejora de empleo, así como brindando apoyo a empresas en la búsqueda de talento y recursos humanos calificados."
-          );
-        e.speak(n);
-      }
+function playVoice() {
+      var speechSynthesis = window.speechSynthesis;
+      var speechText = "Desde sus inicios en 1956, como Organismo Autónomo del Ayuntamiento de Madrid, la Agencia para el Empleo es una entidad comprometida con el desarrollo económico y social de la ciudad. Su labor se centra en gestionar las políticas municipales de empleo, facilitando la inserción laboral de personas desempleadas o en proceso de mejora de empleo, así como brindando apoyo a empresas en la búsqueda de talento y recursos humanos calificados.";
+      var utterance = new SpeechSynthesisUtterance(speechText);
+      speechSynthesis.speak(utterance);
+    }
+
+
       function o() {
         fetch("https://aceback-1.onrender.com/videos/3")
           .then(function (e) {
