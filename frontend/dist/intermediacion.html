@@ -105,7 +105,7 @@
       <button
         id="voiceButton"
         class="voice-button"
-        onclick="n()"
+        onclick="playVoice()"
         aria-label="Reproducir voz"
         uk-icon="icon: rss; ratio: 2"
       ></button>
@@ -148,7 +148,7 @@
           e.style.display = "none";
         }, 5e3);
       }),
-        fetch("https://aceback-1.onrender.com/videos/5")
+        fetch("https://aceback-1.onrender.com/videos/6")
           .then(function (e) {
             return e.json();
           })
