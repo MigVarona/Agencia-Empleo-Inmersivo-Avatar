@@ -35,10 +35,9 @@
   <a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera"
     position="0 1.6 0"><a-camera><a-look-controls pitchEnabled="false"></a-look-controls></a-camera><a-videosphere
       src="#video" rotation="0 270 0"></a-videosphere>
-    <video id="video" loop muted autoplay crossorigin webkit-playsinline="true" playsinline="true"
-      onloadedmetadata="this.currentTime=0">
-      <source type="video/mp4" src="" />
-    </video>
+      <video id="video" loop muted autoplay playsinline webkit-playsinline="true" crossorigin>
+        <source type="video/mp4" src="" />
+      </video>
     <div class="imagen-container">
       <a href="index.html">
         <img class="imagen" src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png"
