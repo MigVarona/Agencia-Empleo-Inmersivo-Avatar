@@ -103,11 +103,13 @@
         <div class="hand-icon"></div>
       </div>
       
-      <svg id="voiceButton"
-      class="voice-button"
-      onclick="n()"
-      aria-label="Reproducir voz"
-       xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e8eaed"><path d="M640-440v-80h160v80H640Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM120-360v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z"/></svg>
+      <svg id="video"
+    class="voice-button"
+    onclick="toggleVoice()"
+    aria-label="Reproducir voz"
+    xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e8eaed">
+    <path d="M640-440v-80h160v80H640Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM120-360v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z"/>
+</svg>
 
       <footer class="footer">
         <p style="color: #000; font-size: 0.7rem">
@@ -123,13 +125,32 @@
     video.play();
   });
 }
-      function n() {
-        var e = window.speechSynthesis,
-          n = new SpeechSynthesisUtterance(
-            "Innovamos en procesos de selección, utilizando gamificación y adaptándonos a las demandas del mercado laboral."
-          );
-        e.speak(n);
-      }
+var speechSynthesis = window.speechSynthesis;
+    var utterance = null;
+
+    function toggleVoice() {
+        if (speechSynthesis.speaking) {
+            speechSynthesis.cancel();
+        } else {
+            playVoice();
+        }
+    }
+
+    function playVoice() {
+        fetch("https://aceback-1.onrender.com/videos/5")
+            .then(function (e) {
+                return e.json();
+            })
+            .then(function (e) {
+                var speechText = e.description;
+                utterance = new SpeechSynthesisUtterance(speechText);
+                speechSynthesis.speak(utterance);
+            })
+            .catch(function (e) {
+                console.error("Error al obtener los datos:", e);
+            });
+    }
+
       function t() {
         fetch("https://aceback-1.onrender.com/videos/5")
           .then(function (e) {

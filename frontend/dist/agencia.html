@@ -89,23 +89,33 @@ var speechSynthesis = window.speechSynthesis;
         }
     }
 
+    var speechSynthesis = window.speechSynthesis;
+    var utterance = null;
+
+    function toggleVoice() {
+        if (speechSynthesis.speaking) {
+            speechSynthesis.cancel();
+        } else {
+            playVoice();
+        }
+    }
+
     function playVoice() {
-        var speechText = "La Agencia para el Empleo de Madrid mejora la empleabilidad mediante diagnósticos y itinerarios personalizados para superar barreras y mejorar competencias clave.";
-        utterance = new SpeechSynthesisUtterance(speechText);
-        speechSynthesis.speak(utterance);
+        fetch("https://aceback-1.onrender.com/videos/2")
+            .then(function (e) {
+                return e.json();
+            })
+            .then(function (e) {
+                var speechText = e.description;
+                utterance = new SpeechSynthesisUtterance(speechText);
+                speechSynthesis.speak(utterance);
+            })
+            .catch(function (e) {
+                console.error("Error al obtener los datos:", e);
+            });
     }
-    function t() {
-      fetch("https://aceback-1.onrender.com/videos/2")
-        .then(function (e) {
-          return e.json();
-        })
-        .then(function (e) {
-          document.getElementById("2").innerText = e.description;
-        })
-        .catch(function (e) {
-          return console.error("Error al obtener los datos:", e);
-        });
-    }
+
+    
     document.addEventListener("DOMContentLoaded", function () {
       var e = document.getElementById("icon-container");
       setTimeout(function () {
