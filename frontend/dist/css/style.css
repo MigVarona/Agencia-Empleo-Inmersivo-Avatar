@@ -250,4 +250,15 @@ a-scene img.visible {
   margin-top: 100px !important;
 }
 
+
+.myIframe {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  right: 50%;
+  width: 600px;
+  height: 400px;
+  z-index: 10;
+  border: none;
+}
 /*# sourceMappingURL=style.css.map */

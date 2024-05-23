@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Charts with A-Frame and BabiaXR</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-babia-components/dist/aframe-babia-components.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.2.0/dist/aframe-extras.min.js"></script>
+  <script src="https://unpkg.com/aframe-orbit-controls-component/dist/aframe-orbit-controls-component.min.js"></script>
+  <link href="css/output.css" rel="stylesheet" />
+
+  <link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Notable&amp;display=swap"
+  rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
+  rel="stylesheet" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Poiret+One&amp;display=swap"
+  rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;display=swap" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+<link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    AFRAME.registerComponent('pause-animation-on-hover', {
+      init: function () {
+        this.el.addEventListener('mouseenter', () => {
+          this.el.components.animation.pause();
+        });
+        this.el.addEventListener('mouseleave', () => {
+          this.el.components.animation.play();
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+    <a-scene>
+      <iframe class="myIframe" src="https://r3-f-avatar.vercel.app/"></iframe>
+      <div class="imagen-container">
+        <a href="index.html">
+          <img
+            class="imagen"
+            src="submarca_agenciaempleo_vertical_madrid_negro.ad578610.ad578610.ad578610.png"
+            width="300px"
+          />
+        </a>
+      </div>
+
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+        &#9776;
+      </button>
+      <div class="menu" id="menu">
+        <a href="index.html">Ancora</a><a href="entrada.html">Entrada</a><a href="agencia.html">Agencia</a><a
+          href="intermediacion.html">Intermediacion</a><a href="salta.html">Salta</a><a href="talento.html">Talento</a><a
+          href="formacion.html">Formacion</a><a href="avatar.html">Agencia virtual</a>
+      </div>
+
+        <a-assets>
+            <a-asset-item id="office" src="assets/3d/escenaaeggrafic2.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity 
+        gltf-model="#office" 
+        scale="120 100 120" 
+        rotation="0 270 0" 
+        position="-49 109 -970"></a-entity>
+
+        <a-light type="point" intensity="1" position="-10 166 30"></a-light>
+
+        <a-entity position="0.803 80 105">
+            <a-entity camera look-controls orbit-controls="
+                autoRotate: false; 
+                enableDamping: true; 
+                dampingFactor: 0.25; 
+                rotateSpeed: 0.25; 
+                minDistance: 1; 
+                maxDistance: 20;
+                enableZoom: true;
+                zoomSpeed: 1.0;">
+            </a-entity>
+            <a-entity cursor="rayOrigin: mouse"></a-entity>
+            <a-entity laser-controls="hand: right"></a-entity>
+        </a-entity>
+
+        <a-entity id="pieChart1" babia-pie='
+        legend: true; palette: blues; key: TIPOCURSO_DESC; size: Recuento de TIPOCURSO_DESC;
+        data: [
+            {"TIPOCURSO_DESC": "Formación - Curso de formación online", "Recuento de TIPOCURSO_DESC": 12798},
+            {"TIPOCURSO_DESC": "Formación - Curso de Formación", "Recuento de TIPOCURSO_DESC": 5142},
+            {"TIPOCURSO_DESC": "Formación - Certificado de Profesionalidad", "Recuento de TIPOCURSO_DESC": 3202},
+            {"TIPOCURSO_DESC": "PFAs - Curso de Formación", "Recuento de TIPOCURSO_DESC": 3169},
+            {"TIPOCURSO_DESC": "Talleres - Curso de Formación", "Recuento de TIPOCURSO_DESC": 2744},
+            {"TIPOCURSO_DESC": "PFAs - Certificado de Profesionalidad", "Recuento de TIPOCURSO_DESC": 2403},
+            {"TIPOCURSO_DESC": "Otros - Itinerario sociolaboral", "Recuento de TIPOCURSO_DESC": 1002},
+            {"TIPOCURSO_DESC": "Formación - Módulo", "Recuento de TIPOCURSO_DESC": 801},
+            {"TIPOCURSO_DESC": "Talleres - Certificado de Profesionalidad", "Recuento de TIPOCURSO_DESC": 439},
+            {"TIPOCURSO_DESC": "Formación - Especialidad Formativa Sepe", "Recuento de TIPOCURSO_DESC": 319},
+            {"TIPOCURSO_DESC": "Otros - Seminario", "Recuento de TIPOCURSO_DESC": 260},
+            {"TIPOCURSO_DESC": "Otros - Curso de Formación", "Recuento de TIPOCURSO_DESC": 188},
+            {"TIPOCURSO_DESC": "Otros - Reinvención", "Recuento de TIPOCURSO_DESC": 101}]'
+        position="267 115.90 -316" 
+        rotation="90 0 0" 
+        scale="70 20 70" 
+        visible="false"></a-entity>
+            
+        <a-entity id="pieChart2" babia-pie='
+        legend: true; palette: sunset; key: AZ; size: Recuento de AZ;
+        data: [
+            {"AZ": "AZ Puente Vallecas","Recuento de AZ": 167687},
+            {"AZ": "AZ Villaverde","Recuento de AZ": 116132},
+            {"AZ": "AZ Vicálvaro","Recuento de AZ": 112788},
+            {"AZ": "AZ Arganzuela","Recuento de AZ": 97564},
+            {"AZ": "AZ Hortaleza-Barajas","Recuento de AZ": 91168},
+            {"AZ": "Programas Fomento Empleo","Recuento de AZ": 85437},
+            { "AZ": "AZ Carabanchel","Recuento de AZ": 81646},
+            { "AZ": "AZ Retiro","Recuento de AZ": 79265},
+            {"AZ": "AZ Tetúan","Recuento de AZ": 73415},
+            { "AZ": "Talento y Empresas", "Recuento de AZ": 28011},
+            { "AZ": "AutoEmpleo","Recuento de AZ": 9590},
+            {"AZ": "Formación", "Recuento de AZ": 1491},
+            {"AZ": "Programas Especiales","Recuento de AZ": 1064},
+            { "AZ": "AZ-Otros Municipios","Recuento de AZ": 636}]' 
+        position="-360 115.90 -320" 
+        rotation="90 0 0" 
+        scale="70 20 70" 
+        visible="false"></a-entity>
+
+       
+
+        <a-video id="video" src="assets/videos/salta_video.mp4" 
+            width="25" 
+            height="15" 
+            position="-44 200 -710" 
+            scale="20 20 20"
+            visible="false"></a-video>
+
+        <a-entity babia-task="taskVideo: true; taskVideoId: video"></a-entity>
+    </a-scene>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const pieCharts = ['#pieChart1', '#pieChart2', '#pieChart3', '#pieChart4', '#pieChart5'];
+        const video = document.querySelector('#video');
+        let clickCount = 0;
+
+        const toggleVisibility = async () => {
+          if (clickCount === 0) {
+            console.log('Mostrar gráficos');
+            pieCharts.forEach(id => {
+              const chart = document.querySelector(id);
+              if (chart) {
+                chart.setAttribute('visible', 'true');
+              } else {
+                console.error(`Gráfico no encontrado: ${id}`);
+              }
+            });
+          } else if (clickCount === 1) {
+            console.log('Ocultar gráficos');
+            pieCharts.forEach(id => {
+              const chart = document.querySelector(id);
+              if (chart) {
+                chart.setAttribute('visible', 'false');
+              } else {
+                console.error(`Gráfico no encontrado: ${id}`);
+              }
+            });
+          } else if (clickCount === 2) {
+            console.log('Mostrar y reproducir video');
+            video.setAttribute('visible', 'true');
+            await video.play();
+          } else if (clickCount === 3) {
+            console.log('Pausar y ocultar video');
+            video.pause();
+            video.setAttribute('visible', 'false');
+          }
+          clickCount = (clickCount + 1) % 4;
+        };
+
+        document.querySelector('a-scene').addEventListener('click', toggleVisibility);
+      });
+
+      function toggleMenu() {
+  var menu = document.getElementById("menu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+
+    </script>
+</body>
+</html>

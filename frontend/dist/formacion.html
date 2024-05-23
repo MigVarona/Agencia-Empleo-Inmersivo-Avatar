@@ -36,11 +36,9 @@
       &#9776;
     </button>
     <div class="menu" id="menu">
-      <a href="index.html">Ancora</a><a href="entrada.html">Entrada</a
-      ><a href="agencia.html">Agencia</a
-      ><a href="intermediacion.html">Intermediacion</a
-      ><a href="salta.html">Salta</a><a href="talento.html">Talento</a
-      ><a href="formacion.html">Formacion</a>
+      <a href="index.html">Ancora</a><a href="entrada.html">Entrada</a><a href="agencia.html">Agencia</a><a
+        href="intermediacion.html">Intermediacion</a><a href="salta.html">Salta</a><a href="talento.html">Talento</a><a
+        href="formacion.html">Formacion</a><a href="avatar.html">Agencia virtual</a>
     </div>
     <a-scene
       vr-mode-ui="enabled: true"
@@ -94,13 +92,15 @@
           </div>
         </div>
       </div>
-      <button
-        id="voiceButton"
-        class="voice-button"
-        onclick="n()"
-        aria-label="Reproducir voz"
-        uk-icon="icon: rss; ratio: 2"
-      ></button>
+      <svg id="video"
+    class="voice-button"
+    onclick="toggleVoice()"
+    aria-label="Reproducir voz"
+    xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e8eaed">
+    <path d="M640-440v-80h160v80H640Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM120-360v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z"/>
+</svg>
+
+ 
       <div class="oculto swipe" id="icon-container">
         <div class="path"></div>
         <div class="hand-icon"></div>
@@ -119,13 +119,31 @@
     video.play();
   });
 }
-      function n() {
-        var e = window.speechSynthesis,
-          n = new SpeechSynthesisUtterance(
-            "La Agencia para el Empleo de Madrid es una Agencia de Colocación sin ánimo de lucro autorizada por el Sistema Nacional de Empleo. La intermediación laboral es clave en la búsqueda de empleo, conectando ofertas con demandantes y empresas. Hemos fortalecido nuestros servicios con el Centro de Personas & Empresas, estableciendo alianzas directas con empresas y utilizando nuevas herramientas de evaluación. Captamos talento a través de diferentes medios y ofrecemos capacitación en competencias laborales."
-          );
-        e.speak(n);
-      }
+var speechSynthesis = window.speechSynthesis;
+    var utterance = null;
+
+    function toggleVoice() {
+        if (speechSynthesis.speaking) {
+            speechSynthesis.cancel();
+        } else {
+            playVoice();
+        }
+    }
+
+    function playVoice() {
+        fetch("https://aceback-1.onrender.com/videos/4")
+            .then(function (e) {
+                return e.json();
+            })
+            .then(function (e) {
+                var speechText = e.description;
+                utterance = new SpeechSynthesisUtterance(speechText);
+                speechSynthesis.speak(utterance);
+            })
+            .catch(function (e) {
+                console.error("Error al obtener los datos:", e);
+            });
+    }
       function o() {
         fetch("https://aceback-1.onrender.com/videos/4")
           .then(function (e) {
