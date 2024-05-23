@@ -52,39 +52,6 @@
           <p id="6"></p> 
         </div>
       </div>
-<<<<<<< HEAD
-      <div class="oculto swipe" id="icon-container">
-        <div class="path"></div>
-        <div class="hand-icon"></div>
-      </div>
-      
-      <svg id="voiceButton"
-      class="voice-button"
-      onclick="n()"
-      aria-label="Reproducir voz"
-       xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e8eaed"><path d="M640-440v-80h160v80H640Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM120-360v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z"/></svg>
-
-      <footer class="footer">
-        <p style="color: #000; font-size: 0.7rem">
-          © 2024 Agencia Empleo. Todos los derechos reservados.
-        </p>
-      </footer>
-    </a-scene>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      function startVideo() {
-  var video = document.getElementById("video");
-  video.addEventListener('loadedmetadata', function() {
-    video.play();
-  });
-}
-function n() {
-      var e = window.speechSynthesis;
-      var t = new SpeechSynthesisUtterance(
-        "Como parte de nuestra estrategia tecnológica, hemos lanzado la plataforma SALTA para promover la participación activa de los usuarios. Permite gestionar perfiles, adjuntar documentos y actualizar objetivos profesionales automáticamente. Ofrecemos un servicio integral y accesible para empleadores y buscadores de empleo. SALTA está disponible 24/7, permitiendo a los usuarios acceder a servicios, consultar información y programar citas virtuales desde sus hogares."
-      );
-      e.speak(t);
-=======
     </div>
 
 
@@ -135,7 +102,6 @@ function n() {
     function startVideo() {
       var video = document.getElementById('video');
       video.play();
->>>>>>> c9d0a1bb8503d160a2f487ec70823993f2539f73
     }
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -155,42 +121,46 @@ function n() {
       synth.speak(utterance);
     }
 
-    fetch('assets/videos.json')
-    .then(response => response.json())
-    .then(data => {
-        const desiredVideoId = "6"; 
-        const desiredVideo = data.find(video => video.id === desiredVideoId);
-        
-        const videoElement = document.getElementById('video');
-        videoElement.querySelector('source').setAttribute('src', desiredVideo.sources[0]);
-        videoElement.load(); 
-    })
-    .catch(error => console.error('Error al cargar el archivo JSON:', error));
-
-    function obtenerDatos() {
-    fetch('assets/videos.json')
-      .then(response => response.json())
-      .then(data => {
-        const objeto = data.find(item => item.id === "6"); 
-        if (objeto) {
-          document.getElementById('6').innerText = objeto.description; 
-        } else {
-          console.error('No se encontró ningún objeto con el ID "1" en el JSON.');
-        }
-      })
-      .catch(error => console.error('Error al obtener los datos:', error));
-  }
-
-  document.getElementById('modal-overflow').addEventListener('shown', function () {
-    obtenerDatos();
-  });
-
-  </script>
-  <script>$(document).ready(function () {
-      $('.menu-toggle').click(function () {
-        $('.menu').toggle();
+    function t() {
+      fetch("https://aceback-1.onrender.com/videos/6")
+        .then(function (e) {
+          return e.json();
+        })
+        .then(function (e) {
+          document.getElementById("6").innerText = e.description;
+        })
+        .catch(function (e) {
+          return console.error("Error al obtener los datos:", e);
+        });
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      var e = document.getElementById("icon-container");
+      setTimeout(function () {
+        e.style.display = "none";
+      }, 5e3);
+    }),
+      fetch("https://aceback-1.onrender.com/videos/6")
+        .then(function (e) {
+          return e.json();
+        })
+        .then(function (e) {
+          var n = document.getElementById("video");
+          n.querySelector("source").setAttribute("src", e.sources[0]),
+            n.load();
+        })
+        .catch(function (e) {
+          return console.error("Error al cargar el archivo JSON:", e);
+        }),
+      document
+        .getElementById("modal-overflow")
+        .addEventListener("shown", function () {
+          t();
+        }),
+      $(document).ready(function () {
+        $(".menu-toggle").click(function () {
+          $(".menu").toggle();
+        });
       });
-    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
