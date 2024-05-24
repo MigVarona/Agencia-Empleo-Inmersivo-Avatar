@@ -25,7 +25,7 @@ const jsonData = JSON.parse(fs.readFileSync('assets/videos.json', 'utf-8'));
 
 async function migrateData() {
   try {
-    await Video.deleteMany(); // Borrar cualquier dato existente
+    await Video.deleteMany(); 
     await Video.insertMany(jsonData);
     console.log('Data migrated successfully');
   } catch (error) {

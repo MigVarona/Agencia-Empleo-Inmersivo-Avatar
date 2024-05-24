@@ -14,12 +14,10 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Conectar a la base de datos
 connectToDatabase();
 
-// Configurar encabezados CORS
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Permitir solicitudes desde cualquier origen
+  res.header('Access-Control-Allow-Origin', '*'); 
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
@@ -27,13 +25,10 @@ app.use((req, res, next) => {
   next();
 });
 
-// Rutas de la API
 setupRoutes(app);
 
-// Servir archivos estáticos
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
-// Iniciar el servidor
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
