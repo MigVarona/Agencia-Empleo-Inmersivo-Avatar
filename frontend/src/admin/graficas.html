@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="../dist/assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png" alt="Escudo" class="logo">
+        <img src="../../dist/assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png" alt="Escudo" class="logo">
         <div class="title">
             <span class="ae">ae</span> AGENCIA PARA EL EMPLEO
         </div>
@@ -25,7 +25,15 @@
             <h2>Panel de Graficas</h2>
             <form>
                 <label for="graph">Seleccione Graficas</label>
-                <input type="text" id="graph" name="graph" placeholder="Seleccione Graficas" required>
+                <select id="scene" name="scene" required>
+                    <option value="" disabled selected>Seleccione Graficas</option>
+                    <option value="escena1">Grafica 1</option>
+                    <option value="escena2">Grafica 2</option>
+                    
+
+
+
+                </select>
 
                 <label for="title">TITULO</label>
                 <input type="text" id="title" name="title" required>
