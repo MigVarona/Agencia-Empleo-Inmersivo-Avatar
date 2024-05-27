@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador - Agencia para el Empleo</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="header">
+        <img src="../dist/assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png" alt="Escudo" class="logo">
+        
+        <div class="logout">
+            <a href="#">Logout</a>
+        </div>
+    </div>
+    <div class="welcome">
+        Bienvenido, Admin
+    </div>
+    <div style="margin-bottom: 100px;" class="container">
+        <h1>PANEL DE ADMINISTRADOR</h1>
+        <div class="panel">
+            <h2>Panel de Escenas</h2>
+            <form>
+                <label for="scene">Seleccione la escena</label>
+                <input type="text" id="scene" name="scene" placeholder="Seleccione la escena" required>
+
+                <label for="title">TITULO</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="description">DESCRIPCION</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+
+                <label for="video">Link video 360</label>
+                <input type="text" id="video" name="video" required>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
