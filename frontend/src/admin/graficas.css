@@ -71,7 +71,7 @@ label {
     color: #3A76F0;
 }
 
-input, textarea {
+input, textarea, select {
     border: 2px solid #3A76F0;
     border-radius: 5px;
     padding: 10px;
@@ -82,4 +82,18 @@ input, textarea {
 textarea {
     resize: none;
     background-color: #F5F5F5;
+}
+
+.submit-btn {
+    background-color: #3A76F0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #2a5bbf;
 }

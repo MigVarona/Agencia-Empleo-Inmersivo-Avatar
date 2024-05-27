@@ -23,16 +23,12 @@
         <h1>PANEL DE ADMINISTRADOR</h1>
         <div class="panel">
             <h2>Panel de Graficas</h2>
-            <form>
+            <form id="adminForm">
                 <label for="graph">Seleccione Graficas</label>
-                <select id="scene" name="scene" required>
+                <select id="graph" name="graph" required>
                     <option value="" disabled selected>Seleccione Graficas</option>
-                    <option value="escena1">Grafica 1</option>
-                    <option value="escena2">Grafica 2</option>
-                    
-
-
-
+                    <option value="grafica1">Grafica 1</option>
+                    <option value="grafica2">Grafica 2</option>
                 </select>
 
                 <label for="title">TITULO</label>
@@ -40,8 +36,20 @@
 
                 <label for="data">DATA</label>
                 <textarea id="data" name="data" rows="4" required></textarea>
+
+                <button type="submit" class="submit-btn">Enviar</button>
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('adminForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (confirm('¿Está seguro de que desea enviar el formulario?')) {
+                alert('Formulario enviado con éxito');
+                this.reset();  // Esto reinicia el formulario, borrando todos los campos.
+            }
+        });
+    </script>
 </body>
 </html>
