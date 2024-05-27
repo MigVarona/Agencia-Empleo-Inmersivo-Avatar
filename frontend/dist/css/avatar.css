@@ -1,0 +1,71 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative; /* Añade posición relativa para que el menú se posicione correctamente */
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Para eliminar el borde del iframe si lo hay */
+}
+.menu-toggle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 9999;
+    cursor: pointer;
+    color: #fff;
+    font-size: 35px;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 90px;
+    right: 50px;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 9998;
+    width: 150px;
+}
+
+.menu a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+    .imagen {
+      width: 150px !important;
+    }
+  
+    .menu {
+      width: 160px !important;
+      top: 100px;
+      right: 30px;
+    }
+  }
+  
+  .imagen-container {
+    position: absolute;
+    z-index: 998;
+    margin-left: 25px;
+    margin-top: 30px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  
+  
+  .imagen {
+    width: 400px;
+    display: block;
+  }
