@@ -66,13 +66,14 @@ h4 {
 }
 
 .uk-button {
+  
   z-index: 999;
   position: absolute;
   top: 65%;
   color: black !important;
   left: 60px;
-  opacity: 90%;
-  background-color: #fff !important;
+  background-color: #ffffff !important;
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {
@@ -159,8 +160,8 @@ a-scene img.visible {
 
 .chatbot {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 125px;
+  right: 35px;
   width: 100px;
   height: 100px;
   z-index: 9999;

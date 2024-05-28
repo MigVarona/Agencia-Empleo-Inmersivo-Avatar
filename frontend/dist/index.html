@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>Agencia Empleo</title>
@@ -8,9 +9,14 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <link href="css/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Notable&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Poiret+One&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Notable&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Poiret+One&amp;display=swap"
+        rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;display=swap" rel="stylesheet" />
@@ -21,7 +27,10 @@
         &#9776;
     </button>
     <div class="menu" id="menu">
-        <a href="index.html">Ancora</a><a href="entrada.html">Entrada</a><a href="agencia.html">Agencia</a><a href="intermediacion.html">Intermediacion</a><a href="salta.html">Salta</a><a href="talento.html">Talento</a><a href="formacion.html">Formacion</a><a href="avatar.html">Agencia virtual</a>
+        <a href="index.html">Ancora</a><a href="entrada.html">Entrada</a><a href="agencia.html">Agencia</a><a
+            href="intermediacion.html">Intermediacion</a><a href="salta.html">Salta</a><a
+            href="talento.html">Talento</a><a href="formacion.html">Formacion</a><a href="avatar.html">Agencia
+            virtual</a>
     </div>
     <a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera" position="0 1.6 0">
         <a-camera>
@@ -33,11 +42,16 @@
         </video>
         <div class="imagen-container">
             <a href="index.html">
-                <img class="imagen" src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png" width="300px" />
+                <img class="imagen" src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png"
+                    width="300px" />
             </a>
         </div>
-        <a class="btnmg uk-button uk-button-default" href="#modal-overflow" uk-toggle="">Conoce +</a>
-        <img class="visible" src="assets/white-swipe.png" alt="" />
+        <a
+        class="btnmg uk-button uk-button-default"
+        href="#modal-overflow"
+        uk-toggle=""
+        >Conoce +</a
+      >        <img class="visible" src="assets/white-swipe.png" alt="" />
         <div id="modal-overflow" sty="" e="opacity: 0.8" uk-modal="">
             <div class="uk-modal-dialog" id="ancora">
                 <button class="uk-modal-close-default" type="button" uk-close=""></button>
@@ -51,23 +65,29 @@
             <div class="hand-icon"></div>
         </div>
 
-        <div class="chatbot" id="icon-chat">
-            <img src="assets/imagenes/chatbot.png" alt="Chatbot Icon">
-        </div>
 
-        <svg id="voice-button" class="voice-button" onclick="toggleVoice()" aria-label="Reproducir voz" xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e8eaed">
-            <path d="M640-440v-80h160v80H640Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM120-360v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z" />
+
+        <svg id="voice-button" class="voice-button" onclick="toggleVoice()" aria-label="Reproducir voz"
+            xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e8eaed">
+            <path
+                d="M640-440v-80h160v80H640Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM120-360v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z" />
         </svg>
 
         <footer class="footer">
             <p style="color: #000; font-size: 0.7rem">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
         </footer>
     </a-scene>
+
+    <a href="avatar.html">
+        <div class="chatbot" id="icon-chat">
+            <img src="assets/imagenes/chatbot.png" alt="Chatbot Icon">
+        </div>
+    </a>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function startVideo() {
             var video = document.getElementById("video");
-            video.addEventListener('loadedmetadata', function() {
+            video.addEventListener('loadedmetadata', function () {
                 video.play();
             });
         }
@@ -84,61 +104,62 @@
 
         function playVoice() {
             fetch("https://aceback-1.onrender.com/videos/1")
-                .then(function(e) {
+                .then(function (e) {
                     return e.json();
                 })
-                .then(function(e) {
+                .then(function (e) {
                     var speechText = e.description;
                     utterance = new SpeechSynthesisUtterance(speechText);
                     speechSynthesis.speak(utterance);
                 })
-                .catch(function(e) {
+                .catch(function (e) {
                     console.error("Error al obtener los datos:", e);
                 });
         }
 
         function t() {
             fetch("https://aceback-1.onrender.com/videos/1")
-                .then(function(e) {
+                .then(function (e) {
                     return e.json();
                 })
-                .then(function(e) {
+                .then(function (e) {
                     document.getElementById("1").innerText = e.description;
                 })
-                .catch(function(e) {
+                .catch(function (e) {
                     return console.error("Error al obtener los datos:", e);
                 });
         }
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             var e = document.getElementById("icon-container");
-            setTimeout(function() {
+            setTimeout(function () {
                 e.style.display = "none";
             }, 5e3);
         }),
-        fetch("https://aceback-1.onrender.com/videos/1")
-            .then(function(e) {
-                return e.json();
-            })
-            .then(function(e) {
-                var n = document.getElementById("video");
-                n.querySelector("source").setAttribute("src", e.sources[0]),
-                    n.load();
-            })
-            .catch(function(e) {
-                return console.error("Error al cargar el archivo JSON:", e);
-            }),
-        document
-            .getElementById("modal-overflow")
-            .addEventListener("shown", function() {
-                t();
-            }),
-        $(document).ready(function() {
-            $(".menu-toggle").click(function() {
-                $(".menu").toggle();
+            fetch("https://aceback-1.onrender.com/videos/1")
+                .then(function (e) {
+                    return e.json();
+                })
+                .then(function (e) {
+                    var n = document.getElementById("video");
+                    n.querySelector("source").setAttribute("src", e.sources[0]),
+                        n.load();
+                })
+                .catch(function (e) {
+                    return console.error("Error al cargar el archivo JSON:", e);
+                }),
+            document
+                .getElementById("modal-overflow")
+                .addEventListener("shown", function () {
+                    t();
+                }),
+            $(document).ready(function () {
+                $(".menu-toggle").click(function () {
+                    $(".menu").toggle();
+                });
             });
-        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
 </body>
+
 </html>
