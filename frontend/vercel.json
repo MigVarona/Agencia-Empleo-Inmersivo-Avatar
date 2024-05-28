@@ -1,23 +1,13 @@
 {
     "rewrites": [
-      { "source": "/index", "destination": "/index.html" },
-      { "source": "/entrada", "destination": "/entrada.html" },
-      { "source": "/agencia", "destination": "/agencia.html" },
-      { "source": "/intermediacion", "destination": "/intermediacion.html" },
-      { "source": "/salta", "destination": "/salta.html" },
-      { "source": "/talento", "destination": "/talento.html" },
-      { "source": "/formacion", "destination": "/formacion.html" },
-      { "source": "/avatar", "destination": "/avatar.html" }
-    ],
-    "redirects": [
-      { "source": "/salta.html", "destination": "/salta", "statusCode": 301 },
-      { "source": "/index.html", "destination": "/index", "statusCode": 301 },
-      { "source": "/entrada.html", "destination": "/entrada", "statusCode": 301 },
-      { "source": "/agencia.html", "destination": "/agencia", "statusCode": 301 },
-      { "source": "/intermediacion.html", "destination": "/intermediacion", "statusCode": 301 },
-      { "source": "/talento.html", "destination": "/talento", "statusCode": 301 },
-      { "source": "/formacion.html", "destination": "/formacion", "statusCode": 301 },
-      { "source": "/avatar.html", "destination": "/avatar", "statusCode": 301 }
+      {
+        "source": "/(.+)\\.html",
+        "destination": "/$1"
+      },
+      {
+        "source": "/:path+",
+        "destination": "/frontend/dist/:path*"
+      }
     ]
   }
   
