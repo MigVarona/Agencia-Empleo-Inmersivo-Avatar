@@ -1,0 +1,13 @@
+{
+    "rewrites": [
+      {
+        "source": "/(.+)\\.html",
+        "destination": "/$1"
+      },
+      {
+        "source": "/:path+",
+        "destination": "/frontend/dist/:path*"
+      }
+    ]
+  }
+  
