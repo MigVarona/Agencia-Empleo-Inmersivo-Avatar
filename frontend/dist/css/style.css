@@ -14,7 +14,6 @@ h1 {
   }
 }
 
-
 .nab {
   z-index: 999;
   position: absolute;
@@ -67,13 +66,14 @@ h4 {
 }
 
 .uk-button {
+  
   z-index: 999;
   position: absolute;
   top: 65%;
   color: black !important;
   left: 60px;
-  opacity: 90%;
-  background-color: #fff !important;
+  background-color: #ffffff !important;
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {
@@ -158,6 +158,20 @@ a-scene img.visible {
   }
 }
 
+.chatbot {
+  position: fixed;
+  bottom: 125px;
+  right: 35px;
+  width: 100px;
+  height: 100px;
+  z-index: 9999;
+}
+
+.chatbot img {
+  width: 100%;
+  height: 100%;
+}
+
 .menu-toggle {
   position: absolute;
   top: 30px;
@@ -210,8 +224,6 @@ a-scene img.visible {
   border-radius: 10px;
 }
 
-
-
 .imagen {
   width: 300px;
   display: block;
@@ -250,7 +262,6 @@ a-scene img.visible {
   margin-top: 100px !important;
 }
 
-
 .myIframe {
   position: fixed;
   bottom: 10px;
@@ -261,4 +272,3 @@ a-scene img.visible {
   z-index: 10;
   border: none;
 }
-/*# sourceMappingURL=style.css.map */
