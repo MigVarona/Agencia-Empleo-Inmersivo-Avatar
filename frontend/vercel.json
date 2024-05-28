@@ -1,13 +1,13 @@
 {
     "rewrites": [
-      { "source": "/index", "destination": "/dist/index.html" },
-      { "source": "/entrada", "destination": "/dist/entrada.html" },
-      { "source": "/agencia", "destination": "/dist/agencia.html" },
-      { "source": "/intermediacion", "destination": "/dist/intermediacion.html" },
-      { "source": "/salta", "destination": "/dist/salta.html" },
-      { "source": "/talento", "destination": "/dist/talento.html" },
-      { "source": "/formacion", "destination": "/dist/formacion.html" },
-      { "source": "/avatar", "destination": "/dist/avatar.html" }
+      { "source": "/index", "destination": "/index.html" },
+      { "source": "/entrada", "destination": "/entrada.html" },
+      { "source": "/agencia", "destination": "/agencia.html" },
+      { "source": "/intermediacion", "destination": "/intermediacion.html" },
+      { "source": "/salta", "destination": "/salta.html" },
+      { "source": "/talento", "destination": "/talento.html" },
+      { "source": "/formacion", "destination": "/formacion.html" },
+      { "source": "/avatar", "destination": "/avatar.html" }
     ],
     "redirects": [
       { "source": "/salta.html", "destination": "/salta", "statusCode": 301 },
