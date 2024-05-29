@@ -17,9 +17,8 @@ mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: true,
 });
 
-// Configurar encabezados CORS
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Permitir solicitudes desde cualquier origen
+  res.header('Access-Control-Allow-Origin', '*');
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
@@ -27,6 +26,15 @@ app.use((req, res, next) => {
   next();
 });
 
+// Esquema para usuarios administradores
+const adminUserSchema = new mongoose.Schema({
+  username: String,
+  password: String
+});
+
+const AdminUser = mongoose.model('AdminUser', adminUserSchema);
+
+// Esquema para videos
 const videoSchema = new mongoose.Schema({
   id: String,
   title: String,
@@ -36,9 +44,34 @@ const videoSchema = new mongoose.Schema({
 
 const Video = mongoose.model('Video', videoSchema);
 
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+// Ruta para crear usuarios administradores
+app.post('/createAdminUser', async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const user = new AdminUser({ username, password });
+    await user.save();
+    res.status(201).json({ message: 'Admin user created successfully' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
 
-// Rutas de la API
+// Ruta para iniciar sesión de usuarios administradores
+app.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const user = await AdminUser.findOne({ username, password });
+    if (user) {
+      res.status(200).json({ message: 'Login successful' });
+    } else {
+      res.status(401).json({ message: 'Invalid username or password' });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// Rutas para gestionar videos
 app.get('/videos', async (req, res) => {
   try {
     const videos = await Video.find();
@@ -98,12 +131,6 @@ app.delete('/videos/:id', async (req, res) => {
   }
 });
 
-
-//app.get('/agencia.html', (req, res) => {
-//  res.sendFile(path.join(__dirname, '../Agencia Front/dist', 'agencia.html'));
-//});
-
-// Iniciar el servidor
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

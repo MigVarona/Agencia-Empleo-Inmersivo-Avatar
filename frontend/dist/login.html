@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agencia para el Empleo</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <img src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png" alt="Escudo">
+    </div>
+    
+    <form class="login-form" id="loginForm">
+      <input type="text" id="username" placeholder="Usuario" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button style="margin-top: 20px;" type="submit">Iniciar Sesión</button>
+    </form>
+    <div style="margin-top: 25px;" class="forgot-password">
+      ¿Olvidaste tu contraseña?, <a href="#">pulsa aquí</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (isLoggedIn && isLoggedIn === 'true') {
+        window.location.href = 'admin.html';
+      }
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      try {
+        const response = await fetch('https://aceback-1.onrender.com/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+        });
+
+        if (response.ok) {
+          // Login exitoso, redirigir a admin.html
+          localStorage.setItem('isLoggedIn', 'true');
+          window.location.href = 'admin.html';
+        } else {
+          // Error de inicio de sesión
+          alert('Inicio de sesión incorrecto');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error al intentar iniciar sesión');
+      }
+    });
+  </script>
+</body>
+
+</html>
