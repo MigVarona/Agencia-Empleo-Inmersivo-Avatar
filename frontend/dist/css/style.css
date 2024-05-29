@@ -262,13 +262,22 @@ a-scene img.visible {
   margin-top: 100px !important;
 }
 
-.myIframe {
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  right: 50%;
-  width: 600px;
-  height: 400px;
-  z-index: 10;
-  border: none;
+
+
+#keyboardIcon {
+  position: absolute;
+  bottom: 50px;
+  right: 200px;
+  width: 100px;  /* Adjust the size as needed */
+  opacity: 0.8;
+}
+
+.voice-button {
+  position: absolute;
+  bottom: 60px;
+  left: 30px;
+  z-index: 9999;
+  cursor: pointer;
+  color: white;
+  font-size: 35px;
 }
