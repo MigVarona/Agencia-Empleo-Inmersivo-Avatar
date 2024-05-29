@@ -27,9 +27,16 @@
   </div>
 
   <script>
-    document.getElementById('loginForm').addEventListener('submit', async function(event) {
+    document.addEventListener('DOMContentLoaded', function () {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (isLoggedIn && isLoggedIn === 'true') {
+        window.location.href = 'admin.html';
+      }
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', async function (event) {
       event.preventDefault();
-      
+
       const username = document.getElementById('username').value.trim();
       const password = document.getElementById('password').value.trim();
 
@@ -44,6 +51,7 @@
 
         if (response.ok) {
           // Login exitoso, redirigir a admin.html
+          localStorage.setItem('isLoggedIn', 'true');
           window.location.href = 'admin.html';
         } else {
           // Error de inicio de sesión

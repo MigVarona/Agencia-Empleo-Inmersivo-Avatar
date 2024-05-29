@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administrador - Agencia para el Empleo</title>
     <link rel="stylesheet" href="css/admin.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (!isLoggedIn || isLoggedIn !== 'true') {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
 </head>
+
 <body>
     <div class="header">
         <img src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png" alt="Escudo" class="logo">
         <div class="logout">
-            <a href="#">Logout</a>
+            <a href="#" id="logoutBtn">Logout</a>
         </div>
     </div>
     <div class="welcome">
@@ -49,7 +59,7 @@
     </div>
 
     <script>
-        document.getElementById('adminForm').addEventListener('submit', async function(event) {
+        document.getElementById('adminForm').addEventListener('submit', async function (event) {
             event.preventDefault();
             if (confirm('¿Está seguro de que desea enviar el formulario?')) {
                 const sceneId = document.getElementById('scene').value;
@@ -72,7 +82,7 @@
                 }
 
                 try {
-                    const response = await fetch(`http://localhost:3000/videos/${sceneId}`, {
+                    const response = await fetch(`https://aceback-1.onrender.com/videos/${sceneId}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json'
@@ -96,6 +106,17 @@
                 this.reset();
             }
         });
+
+        document.getElementById('logoutBtn').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Limpiar el estado de autenticación
+            localStorage.removeItem('isLoggedIn');
+
+            // Redirigir al usuario a la página de inicio de sesión
+            window.location.href = 'login.html';
+        });
     </script>
 </body>
+
 </html>
