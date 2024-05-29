@@ -34,7 +34,7 @@
       const password = document.getElementById('password').value.trim();
 
       try {
-        const response = await fetch('http://localhost:3000/createAdminUser', {
+        const response = await fetch('https://aceback-1.onrender.com/createAdminUser', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
