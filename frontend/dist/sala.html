@@ -1,28 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>3D Charts with A-Frame and BabiaXR</title>
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-  <script src="https://unpkg.com/aframe-babia-components/dist/aframe-babia-components.min.js"></script>
+  <script src="library\aframe-babia-components3.js"></script>
   <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.2.0/dist/aframe-extras.min.js"></script>
-  <script src="https://unpkg.com/aframe-orbit-controls-component/dist/aframe-orbit-controls-component.min.js"></script>
-  <link href="css/output.css" rel="stylesheet" />
-
-  <link
-  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Notable&amp;display=swap"
-  rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
-  rel="stylesheet" />
-<link
-  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Poiret+One&amp;display=swap"
-  rel="stylesheet" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;display=swap" rel="stylesheet" />
-<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
-<link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 
   <script>
     AFRAME.registerComponent('pause-animation-on-hover', {
@@ -37,161 +23,266 @@
     });
   </script>
 </head>
+
 <body>
-    <a-scene>
-      <iframe class="myIframe" src="https://r3-f-avatar.vercel.app/"></iframe>
-      <div class="imagen-container">
-        <a href="index.html">
-          <img
-            class="imagen"
-            src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png"
-            width="300px"
-          />
-        </a>
-      </div>
+  <a-scene>
+    <!-- Importar ambiente de oficina -->
+    <a-assets>
+      <a-asset-item id="office" src="assets\escenaae2grafic360.glb"></a-asset-item>
+    </a-assets>
 
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
-        &#9776;
-      </button>
-      <div class="menu" id="menu">
-        <a href="index.html">Ancora</a><a href="entrada.html">Entrada</a><a href="agencia.html">Agencia</a><a
-          href="intermediacion.html">Intermediacion</a><a href="salta.html">Salta</a><a href="talento.html">Talento</a><a
-          href="formacion.html">Formacion</a><a href="avatar.html">Agencia virtual</a>
-      </div>
+    <!-- Entorno de la oficina -->
+    <a-entity gltf-model="#office" scale="120 100 120" rotation="0 270 0" position="-49 109 -970"></a-entity>
 
-        <a-assets>
-            <a-asset-item id="office" src="assets/3d/escenaaeggrafic2.glb"></a-asset-item>
-        </a-assets>
+    <!-- Light -->
+    <a-light type="point" intensity="1" position="-10 166 30"></a-light>
 
-        <a-entity 
-        gltf-model="#office" 
-        scale="120 100 120" 
-        rotation="0 270 0" 
-        position="-49 109 -970"></a-entity>
+    <!-- Camera with WASD Controls -->
+    <a-entity id="camera" camera wasd-controls="acceleration: 500" look-controls position="0.803 80 105">
+      <a-entity cursor="rayOrigin: mouse"></a-entity>
+      <a-entity laser-controls="hand: right"></a-entity>
+    </a-entity>
 
-        <a-light type="point" intensity="1" position="-10 166 30"></a-light>
+    <!-- Titulo de Grafico PieChart1 -->
+    <a-entity id="titleChart1" position="277 -66.8 -311.5" scale="25 25 30" rotation="0 0 0" visible="false">
+      <!-- Background plane for title -->
+      <a-plane position="0 3.5 0" width="6" height="1.5" color="#FFF" opacity="0.95"></a-plane>
+      <!-- Title text -->
+      <a-text value="PLAZAS POR CURSO" align="center" position="0 3.5 0.1" scale="2 3 3" color="#000"></a-text>
+    </a-entity>
 
-        <a-entity position="0.803 80 105">
-            <a-entity camera look-controls orbit-controls="
-                autoRotate: false; 
-                enableDamping: true; 
-                dampingFactor: 0.25; 
-                rotateSpeed: 0.25; 
-                minDistance: 1; 
-                maxDistance: 20;
-                enableZoom: true;
-                zoomSpeed: 1.0;">
-            </a-entity>
-            <a-entity cursor="rayOrigin: mouse"></a-entity>
-            <a-entity laser-controls="hand: right"></a-entity>
-        </a-entity>
-
-        <a-entity id="pieChart1" babia-pie='
+    <!-- PLAZAS POR CURSO Pie Charts1 -->
+    <a-entity id="pieChart1" babia-pie='
         legend: true; palette: blues; key: TIPOCURSO_DESC; size: Recuento de TIPOCURSO_DESC;
         data: [
-            {"TIPOCURSO_DESC": "Formación - Curso de formación online", "Recuento de TIPOCURSO_DESC": 12798},
-            {"TIPOCURSO_DESC": "Formación - Curso de Formación", "Recuento de TIPOCURSO_DESC": 5142},
-            {"TIPOCURSO_DESC": "Formación - Certificado de Profesionalidad", "Recuento de TIPOCURSO_DESC": 3202},
-            {"TIPOCURSO_DESC": "PFAs - Curso de Formación", "Recuento de TIPOCURSO_DESC": 3169},
-            {"TIPOCURSO_DESC": "Talleres - Curso de Formación", "Recuento de TIPOCURSO_DESC": 2744},
-            {"TIPOCURSO_DESC": "PFAs - Certificado de Profesionalidad", "Recuento de TIPOCURSO_DESC": 2403},
-            {"TIPOCURSO_DESC": "Otros - Itinerario sociolaboral", "Recuento de TIPOCURSO_DESC": 1002},
-            {"TIPOCURSO_DESC": "Formación - Módulo", "Recuento de TIPOCURSO_DESC": 801},
-            {"TIPOCURSO_DESC": "Talleres - Certificado de Profesionalidad", "Recuento de TIPOCURSO_DESC": 439},
-            {"TIPOCURSO_DESC": "Formación - Especialidad Formativa Sepe", "Recuento de TIPOCURSO_DESC": 319},
-            {"TIPOCURSO_DESC": "Otros - Seminario", "Recuento de TIPOCURSO_DESC": 260},
-            {"TIPOCURSO_DESC": "Otros - Curso de Formación", "Recuento de TIPOCURSO_DESC": 188},
-            {"TIPOCURSO_DESC": "Otros - Reinvención", "Recuento de TIPOCURSO_DESC": 101}]'
-        position="267 115.90 -316" 
-        rotation="90 0 0" 
-        scale="70 20 70" 
-        visible="false"></a-entity>
-            
-        <a-entity id="pieChart2" babia-pie='
+            {"TIPOCURSO_DESC": "Formacion  Curso Online", "Recuento de TIPOCURSO_DESC": 12798},
+            {"TIPOCURSO_DESC": "Formacion  Curso Presencial", "Recuento de TIPOCURSO_DESC": 5142},
+            {"TIPOCURSO_DESC": "Formacion  Cert Profesionalidad", "Recuento de TIPOCURSO_DESC": 3202},
+            {"TIPOCURSO_DESC": "PFAs  Curso Formación", "Recuento de TIPOCURSO_DESC": 3169},
+            {"TIPOCURSO_DESC": "Talleres  Curso Formacion", "Recuento de TIPOCURSO_DESC": 2744},
+            {"TIPOCURSO_DESC": "PFAs  Cert Profesionalidad", "Recuento de TIPOCURSO_DESC": 2403},
+            {"TIPOCURSO_DESC": "Otros  Itinerario sociolaboral", "Recuento de TIPOCURSO_DESC": 1002},
+            {"TIPOCURSO_DESC": "Formacion  Modulo", "Recuento de TIPOCURSO_DESC": 801},
+            {"TIPOCURSO_DESC": "Talleres  Cert Profesionalidad", "Recuento de TIPOCURSO_DESC": 439},
+            {"TIPOCURSO_DESC": "Formacion  Esp Formativa Sepe", "Recuento de TIPOCURSO_DESC": 319},
+            {"TIPOCURSO_DESC": "Otros  Seminario", "Recuento de TIPOCURSO_DESC": 260},
+            {"TIPOCURSO_DESC": "Otros  Curso de Formacion", "Recuento de TIPOCURSO_DESC": 188},
+            {"TIPOCURSO_DESC": "Otros  Reinvencion", "Recuento de TIPOCURSO_DESC": 101}]' position="267 115.90 -318"
+      rotation="90 0 0" scale="70 20 70" visible="false" animation-on-hover>
+    </a-entity>
+
+    <!-- Titulo de Grafico PieChart2 -->
+    <a-entity id="titleChart2" position="-371 -66.8 -311.5" scale="25 25 30" rotation="0 0 0" visible="false">
+      <!-- Background plane for title -->
+      <a-plane position="0 3.5 0" width="6" height="1.5" color="#FFF" opacity="0.95"></a-plane>
+      <!-- Title text -->
+      <a-text value="ATENCIONES POR AGENCIA" align="center" position="0 3.5 0.1" scale="2 3 3" color="#000"></a-text>
+    </a-entity>
+
+    <!-- ATENCIONES POR AGENCIA Pie Charts2 -->
+    <a-entity id="pieChart2" babia-pie='
         legend: true; palette: sunset; key: AZ; size: Recuento de AZ;
         data: [
-            {"AZ": "AZ Puente Vallecas","Recuento de AZ": 167687},
-            {"AZ": "AZ Villaverde","Recuento de AZ": 116132},
-            {"AZ": "AZ Vicálvaro","Recuento de AZ": 112788},
-            {"AZ": "AZ Arganzuela","Recuento de AZ": 97564},
-            {"AZ": "AZ Hortaleza-Barajas","Recuento de AZ": 91168},
-            {"AZ": "Programas Fomento Empleo","Recuento de AZ": 85437},
-            { "AZ": "AZ Carabanchel","Recuento de AZ": 81646},
-            { "AZ": "AZ Retiro","Recuento de AZ": 79265},
-            {"AZ": "AZ Tetúan","Recuento de AZ": 73415},
-            { "AZ": "Talento y Empresas", "Recuento de AZ": 28011},
-            { "AZ": "AutoEmpleo","Recuento de AZ": 9590},
-            {"AZ": "Formación", "Recuento de AZ": 1491},
+            {"AZ": "Puente Vallecas","Recuento de AZ": 167687},
+            {"AZ": "Villaverde","Recuento de AZ": 116132},
+            {"AZ": "Vicalvaro","Recuento de AZ": 112788},
+            {"AZ": "Arganzuela","Recuento de AZ": 97564},
+            {"AZ": "Hortaleza-Barajas","Recuento de AZ": 91168},
+            {"AZ": "Prog Fomento Empleo","Recuento de AZ": 85437},
+            {"AZ": "Carabanchel","Recuento de AZ": 81646},
+            {"AZ": "Retiro","Recuento de AZ": 79265},
+            {"AZ": "Tetuan","Recuento de AZ": 73415},
+            {"AZ": "Talento y Empresas", "Recuento de AZ": 28011},
+            {"AZ": "AutoEmpleo","Recuento de AZ": 9590},
+            {"AZ": "Formacion", "Recuento de AZ": 1491},
             {"AZ": "Programas Especiales","Recuento de AZ": 1064},
-            { "AZ": "AZ-Otros Municipios","Recuento de AZ": 636}]' 
-        position="-360 115.90 -320" 
-        rotation="90 0 0" 
-        scale="70 20 70" 
-        visible="false"></a-entity>
+            {"AZ": "Otros Municipios","Recuento de AZ": 636}]' position="-360 115.90 -320" rotation="90 0 0"
+      scale="70 20 70" visible="false" animation-on-hover></a-entity>
 
-       
+    <!-- Titulo de Grafico PieChart3 -->
+    <a-entity id="titleChart3" position="-371 -65.8 -170.5" scale="25 25 30" rotation="0 0 0" visible="false">
+      <!-- Background plane for title -->
+      <a-plane position="0 3.5 0" width="6" height="1.5" color="#FFF" opacity="0.95"></a-plane>
+      <!-- Title text -->
+      <a-text value="ACT INDUSTRIAL Y ENERGIA" align="center" position="0 3.5 0.1" scale="1.5 3 3"
+        color="#000"></a-text>
+    </a-entity>
 
-        <a-video id="video" src="assets/videos/salta_video.mp4" 
-            width="25" 
-            height="15" 
-            position="-44 200 -710" 
-            scale="20 20 20"
-            visible="false"></a-video>
+    <!-- ACTIVIDADES INDUSTRIAL Y DE ENERGIA - INTERMEDIACION Pie Charts3 -->
+    <a-entity id="pieChart3" babia-pie='
+        legend: true; palette: flat; key: CNAE_DESC; size: Recuento_de_CNAE_DESC;
+        data: [
+            { "CNAE_DESC": "Ind Prod Alimenticios y bebidas", "Recuento_de_CNAE_DESC": 1354 },
+            { "CNAE_DESC": "Industria quimica", "Recuento_de_CNAE_DESC": 314 },
+            { "CNAE_DESC": "Prod y Dist Energia electrica, gas, vapor y agua caliente", "Recuento_de_CNAE_DESC": 264 },
+            { "CNAE_DESC": "Edicion, artes graficas ", "Recuento_de_CNAE_DESC": 252 },
+            { "CNAE_DESC": "Fabric textiles y Produc textiles", "Recuento_de_CNAE_DESC": 165 },
+            { "CNAE_DESC": "Metalurgia", "Recuento_de_CNAE_DESC": 153 },
+            { "CNAE_DESC": "Ind Construccion Maquinaria Equip Mecanico", "Recuento_de_CNAE_DESC": 113 },
+            { "CNAE_DESC": "Fabric Vehículos Motor, Remolques Semirremolques", "Recuento_de_CNAE_DESC": 104 },
+            { "CNAE_DESC": "Fabric Material Electrónico y Equipos ", "Recuento_de_CNAE_DESC": 154 },
+            { "CNAE_DESC": "Ind Confección y Peleteria", "Recuento_de_CNAE_DESC": 24 },
+            { "CNAE_DESC": "Industria del papel", "Recuento_de_CNAE_DESC": 18 },
+            { "CNAE_DESC": "Fabric Productos Caucho y Materias Plasticas", "Recuento_de_CNAE_DESC": 41 },
+            { "CNAE_DESC": "Reciclaje", "Recuento_de_CNAE_DESC": 47 },
+            { "CNAE_DESC": "Fabric Muebles. Otras industrias manufactureras", "Recuento_de_CNAE_DESC": 49 },
+            { "CNAE_DESC": "Fabric Equipo e instrumentos medico-quirurgicos", "Recuento_de_CNAE_DESC": 11 },
+            { "CNAE_DESC": "Ind Madera y Corcho", "Recuento_de_CNAE_DESC": 11 }
+        ]' position="-364 110.4 -170.5" rotation="90 0 0" scale="70 20 70" visible="false" animation-on-hover>
+    </a-entity>
 
-        <a-entity babia-task="taskVideo: true; taskVideoId: video"></a-entity>
-    </a-scene>
+    <!-- Titulo de Grafico PieChart4 -->
+    <a-entity id="titleChart4" position="271.5 -66 -178" scale="25 25 30" rotation="0 0 0" visible="false">
+      <!-- Background plane for title -->
+      <a-plane position="0 3.5 0" width="6" height="1.5" color="#FFF" opacity="0.95"></a-plane>
+      <!-- Title text -->
+      <a-text value="SECTOR SERVICIOS" align="center" position="0 3.5 0.1" scale="1.5 3 3" color="#000"></a-text>
+    </a-entity>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
+    <!-- SERCTOR SERVICIOS - INTERMEDIACION Pie Charts4 -->
+    <a-entity id="pieChart4" babia-pie='
+      legend: true; palette: foxy; key: CNAE_DESC; size: Recuento_de_CNAE_DESC; 
+      data: [
+        { "CNAE_DESC": "Administracion publica, defensa y seguridad social obligatoria", "Recuento_de_CNAE_DESC": 13273 },
+        { "CNAE_DESC": "Act sanitarias vet, serv sociales", "Recuento_de_CNAE_DESC": 5637 },
+        { "CNAE_DESC": "Hosteleria", "Recuento_de_CNAE_DESC": 4977 },
+        { "CNAE_DESC": "Comercio al por menor", "Recuento_de_CNAE_DESC": 7941 },
+        { "CNAE_DESC": "Comercio al por mayor ", "Recuento_de_CNAE_DESC": 4672 },
+        { "CNAE_DESC": "Act recreativas, culturales y deportivas", "Recuento_de_CNAE_DESC": 998 },
+        { "CNAE_DESC": "Act diversas de servicios personales", "Recuento_de_CNAE_DESC": 1012 },
+        { "CNAE_DESC": "Act Asociativas", "Recuento_de_CNAE_DESC": 1212 },
+        { "CNAE_DESC": "Educacion", "Recuento_de_CNAE_DESC": 1109 },
+        { "CNAE_DESC": "Transporte terrestre", "Recuento_de_CNAE_DESC": 1146 },
+        { "CNAE_DESC": "Act anexas a los transportes ", "Recuento_de_CNAE_DESC": 415 },
+        { "CNAE_DESC": "Hogares personal domestico", "Recuento_de_CNAE_DESC": 391 },
+        { "CNAE_DESC": "Act inmobiliarias", "Recuento_de_CNAE_DESC": 388 },
+        { "CNAE_DESC": "Act Saneamiento privado", "Recuento_de_CNAE_DESC": 296 },
+        { "CNAE_DESC": "Correos y telecomunicaciones", "Recuento_de_CNAE_DESC": 123 },
+        { "CNAE_DESC": "Act aux intermediacion financiera", "Recuento_de_CNAE_DESC": 73 },
+        { "CNAE_DESC": "Act informaticas", "Recuento_de_CNAE_DESC": 804 }
+      ]' position="264 105.8 -178" rotation="90 0 0" scale="70 20 70" visible="false" animation-on-hover>
+    </a-entity>
+
+    <!-- Titulo de Grafico PieChart5 -->
+    <a-entity id="titleChart5" position="-49 -50 -478" scale="50 25 30" rotation="0 0 0" visible="false">
+      <!-- Background plane for title -->
+      <a-plane position="0 3.5 0" width="6" height="1.5" color="#FFF" opacity="0.95"></a-plane>
+      <!-- Title text -->
+      <a-text value="ACT PRIMARIA Y TRANSPORTE" align="center" position="0 3.5 0.1" scale="1.5 3 3"
+        color="#000"></a-text>
+    </a-entity>
+
+
+    <!-- ACTIVIDADES PRIMARIA Y DE TRANSPORTE - INTERMEDIACION Pie Charts5 -->
+    <a-entity id="pieChart5" babia-pie='
+        legend: true; palette: ubuntu; key: CNAE_DESC; size: Recuento_de_CNAE_DESC; 
+        data: [
+            { "CNAE_DESC": "Agricultura, ganaderia caza", "Recuento_de_CNAE_DESC": 1088 },
+            { "CNAE_DESC": "Pesca, acuicultura y act relacionados", "Recuento_de_CNAE_DESC": 49 },
+            { "CNAE_DESC": "Extrac Crudos Petróleo y Gas natural", "Recuento_de_CNAE_DESC": 30 },
+            { "CNAE_DESC": "Selvicultura, explotación forestal ", "Recuento_de_CNAE_DESC": 71 },
+            { "CNAE_DESC": "Transporte aereo y espacial", "Recuento_de_CNAE_DESC": 32 },
+            { "CNAE_DESC": "Transporte maritimo", "Recuento_de_CNAE_DESC": 16 },
+            { "CNAE_DESC": "Transporte terrestre", "Recuento_de_CNAE_DESC": 1146 },
+            { "CNAE_DESC": "Actividades anexas a los transportes", "Recuento_de_CNAE_DESC": 415 }
+        ]' position="-36 133 -496" rotation="90 0 0" scale="70 20 70" visible="false" animation-on-hover>
+    </a-entity>
+
+    <!-- Video Entity -->
+    <a-video id="video" src="assets/saltavideosala.mp4" width="25" height="15" position="-44 200 -710" scale="20 20 20"
+      visible="false"></a-video>
+
+    <!-- Tarea de Descripción de Video -->
+    <a-entity babia-task="taskVideo: true; taskVideoId: video"></a-entity>
+
+    <svg id="video" class="voice-button" onclick="toggleVoice()" aria-label="Reproducir voz"
+      xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e8eaed">
+      <path
+        d="M640-440v-80h160v80H640Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM120-360v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z" />
+    </svg>
+
+  </a-scene>
+
+  <!-- Interacciones para Graficos y Video -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
         const pieCharts = ['#pieChart1', '#pieChart2', '#pieChart3', '#pieChart4', '#pieChart5'];
+        const titles = ['#titleChart1', '#titleChart2', '#titleChart3', '#titleChart4', '#titleChart5'];
         const video = document.querySelector('#video');
         let clickCount = 0;
 
-        const toggleVisibility = async () => {
-          if (clickCount === 0) {
-            console.log('Mostrar gráficos');
-            pieCharts.forEach(id => {
-              const chart = document.querySelector(id);
-              if (chart) {
-                chart.setAttribute('visible', 'true');
-              } else {
-                console.error(`Gráfico no encontrado: ${id}`);
-              }
-            });
-          } else if (clickCount === 1) {
-            console.log('Ocultar gráficos');
-            pieCharts.forEach(id => {
-              const chart = document.querySelector(id);
-              if (chart) {
-                chart.setAttribute('visible', 'false');
-              } else {
-                console.error(`Gráfico no encontrado: ${id}`);
-              }
-            });
-          } else if (clickCount === 2) {
-            console.log('Mostrar y reproducir video');
-            video.setAttribute('visible', 'true');
-            await video.play();
-          } else if (clickCount === 3) {
-            console.log('Pausar y ocultar video');
-            video.pause();
-            video.setAttribute('visible', 'false');
-          }
-          clickCount = (clickCount + 1) % 4;
+        const toggleVisibility = () => {
+            if (clickCount === 0) {
+                console.log('Mostrar video');
+                video.setAttribute('visible', 'true');
+            } else if (clickCount === 1) {
+                console.log('Ocultar video');
+                video.setAttribute('visible', 'false');
+            } else if (clickCount === 2) {
+                console.log('Mostrar gráficos y títulos');
+                pieCharts.forEach(id => {
+                    const chart = document.querySelector(id);
+                    if (chart) {
+                        chart.setAttribute('visible', 'true');
+                    } else {
+                        console.error(`Gráfico no encontrado: ${id}`);
+                    }
+                });
+                titles.forEach(id => {
+                    const title = document.querySelector(id);
+                    if (title) {
+                        title.setAttribute('visible', 'true');
+                    } else {
+                        console.error(`Título no encontrado: ${id}`);
+                    }
+                });
+            } else if (clickCount === 3) {
+                console.log('Ocultar gráficos y títulos');
+                pieCharts.forEach(id => {
+                    const chart = document.querySelector(id);
+                    if (chart) {
+                        chart.setAttribute('visible', 'false');
+                    } else {
+                        console.error(`Gráfico no encontrado: ${id}`);
+                    }
+                });
+                titles.forEach(id => {
+                    const title = document.querySelector(id);
+                    if (title) {
+                        title.setAttribute('visible', 'false');
+                    } else {
+                        console.error(`Título no encontrado: ${id}`);
+                    }
+                });
+            }
+            clickCount = (clickCount + 1) % 4;
         };
 
         document.querySelector('a-scene').addEventListener('click', toggleVisibility);
-      });
 
-      function toggleMenu() {
-  var menu = document.getElementById("menu");
-  if (menu.style.display === "block") {
-    menu.style.display = "none";
-  } else {
-    menu.style.display = "block";
-  }
-}
+        const voiceButton = document.querySelector('.voice-button');
+        voiceButton.addEventListener('click', (event) => {
+            event.stopPropagation(); // Detener la propagación del evento de clic
+            if (speechSynthesis.speaking) {
+                speechSynthesis.cancel();
+            } else {
+                fetch("https://aceback-1.onrender.com/videos/4")
+                    .then(response => response.json())
+                    .then(data => {
+                        const speechText = data.description;
+                        const utterance = new SpeechSynthesisUtterance(speechText);
+                        speechSynthesis.speak(utterance);
+                    })
+                    .catch(error => {
+                        console.error("Error al obtener los datos:", error);
+                    });
+            }
+        });
+    });
+</script>
 
-    </script>
+  <!-- Icono movimiento en escena WASD movement -->
+  <img id="keyboardIcon" src="assets\teclado_direccion.png" alt="Use WASD keys to move">
 </body>
+
 </html>
