@@ -1,81 +1,67 @@
-
-<img src="frontend/dist/assets/imagenes/Nuevo_logo agencia empleo_azulpantone full transp.png" width="250" alt="Logo AE"/>
-PROYECTO INMERSIVO PARA LA AGENCIA PARA EL EMPLEO DE MADRID
-
+# PROYECTO INMERSIVO PARA LA AGENCIA PARA EL EMPLEO DE MADRID
 
 La Agencia para el Empleo de Madrid se distingue por su compromiso con la innovación y la modernización de sus servicios para adaptarse a las cambiantes necesidades del mercado laboral. En consonancia con esta visión, proponemos el desarrollo de una experiencia web inmersiva que aproveche las tecnologías de realidad aumentada (AR) y realidad virtual (VR). Esta iniciativa representa un paso audaz hacia adelante, permitiendo a la Agencia para el Empleo de Madrid ofrecer una experiencia única y dinámica a sus usuarios.
 
+Este proyecto desarrolla una experiencia web inmersiva, accesible e innovadora que combina AR, VR y además escenas de video 360, de los espacios de trabajo más importantes de la Agencia para el Empleo de Madrid. Esta experiencia permitirá visibilizar el desempeño de sus áreas, conectando de manera efectiva con visitantes y usuarios. A través de la combinación de tecnologías de AR y VR, la Agencia para el Empleo podrá diferenciar sus servicios, ofreciendo una forma innovadora de interactuar con su público objetivo y mejorar su accesibilidad.
 
-Este proyecto desarrolla una experiencia web inmersiva, accesible e innovadora que combina AR , VR y además escenas de video 360, de los espacios de trabajo más importantes de la Agencia para el Empleo de Madrid. Esta experiencia permitirá visibilizar el desempeño de sus áreas, conectando de manera efectiva con visitantes y usuarios. A través de la combinación de tecnologías de AR y VR, la Agencia para el Empleo podrá diferenciar sus servicios, ofreciendo una forma innovadora de interactuar con su público objetivo y mejorar su accesibilidad.
+## Objetivos
 
+- Crear Interfaz de Usuario
+- Desarrollo de Escenas 360
+- Implementación de Espacio Virtual Inmersivo
+- Integración de Tecnologías Web VR
 
-### Objetivos:
+## ¿Cómo lo hacemos?
 
-Crear Interfaz de Usuario
+### Tecnologías para el diseño y desarrollo de la interfaz de usuario
 
-Desarrollo de Escenas 360
+#### Área Front
 
-Implementación de Espacio Virtual Inmersivo
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![A-Frame](https://img.shields.io/badge/A--Frame-E0D44E?style=for-the-badge&logo=aframe&logoColor=black)
+![THREE.js](https://img.shields.io/badge/THREE.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
+![BabiaXR](https://img.shields.io/badge/BabiaXR-4F6BED?style=for-the-badge&logo=babiaxr&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![React Three Fiber](https://img.shields.io/badge/React%20Three%20Fiber-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Pug](https://img.shields.io/badge/Pug-A86454?style=for-the-badge&logo=pug&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-Integración de Tecnologías Web VR
+#### Área Back
 
+![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
-### ¿Cómo lo hacemos?
+#### Testeo
 
-Tecnologías para el diseño y desarrollo de la interfaz de usuario:
+![Cypress](https://img.shields.io/badge/Cypress-1B73BA?style=for-the-badge&logo=cypress&logoColor=white)
+![JUnit](https://img.shields.io/badge/JUnit-25A162?style=for-the-badge&logo=junit5&logoColor=white)
 
+#### Seguridad
 
-### Área Front
+![Spring Security](https://img.shields.io/badge/Spring%20Security-6DB33F?style=for-the-badge&logo=spring-security&logoColor=white)
 
-- <span style="color:#E34F26;">HTML</span>
-- <span style="color:#1572B6;">CSS</span>
-- <span style="color:#CC6699;">Sass</span>
-- <span style="color:#06B6D4;">TailwindCSS</span>
-- <span style="color:#F7DF1E;">JavaScript</span>
-- <span style="color:#E0D44E;">A-Frame</span>
-- <span style="color:#000000;">THREE.js</span>
-- <span style="color:#4F6BED;">BabiaXR</span>
+### Integración de Tecnologías AR y VR
 
-### Área Back
+- **Uso simultáneo de realidad aumentada y virtual**: Para una experiencia más rica y diversa.
+- **Enfoque en Espacios Laborales**: Especialización en la visualización y promoción de áreas laborales de la Agencia para el Empleo de Madrid.
+- **Interacción y Conectividad**: Facilitar una interacción efectiva entre la Agencia y sus visitantes a través de tecnologías inmersivas.
 
-- <span style="color:#007396;">Java</span>
-- <span style="color:#6DB33F;">Spring Boot</span>
+## Nuestro equipo
 
-### Testeo
+- [Chema Vicente](https://github.com/ChemaV): Product Owner, Dev Front Inmersivo, Producción Audiovisual.
+- [Jenny Bernal](https://github.com/Jennyb13): Scrum Master, Dev Front Inmersivo.
+- [Miguel Varona](https://github.com/MigVarona): Dev Frontend, Backend, Procesos de Integración.
+- [Cata Arias](https://github.com/cataarias): Dev Front Inmersivo.
+- [Rafael González](https://github.com/SoyRafaelDev): Dev Backend.
 
-- <span style="color:#1B73BA;">Cypress</span>
-- <span style="color:#25A162;">JUnit</span>
+## Despliegue
 
-### Seguridad
-
-- <span style="color:#6DB33F;">Spring Security</span>
-
-
-
-Integramos Tecnologías AR y VR combinadas
-Uso simultáneo de realidad aumentada y virtual para una experiencia más rica y diversa. 
-
-Enfoque en Espacios Laborales:
-Especialización en la visualización y promoción de áreas laborales de la Agencia para el Empleo de Madrid.
-
-Interacción y Conectividad:
-Facilitar una interacción efectiva entre la Agencia y sus visitantes a través de tecnologías inmersivas.
-
-
-### Nuestro equipo
-
-José María Vicente: Product Owner, Dev Front Inmersivo, Producción Audiovisual.
-
-Jenny Bernal: Scrum Master, Dev Front Inmersivo. 
-
-Miguel Varona: Dev Frontend, Backend, Procesos de Integración. 
-
-Catalina Arias: Dev Front Inmersivo.
-
-Rafael González: Dev Backend.
-
-
-
-
-
-  
+Despliegue en **Vercel**: https://ace-oiyw.vercel.app/index.html
