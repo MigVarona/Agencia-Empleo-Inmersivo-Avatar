@@ -16,15 +16,45 @@
     <div class="title">
       <span class="ae">ae</span> AGENCIA PARA EL EMPLEO
     </div>
-    <form class="login-form">
-      <input type="text" placeholder="Usuario" required>
-      <input type="password" placeholder="Contraseña" required>
+    <form class="login-form" id="loginForm">
+      <input type="text" id="username" placeholder="Usuario" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
       <button style="margin-top: 20px;" type="submit">Iniciar Sesión</button>
     </form>
     <div class="forgot-password">
       ¿Olvidaste tu contraseña?, <a href="#">pulsa aquí</a>
     </div>
   </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      try {
+        const response = await fetch('http://localhost:3000/createAdminUser', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+        });
+
+        if (response.ok) {
+          // Login exitoso, redirigir a admin.html
+          window.location.href = 'admin.html';
+        } else {
+          // Error de inicio de sesión
+          alert('Inicio de sesión incorrecto');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error al intentar iniciar sesión');
+      }
+    });
+  </script>
 </body>
 
 </html>

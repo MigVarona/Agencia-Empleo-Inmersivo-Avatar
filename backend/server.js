@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: true,
 });
 
-// Configurar encabezados CORS
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*'); 
   res.header(
@@ -27,6 +27,15 @@ app.use((req, res, next) => {
   next();
 });
 
+// Esquema para usuarios administradores
+const adminUserSchema = new mongoose.Schema({
+  username: String,
+  password: String
+});
+
+const AdminUser = mongoose.model('adminUser', adminUserSchema);
+
+// Esquema para videos
 const videoSchema = new mongoose.Schema({
   id: String,
   title: String,
@@ -34,9 +43,26 @@ const videoSchema = new mongoose.Schema({
   description: String,
 });
 
+
 const Video = mongoose.model('Video', videoSchema);
 
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+app.post('/createAdminUser', async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const user = new AdminUser({ username, password });
+    await user.save();
+    res.status(201).json({ message: 'Admin user created successfully' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 
 app.get('/videos', async (req, res) => {
   try {
@@ -95,8 +121,4 @@ app.delete('/videos/:id', async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
 });
