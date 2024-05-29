@@ -24,12 +24,14 @@
                 <label for="scene">Seleccione la escena</label>
                 <select id="scene" name="scene">
                     <option value="" disabled selected>Seleccione la escena</option>
-                    <option value="1">Agencia</option>
-                    <option value="2">Entrada</option>
-                    <option value="3">Intermediacion</option>
-                    <option value="4">Salta</option>
-                    <option value="5">Talento</option>
-                    <option value="6">Ancora</option>
+                    <option value="1">Ancora</option>
+                    <option value="2">Agencia</option>
+                    <option value="3">Entrada</option>
+                    <option value="4">Formación</option>
+                    <option value="5">Intermediación</option>
+                    <option value="6">Salta</option>
+                    <option value="6">Talento</option>
+                    <option value="6">Sala</option>
                 </select>
 
                 <label for="title">TITULO</label>
@@ -70,7 +72,7 @@
                 }
 
                 try {
-                    const response = await fetch(`http://localhost:3000/videos/${sceneId}`, {
+                    const response = await fetch(`https://aceback-1.onrender.com/videos/${sceneId}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json'
