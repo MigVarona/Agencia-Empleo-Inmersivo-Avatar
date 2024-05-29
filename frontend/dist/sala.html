@@ -191,10 +191,9 @@
     </a-entity>
 
     <!-- Video Entity -->
-    <a-video id="video" src="assets/videos/salta_video.mp4" width="25" height="15" position="-44 200 -710" scale="20 20 20"
-      visible="false"></a-video>
+    <!--<a-video id="video" src="assets/videos/salta_video.mp4" width="25" height="15" position="-44 200 -710" scale="20 20 20"
+      visible="false"></a-video> -->
 
-    <!-- Tarea de Descripción de Video -->
     <a-entity babia-task="taskVideo: true; taskVideoId: video"></a-entity>
 
     <svg id="video" class="voice-button" onclick="toggleVoice()" aria-label="Reproducir voz"
@@ -287,7 +286,7 @@
             if (speechSynthesis.speaking) {
                 speechSynthesis.cancel();
             } else {
-                fetch("https://aceback-1.onrender.com/videos/4")
+                fetch("https://aceback-1.onrender.com/videos/8")
                     .then(response => response.json())
                     .then(data => {
                         const speechText = data.description;
