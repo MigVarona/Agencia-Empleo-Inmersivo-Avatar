@@ -70,6 +70,7 @@ app.get('/videos/:id', async (req, res) => {
   }
 });
 
+// Corregir método PUT para actualizar un video
 app.put('/videos/:id', async (req, res) => {
   try {
     const video = await Video.findOneAndUpdate(
@@ -97,9 +98,6 @@ app.delete('/videos/:id', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-
-
-
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
