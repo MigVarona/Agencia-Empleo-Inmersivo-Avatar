@@ -17,9 +17,8 @@ mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: true,
 });
 
-
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); 
+  res.header('Access-Control-Allow-Origin', '*');
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
@@ -33,7 +32,7 @@ const adminUserSchema = new mongoose.Schema({
   password: String
 });
 
-const AdminUser = mongoose.model('adminUser', adminUserSchema);
+const AdminUser = mongoose.model('AdminUser', adminUserSchema);
 
 // Esquema para videos
 const videoSchema = new mongoose.Schema({
@@ -43,10 +42,9 @@ const videoSchema = new mongoose.Schema({
   description: String,
 });
 
-
 const Video = mongoose.model('Video', videoSchema);
 
-
+// Ruta para crear usuarios administradores
 app.post('/createAdminUser', async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -58,12 +56,22 @@ app.post('/createAdminUser', async (req, res) => {
   }
 });
 
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// Ruta para iniciar sesión de usuarios administradores
+app.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const user = await AdminUser.findOne({ username, password });
+    if (user) {
+      res.status(200).json({ message: 'Login successful' });
+    } else {
+      res.status(401).json({ message: 'Invalid username or password' });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
 
-
+// Rutas para gestionar videos
 app.get('/videos', async (req, res) => {
   try {
     const videos = await Video.find();
@@ -121,4 +129,8 @@ app.delete('/videos/:id', async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
