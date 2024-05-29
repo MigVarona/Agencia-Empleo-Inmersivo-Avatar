@@ -97,3 +97,11 @@ textarea {
 .submit-btn:hover {
     background-color: #2a5bbf;
 }
+
+
+@media screen and (max-width: 768px) {
+    /* Aplica estilos específicos para dispositivos con un ancho máximo de 768px (tamaños de tablet y móviles) */
+    h1 {
+      font-size: 20px; /* Tamaño de fuente más pequeño para pantallas móviles */
+    }
+  }
