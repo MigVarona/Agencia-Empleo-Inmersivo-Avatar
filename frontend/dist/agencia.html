@@ -119,6 +119,19 @@ var speechSynthesis = window.speechSynthesis;
             });
     }
 
+    function t() {
+            fetch("https://aceback-1.onrender.com/videos/2")
+                .then(function (e) {
+                    return e.json();
+                })
+                .then(function (e) {
+                    document.getElementById("2").innerText = e.description;
+                })
+                .catch(function (e) {
+                    return console.error("Error al obtener los datos:", e);
+                });
+        }
+
     
     document.addEventListener("DOMContentLoaded", function () {
       var e = document.getElementById("icon-container");

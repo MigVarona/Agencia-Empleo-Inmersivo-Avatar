@@ -5,10 +5,12 @@
   <meta charset="UTF-8">
   <title>3D Charts with A-Frame and BabiaXR</title>
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-  <script src="library\aframe-babia-components3.js"></script>
+  <script src="js/aframe-babia-components3.js"></script>
   <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.2.0/dist/aframe-extras.min.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/output.css">
+  
+<link rel="stylesheet" href="css/style.css">
 
   <script>
     AFRAME.registerComponent('pause-animation-on-hover', {
@@ -28,7 +30,7 @@
   <a-scene>
     <!-- Importar ambiente de oficina -->
     <a-assets>
-      <a-asset-item id="office" src="assets\escenaae2grafic360.glb"></a-asset-item>
+      <a-asset-item id="office" src="3D/escenaae2grafic360.glb"></a-asset-item>
     </a-assets>
 
     <!-- Entorno de la oficina -->
@@ -189,7 +191,7 @@
     </a-entity>
 
     <!-- Video Entity -->
-    <a-video id="video" src="assets/saltavideosala.mp4" width="25" height="15" position="-44 200 -710" scale="20 20 20"
+    <a-video id="video" src="assets/videos/salta_video.mp4" width="25" height="15" position="-44 200 -710" scale="20 20 20"
       visible="false"></a-video>
 
     <!-- Tarea de Descripción de Video -->
@@ -201,7 +203,26 @@
         d="M640-440v-80h160v80H640Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM120-360v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z" />
     </svg>
 
+    <div class="imagen-container">
+      <a href="index.html">
+          <img class="imagen" src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png"
+              width="300px" />
+      </a>
+    </div>
+
   </a-scene>
+
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+    &#9776;
+</button>
+<div class="menu" id="menu">
+    <a href="index.html">Ancora</a><a href="entrada.html">Entrada</a><a href="agencia.html">Agencia</a><a
+        href="intermediacion.html">Intermediacion</a><a href="salta.html">Salta</a><a
+        href="talento.html">Talento</a><a href="formacion.html">Formacion</a><a href="sala.html">Agencia
+        virtual</a>
+</div>
+
+
 
   <!-- Interacciones para Graficos y Video -->
   <script>
@@ -279,10 +300,32 @@
             }
         });
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('#menu');
+
+      menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+
+      // Hide menu by default
+      menu.style.display = 'none';
+
+      // Show/hide menu when clicking the toggle button
+      menuToggle.addEventListener('click', () => {
+        if (menu.style.display === 'none') {
+          menu.style.display = 'block';
+        } else {
+          menu.style.display = 'none';
+        }
+      });
+    });
+
 </script>
 
   <!-- Icono movimiento en escena WASD movement -->
-  <img id="keyboardIcon" src="assets\teclado_direccion.png" alt="Use WASD keys to move">
+  <img id="keyboardIcon" src="3D/teclado_direccion.png" alt="Use WASD keys to move">
 </body>
 
 </html>
