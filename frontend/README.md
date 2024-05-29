@@ -1,3 +1,7 @@
+<img src="https://ae360.vercel.app/assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png" alt="logo agencia">
+
+
+
 # PROYECTO INMERSIVO PARA LA AGENCIA PARA EL EMPLEO DE MADRID
 
 La Agencia para el Empleo de Madrid se distingue por su compromiso con la innovación y la modernización de sus servicios para adaptarse a las cambiantes necesidades del mercado laboral. En consonancia con esta visión, proponemos el desarrollo de una experiencia web inmersiva que aproveche las tecnologías de realidad aumentada (AR) y realidad virtual (VR). Esta iniciativa representa un paso audaz hacia adelante, permitiendo a la Agencia para el Empleo de Madrid ofrecer una experiencia única y dinámica a sus usuarios.
