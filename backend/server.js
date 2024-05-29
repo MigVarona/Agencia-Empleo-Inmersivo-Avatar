@@ -99,11 +99,8 @@ app.delete('/videos/:id', async (req, res) => {
 });
 
 
-//app.get('/agencia.html', (req, res) => {
-//  res.sendFile(path.join(__dirname, '../Agencia Front/dist', 'agencia.html'));
-//});
 
-// Iniciar el servidor
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
