@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // Configurar encabezados CORS
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Permitir solicitudes desde cualquier origen
+  res.header('Access-Control-Allow-Origin', '*'); 
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
@@ -38,7 +38,6 @@ const Video = mongoose.model('Video', videoSchema);
 
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
-// Rutas de la API
 app.get('/videos', async (req, res) => {
   try {
     const videos = await Video.find();
@@ -70,7 +69,6 @@ app.get('/videos/:id', async (req, res) => {
   }
 });
 
-// Corregir método PUT para actualizar un video
 app.put('/videos/:id', async (req, res) => {
   try {
     const video = await Video.findOneAndUpdate(

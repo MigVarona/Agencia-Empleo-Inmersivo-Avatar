@@ -22,24 +22,24 @@
             <h2>Panel de Escenas</h2>
             <form id="adminForm">
                 <label for="scene">Seleccione la escena</label>
-                <select id="scene" name="scene" required>
+                <select id="scene" name="scene">
                     <option value="" disabled selected>Seleccione la escena</option>
-                    <option value="escena1">Agencia</option>
-                    <option value="escena2">Entrada</option>
-                    <option value="escena3">Intermediacion</option>
-                    <option value="escena4">Salta</option>
-                    <option value="escena5">Talento</option>
-                    <option value="escena6">Ancora</option>
+                    <option value="1">Agencia</option>
+                    <option value="2">Entrada</option>
+                    <option value="3">Intermediacion</option>
+                    <option value="4">Salta</option>
+                    <option value="5">Talento</option>
+                    <option value="6">Ancora</option>
                 </select>
 
                 <label for="title">TITULO</label>
-                <input type="text" id="title" name="title" required>
+                <input type="text" id="title" name="title">
 
                 <label for="description">DESCRIPCION</label>
-                <textarea id="description" name="description" rows="4" required></textarea>
+                <textarea id="description" name="description" rows="4"></textarea>
 
                 <label for="video">Link video 360</label>
-                <input type="text" id="video" name="video" required>
+                <input type="text" id="video" name="video">
 
                 <button type="submit" class="submit-btn">Enviar</button>
             </form>
@@ -47,12 +47,51 @@
     </div>
 
     <script>
-        document.getElementById('adminForm').addEventListener('submit', function(event) {
+        document.getElementById('adminForm').addEventListener('submit', async function(event) {
             event.preventDefault();
             if (confirm('¿Está seguro de que desea enviar el formulario?')) {
-                alert('Formulario enviado con éxito');
-                this.reset();  // Esto reinicia el formulario, borrando todos los campos.
+                const sceneId = document.getElementById('scene').value;
+                const title = document.getElementById('title').value.trim();
+                const description = document.getElementById('description').value.trim();
+                const video = document.getElementById('video').value.trim();
 
+                const data = {};
+
+                if (title !== '') {
+                    data.title = title;
+                }
+
+                if (description !== '') {
+                    data.description = description;
+                }
+
+                if (video !== '') {
+                    data.sources = [video];
+                }
+
+                try {
+                    const response = await fetch(`http://localhost:3000/videos/${sceneId}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (response.ok) {
+                        const updatedVideo = await response.json();
+                        alert('Video actualizado correctamente');
+                        console.log(updatedVideo);
+                    } else {
+                        const errorData = await response.json();
+                        alert(`Error al actualizar el video: ${errorData.message}`);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error al actualizar el video');
+                }
+
+                this.reset();
             }
         });
     </script>
