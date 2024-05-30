@@ -68,4 +68,4 @@ Este proyecto desarrolla una experiencia web inmersiva, accesible e innovadora q
 
 ## Despliegue
 
-Despliegue en **Vercel**: https://ace-oiyw.vercel.app/index.html
+Despliegue en **Vercel**: https://ae360.vercel.app/
