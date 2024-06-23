@@ -2,11 +2,11 @@
 FROM node:20
 
 # Establecer el directorio de trabajo dentro del contenedor
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copiar los archivos de la aplicación al contenedor
-COPY package*.json ./
-COPY . .
+COPY backend/package*.json ./
+COPY backend/ .
 
 # Instalar las dependencias
 RUN npm install
