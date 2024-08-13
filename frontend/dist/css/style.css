@@ -268,7 +268,7 @@ a-scene img.visible {
   position: absolute;
   bottom: 50px;
   right: 200px;
-  width: 100px;  /* Adjust the size as needed */
+  width: 100px;  
   opacity: 0.8;
 }
 

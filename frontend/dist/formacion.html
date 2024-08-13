@@ -1,187 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Agencia Empleo</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css"
-    />
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <link href="css/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Notable&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Poiret+One&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
-  </head>
 
-  <body class="bg-black" onload="startVideo()">
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
-      &#9776;
-    </button>
-    <div class="menu" id="menu">
-      <a href="index.html">Ancora</a><a href="entrada.html">Entrada</a><a href="agencia.html">Agencia</a><a
-        href="intermediacion.html">Intermediacion</a><a href="salta.html">Salta</a><a href="talento.html">Talento</a><a
-        href="formacion.html">Formacion</a><a href="sala.html">Agencia virtual</a>
+<head>
+  <meta charset="utf-8" />
+  <title>Agencia Empleo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css" />
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <link href="css/output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Notable&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Poiret+One&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;display=swap" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+</head>
+
+<body class="bg-black" onload="startVideo()">
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+    &#9776;
+  </button>
+  <div class="menu" id="menu">
+    <a href="index.html">Ancora</a><a href="entrada.html">Entrada</a><a href="agencia.html">Agencia</a><a
+      href="intermediacion.html">Intermediacion</a><a href="salta.html">Salta</a><a href="talento.html">Talento</a><a
+      href="formacion.html">Formacion</a><a href="sala.html">Agencia virtual</a>
+  </div>
+  <a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera"
+    position="0 1.6 0"><a-camera><a-look-controls pitchEnabled="false"></a-look-controls></a-camera><a-videosphere
+      src="#video" rotation="0 270 0"></a-videosphere>
+    <video id="video" loop muted autoplay playsinline webkit-playsinline="true" crossorigin>
+      <source type="video/mp4" src="" />
+    </video>
+    <div class="imagen-container">
+      <a href="index.html">
+        <img class="imagen" src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png" width="300px" />
+      </a>
     </div>
-    <a-scene
-      vr-mode-ui="enabled: true"
-      cursor="rayOrigin: mouse"
-      id="camera"
-      position="0 1.6 0"
-      ><a-camera
-        ><a-look-controls pitchEnabled="false"></a-look-controls></a-camera
-      ><a-videosphere src="#video" rotation="0 270 0"></a-videosphere>
-      <video id="video" loop muted autoplay playsinline webkit-playsinline="true" crossorigin>
-        <source type="video/mp4" src="" />
-      </video>
-      <div class="imagen-container">
-        <a href="index.html">
-          <img
-            class="imagen"
-            src="assets/imagenes/submarca_agenciaempleo_vertical_madrid_negro.png"
-            width="300px"
-          />
-        </a>
-      </div>
-      <a
-        class="btnmg uk-button uk-button-default"
-        href="#modal-overflow"
-        uk-toggle=""
-        >Conoce +</a
-      >
-      <img
-        class="visible"
-        src="assets/white-swipe.png"
-        alt=""
-      />
-      <div id="modal-overflow" style="opacity: 0.8" uk-modal="">
-        <div class="uk-modal-dialog" id="ancora">
-          <button
-            class="uk-modal-close-default"
-            type="button"
-            uk-close=""
-          ></button>
-          <div class="uk-modal-body" uk-overflow-auto="">
-            <p id="4"></p>
-          </div>
+    <a class="btnmg uk-button uk-button-default" href="#modal-overflow" uk-toggle="">Conoce +</a>
+    <img class="visible" src="assets/white-swipe.png" alt="" />
+    <div id="modal-overflow" style="opacity: 0.8" uk-modal="">
+      <div class="uk-modal-dialog" id="ancora">
+        <button class="uk-modal-close-default" type="button" uk-close=""></button>
+        <div class="uk-modal-body" uk-overflow-auto="">
+          <p id="4"></p>
         </div>
       </div>
-      <svg id="video"
-    class="voice-button"
-    onclick="toggleVoice()"
-    aria-label="Reproducir voz"
-    xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e8eaed">
-    <path d="M640-440v-80h160v80H640Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM120-360v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z"/>
-</svg>
+    </div>
+    <svg id="video" class="voice-button" onclick="toggleVoice()" aria-label="Reproducir voz"
+      xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e8eaed">
+      <path
+        d="M640-440v-80h160v80H640Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM120-360v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z" />
+    </svg>
 
- 
-      <div class="oculto swipe" id="icon-container">
-        <div class="path"></div>
-        <div class="hand-icon"></div>
-      </div>
-      <footer class="footer">
-        <p style="color: #000; font-size: 0.7rem">
-          © 2024 Agencia Empleo. Todos los derechos reservados.
-        </p>
-      </footer>
-    </a-scene>
-    <a href="avatar.html">
-      <div class="chatbot" id="icon-chat">
-          <img src="assets/imagenes/chatbot.png" alt="Chatbot Icon">
-      </div>
+
+    <div class="oculto swipe" id="icon-container">
+      <div class="path"></div>
+      <div class="hand-icon"></div>
+    </div>
+    <footer class="footer">
+      <p style="color: #000; font-size: 0.7rem">
+        © 2024 Agencia Empleo. Todos los derechos reservados.
+      </p>
+    </footer>
+  </a-scene>
+  <a href="avatar.html">
+    <div class="chatbot" id="icon-chat">
+      <img src="assets/imagenes/chatbot.png" alt="Chatbot Icon">
+    </div>
   </a>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
     function startVideo() {
-  var video = document.getElementById("video");
-  video.addEventListener('loadedmetadata', function() {
-    video.play();
-  });
-}
-var speechSynthesis = window.speechSynthesis;
+      var video = document.getElementById("video");
+      video.addEventListener('loadedmetadata', function () {
+        video.play();
+      });
+    }
+    var speechSynthesis = window.speechSynthesis;
     var utterance = null;
 
     function toggleVoice() {
-        if (speechSynthesis.speaking) {
-            speechSynthesis.cancel();
-        } else {
-            playVoice();
-        }
+      if (speechSynthesis.speaking) {
+        speechSynthesis.cancel();
+      } else {
+        playVoice();
+      }
     }
 
     function playVoice() {
-        fetch("https://agencia-empleo.adaptable.app/videos/4")
-            .then(function (e) {
-                return e.json();
-            })
-            .then(function (e) {
-                var speechText = e.description;
-                utterance = new SpeechSynthesisUtterance(speechText);
-                speechSynthesis.speak(utterance);
-            })
-            .catch(function (e) {
-                console.error("Error al obtener los datos:", e);
-            });
-    }
-      function o() {
-        fetch("https://agencia-empleo.adaptable.app/videos/4")
-          .then(function (e) {
-            return e.json();
-          })
-          .then(function (e) {
-            document.getElementById("4").innerText = e.description;
-          })
-          .catch(function (e) {
-            return console.error("Error al obtener los datos:", e);
-          });
-      }
-      document.addEventListener("DOMContentLoaded", function () {
-        var e = document.getElementById("icon-container");
-        setTimeout(function () {
-          e.style.display = "none";
-        }, 5e3);
-      }),
-        fetch("https://agencia-empleo.adaptable.app/videos/4")
-          .then(function (e) {
-            return e.json();
-          })
-          .then(function (e) {
-            var n = document.getElementById("video");
-            n.querySelector("source").setAttribute("src", e.sources[0]),
-              n.load();
-          })
-          .catch(function (e) {
-            return console.error("Error al cargar el archivo JSON:", e);
-          }),
-        document
-          .getElementById("modal-overflow")
-          .addEventListener("shown", function () {
-            o();
-          }),
-        $(document).ready(function () {
-          $(".menu-toggle").click(function () {
-            $(".menu").toggle();
-          });
+      fetch("https://agencia-empleo.adaptable.app/videos/4")
+        .then(function (e) {
+          return e.json();
+        })
+        .then(function (e) {
+          var speechText = e.description;
+          utterance = new SpeechSynthesisUtterance(speechText);
+          speechSynthesis.speak(utterance);
+        })
+        .catch(function (e) {
+          console.error("Error al obtener los datos:", e);
         });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
-  </body>
+    }
+    function o() {
+      fetch("https://agencia-empleo.adaptable.app/videos/4")
+        .then(function (e) {
+          return e.json();
+        })
+        .then(function (e) {
+          document.getElementById("4").innerText = e.description;
+        })
+        .catch(function (e) {
+          return console.error("Error al obtener los datos:", e);
+        });
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      var e = document.getElementById("icon-container");
+      setTimeout(function () {
+        e.style.display = "none";
+      }, 5e3);
+    }),
+      fetch("https://agencia-empleo.adaptable.app/videos/4")
+        .then(function (e) {
+          return e.json();
+        })
+        .then(function (e) {
+          var n = document.getElementById("video");
+          n.querySelector("source").setAttribute("src", e.sources[0]),
+            n.load();
+        })
+        .catch(function (e) {
+          return console.error("Error al cargar el archivo JSON:", e);
+        }),
+      document
+        .getElementById("modal-overflow")
+        .addEventListener("shown", function () {
+          o();
+        }),
+      $(document).ready(function () {
+        $(".menu-toggle").click(function () {
+          $(".menu").toggle();
+        });
+      });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
+</body>
+
 </html>

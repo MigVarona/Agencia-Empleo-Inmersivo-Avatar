@@ -26,7 +26,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Esquema para usuarios administradores
 const adminUserSchema = new mongoose.Schema({
   username: String,
   password: String
@@ -34,7 +33,6 @@ const adminUserSchema = new mongoose.Schema({
 
 const AdminUser = mongoose.model('AdminUser', adminUserSchema);
 
-// Esquema para videos
 const videoSchema = new mongoose.Schema({
   id: String,
   title: String,
@@ -56,7 +54,6 @@ app.post('/createAdminUser', async (req, res) => {
   }
 });
 
-// Ruta para iniciar sesión de usuarios administradores
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -71,7 +68,6 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// Rutas para gestionar videos
 app.get('/videos', async (req, res) => {
   try {
     const videos = await Video.find();
