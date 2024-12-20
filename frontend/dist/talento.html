@@ -34,7 +34,7 @@
   </div>
   <a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera"
     position="0 1.6 0"><a-camera><a-look-controls pitchEnabled="false"></a-look-controls></a-camera><a-videosphere
-      src="#video" rotation="0 270 0"></a-videosphere>
+      src="https://ae360.vercel.app/assets/videos/talento.mp4" rotation="0 270 0"></a-videosphere>
       <video id="video" loop muted autoplay playsinline webkit-playsinline="true" crossorigin>
         <source type="video/mp4" src="" />
       </video>
@@ -51,7 +51,7 @@
       <div class="uk-modal-dialog" id="ancora">
         <button class="uk-modal-close-default" type="button" uk-close=""></button>
         <div class="uk-modal-body" uk-overflow-auto="">
-          <p id="7"></p>
+          <p id="1"></p>
 
         </div>
       </div>
@@ -97,7 +97,7 @@
     }
 
     function playVoice() {
-      fetch("https://agencia-empleo.adaptable.app/videos/7")
+      fetch("")
         .then(function (e) {
           return e.json();
         })
@@ -111,46 +111,42 @@
         });
     }
 
-    function n() {
-      fetch("https://agencia-empleo.adaptable.app/videos/7")
-        .then(function (e) {
-          return e.json();
-        })
-        .then(function (e) {
-          document.getElementById("7").innerText = e.description;
-        })
-        .catch(function (e) {
-          return console.error("Error al obtener los datos:", e);
-        });
+    function addContentToModal() {
+      const modalContent = document.getElementById("1"); // Selecciona el elemento donde irá el texto
+      modalContent.innerHTML = `
+                <p>La Agencia para el Empleo ofrece formación adaptada al mercado laboral, con cursos que otorgan certificaciones oficiales y Certificados de Profesionalidad. Su catálogo incluye módulos en áreas como ofimática y recursos humanos, además de capacitaciones en lenguas extranjeras y actividades específicas como socorrismo y Prevención de Riesgos Laborales.\n\nEstas formaciones mejoran competencias, facilitan la recualificación y promueven la formación continua para el éxito profesional.</p>
+               
+            `;
     }
+
     document.addEventListener("DOMContentLoaded", function () {
       var e = document.getElementById("icon-container");
       setTimeout(function () {
         e.style.display = "none";
       }, 5e3);
-    }),
-      fetch("https://agencia-empleo.adaptable.app/videos/7")
-        .then(function (e) {
-          return e.json();
-        })
-        .then(function (e) {
-          var o = document.getElementById("video");
-          o.querySelector("source").setAttribute("src", e.sources[0]),
-            o.load();
-        })
-        .catch(function (e) {
-          return console.error("Error al cargar el archivo JSON:", e);
-        }),
-      document
-        .getElementById("modal-overflow")
-        .addEventListener("shown", function () {
-          n();
-        }),
-      $(document).ready(function () {
-        $(".menu-toggle").click(function () {
-          $(".menu").toggle();
-        });
+
+      // Asocia la función al evento de clic del botón del modal
+      document.querySelector('.btnmg').addEventListener('click', addContentToModal);
+    });
+
+    fetch("https://ae360.vercel.app/assets/videos/fachada.mp4")
+      .then(function (e) {
+        return e.json();
+      })
+      .then(function (e) {
+        var n = document.getElementById("video");
+        n.querySelector("source").setAttribute("src", e.sources[0]),
+          n.load();
+      })
+      .catch(function (e) {
+        return console.error("Error al cargar el archivo JSON:", e);
       });
+
+    $(document).ready(function () {
+      $(".menu-toggle").click(function () {
+        $(".menu").toggle();
+      });
+    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>

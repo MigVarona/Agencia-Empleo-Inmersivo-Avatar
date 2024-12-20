@@ -33,7 +33,7 @@
     <a-camera>
       <a-look-controls pitchEnabled="false"></a-look-controls>
     </a-camera>
-    <a-videosphere src="#video" rotation="0 270 0"></a-videosphere>
+    <a-videosphere src="https://ae360.vercel.app/assets/videos/agencia_zona.mp4" rotation="0 270 0"></a-videosphere>
     <video id="video" loop muted autoplay playsinline webkit-playsinline="true" crossorigin>
       <source type="video/mp4" src="" />
     </video>
@@ -48,7 +48,7 @@
       <div class="uk-modal-dialog" id="ancora">
         <button class="uk-modal-close-default" type="button" uk-close=""></button>
         <div class="uk-modal-body" uk-overflow-auto="">
-          <p id="2"></p>
+          <p id="1"></p>
         </div>
       </div>
     </div>
@@ -75,91 +75,74 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     function startVideo() {
-      var video = document.getElementById("video");
-      video.addEventListener('loadedmetadata', function () {
-        video.play();
-      });
+        var video = document.getElementById("video");
+        video.addEventListener('loadedmetadata', function () {
+            video.play();
+        });
     }
     var speechSynthesis = window.speechSynthesis;
     var utterance = null;
 
     function toggleVoice() {
-      if (speechSynthesis.speaking) {
-        speechSynthesis.cancel();
-      } else {
-        playVoice();
-      }
-    }
-
-    var speechSynthesis = window.speechSynthesis;
-    var utterance = null;
-
-    function toggleVoice() {
-      if (speechSynthesis.speaking) {
-        speechSynthesis.cancel();
-      } else {
-        playVoice();
-      }
+        if (speechSynthesis.speaking) {
+            speechSynthesis.cancel();
+        } else {
+            playVoice();
+        }
     }
 
     function playVoice() {
-      fetch("https://agencia-empleo.adaptable.app/videos/2")
-        .then(function (e) {
-          return e.json();
-        })
-        .then(function (e) {
-          var speechText = e.description;
-          utterance = new SpeechSynthesisUtterance(speechText);
-          speechSynthesis.speak(utterance);
-        })
-        .catch(function (e) {
-          console.error("Error al obtener los datos:", e);
-        });
+        fetch("")
+            .then(function (e) {
+                return e.json();
+            })
+            .then(function (e) {
+                var speechText = e.description;
+                utterance = new SpeechSynthesisUtterance(speechText);
+                speechSynthesis.speak(utterance);
+            })
+            .catch(function (e) {
+                console.error("Error al obtener los datos:", e);
+            });
     }
 
-    function t() {
-      fetch("https://agencia-empleo.adaptable.app/videos/2")
-        .then(function (e) {
-          return e.json();
-        })
-        .then(function (e) {
-          document.getElementById("2").innerText = e.description;
-        })
-        .catch(function (e) {
-          return console.error("Error al obtener los datos:", e);
-        });
+    function addContentToModal() {
+        const modalContent = document.getElementById("1"); // Selecciona el elemento donde irá el texto
+        modalContent.innerHTML = `
+            <p>La agencia para el Empleo de Madrid mejora la empleabilidad mediante diagnósticos y itinerarios personalizados para superar barreras y mejorar competencias clave.\n\nGracias a la plataforma SALTA, y a la transformación digital, facilitamos el acceso a nuestros servicios, ofreciendo entrevistas de diagnóstico, seminarios laborales y atención a colectivos con dificultades. Proporcionamos información sobre autoempleo, programas como Emplea+ y Viaje al Empleo Web para fortalecer competencias digitales y transversales, impulsando el desarrollo profesional y la motivación</p>
+           
+        `;
     }
-
 
     document.addEventListener("DOMContentLoaded", function () {
-      var e = document.getElementById("icon-container");
-      setTimeout(function () {
-        e.style.display = "none";
-      }, 5e3);
-    }),
-      fetch("https://agencia-empleo.adaptable.app/videos/2")
+        var e = document.getElementById("icon-container");
+        setTimeout(function () {
+            e.style.display = "none";
+        }, 5e3);
+
+        // Asocia la función al evento de clic del botón del modal
+        document.querySelector('.btnmg').addEventListener('click', addContentToModal);
+    });
+
+    fetch("https://ae360.vercel.app/assets/videos/fachada.mp4")
         .then(function (e) {
-          return e.json(); 
+            return e.json();
         })
         .then(function (e) {
-          var n = document.getElementById("video");
-          n.querySelector("source").setAttribute("src", e.sources[0]),
-            n.load();
+            var n = document.getElementById("video");
+            n.querySelector("source").setAttribute("src", e.sources[0]),
+                n.load();
         })
         .catch(function (e) {
-          return console.error("Error al cargar el archivo JSON:", e);
-        }),
-      document
-        .getElementById("modal-overflow")
-        .addEventListener("shown", function () {
-          t();
-        }),
-      $(document).ready(function () {
-        $(".menu-toggle").click(function () {
-          $(".menu").toggle();
+            return console.error("Error al cargar el archivo JSON:", e);
         });
-      });
-  </script>
+
+    $(document).ready(function () {
+        $(".menu-toggle").click(function () {
+            $(".menu").toggle();
+        });
+    });
+</script>
   <script src="https://servpub.madrid.es/FWIAM_FTP/assets/js/cookie-manager.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>

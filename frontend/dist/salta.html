@@ -31,11 +31,11 @@
   </div>
   </div><a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse" id="camera"
     position="0 1.6 0"><a-camera><a-look-controls pitchEnabled="false"></a-look-controls></a-camera><a-videosphere
-      src="#video" rotation="0 240 0"></a-videosphere>
+      src="https://ae360.vercel.app/assets/videos/salta.mp4" rotation="0 240 0"></a-videosphere>
 
-      <video id="video" loop muted autoplay playsinline webkit-playsinline="true" crossorigin>
-        <source type="video/mp4" src="" />
-      </video>
+    <video id="video" loop muted autoplay playsinline webkit-playsinline="true" crossorigin>
+      <source type="video/mp4" src="" />
+    </video>
 
 
     <div class="imagen-container">
@@ -52,7 +52,7 @@
       <div class="uk-modal-dialog" id="ancora">
         <button class="uk-modal-close-default" type="button" uk-close></button>
         <div class="uk-modal-body" uk-overflow-auto>
-          <p id="6"></p> 
+          <p id="1"></p>
 
         </div>
       </div>
@@ -64,140 +64,109 @@
       <div class="path"></div>
       <div class="hand-icon"></div>
     </div>
-    <svg id="video"
-    class="voice-button"
-    onclick="toggleVoice()"
-    aria-label="Reproducir voz"
-
-    xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e8eaed">
-    <path d="M640-440v-80h160v80H640Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM120-360v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z"/>
-</svg>
+    <svg id="video" class="voice-button" onclick="toggleVoice()" aria-label="Reproducir voz"
+      xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#e8eaed">
+      <path
+        d="M640-440v-80h160v80H640Zm48 280-128-96 48-64 128 96-48 64Zm-80-480-48-64 128-96 48 64-128 96ZM120-360v-240h160l200-200v640L280-360H120Zm280-246-86 86H200v80h114l86 86v-252ZM300-480Z" />
+    </svg>
 
     <footer class="footer">
       <p style="color: black; font-size: 0.7rem;">© 2024 Agencia Empleo. Todos los derechos reservados.</p>
     </footer>
 
-    
-    
 
-      <a-light 
-        intensity="6" 
-        type="point" 
-        light="intensity: 25; color: #ffffff; angle: 100" 
-        position="1.23066 2.44986 13.26301" 
-        rotation="-4.42 -2.2 -6.94">
-      </a-light>
-  
-      <a-entity
-        class="frame"
-        position="3 2 -7"
 
-        gltf-model="./assets/3d/rectangle_frame.glb"
-        scale="1 1 1"
-        geometry="primitive: box" 
-        material="transparent: true; opacity: 0.5">
 
-      </a-entity>
-  
-      <a-video 
-        src="assets/videos/salta_video.mp4" 
-        width="25" 
-        height="15" 
-        position="3 2 -7" 
-        scale="0.2 0.2 0.2">
-      </a-video>
+    <a-light intensity="6" type="point" light="intensity: 25; color: #ffffff; angle: 100"
+      position="1.23066 2.44986 13.26301" rotation="-4.42 -2.2 -6.94">
+    </a-light>
 
-   
-    
+    <a-entity class="frame" position="3 2 -7" gltf-model="./assets/3d/rectangle_frame.glb" scale="1 1 1"
+      geometry="primitive: box" material="transparent: true; opacity: 0.5">
+
+    </a-entity>
+
+    <a-video src="assets/videos/salta_video.mp4" width="25" height="15" position="3 2 -7" scale="0.2 0.2 0.2">
+    </a-video>
+
+
+
   </a-scene>
   <a href="avatar.html">
     <div class="chatbot" id="icon-chat">
-        <img src="assets/imagenes/chatbot.png" alt="Chatbot Icon">
+      <img src="assets/imagenes/chatbot.png" alt="Chatbot Icon">
     </div>
-</a>
+  </a>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-
     function startVideo() {
-      var video = document.getElementById('video');
-      video.play();
-
+      var video = document.getElementById("video");
+      video.addEventListener('loadedmetadata', function () {
+        video.play();
+      });
     }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      var iconContainer = document.getElementById("icon-container");
-
-      setTimeout(function () {
-        iconContainer.style.display = "none";
-      }, 5000);
-    });
-
     var speechSynthesis = window.speechSynthesis;
     var utterance = null;
 
     function toggleVoice() {
-        if (speechSynthesis.speaking) {
-            speechSynthesis.cancel();
-        } else {
-            playVoice();
-        }
+      if (speechSynthesis.speaking) {
+        speechSynthesis.cancel();
+      } else {
+        playVoice();
+      }
     }
 
     function playVoice() {
-        fetch("https://agencia-empleo.adaptable.app/videos/6")
-            .then(function (e) {
-                return e.json();
-            })
-            .then(function (e) {
-                var speechText = e.description;
-                utterance = new SpeechSynthesisUtterance(speechText);
-                speechSynthesis.speak(utterance);
-            })
-            .catch(function (e) {
-                console.error("Error al obtener los datos:", e);
-            });
-    }
-
-    function t() {
-      fetch("https://agencia-empleo.adaptable.app/videos/6")
+      fetch("")
         .then(function (e) {
           return e.json();
         })
         .then(function (e) {
-          document.getElementById("6").innerText = e.description;
+          var speechText = e.description;
+          utterance = new SpeechSynthesisUtterance(speechText);
+          speechSynthesis.speak(utterance);
         })
         .catch(function (e) {
-          return console.error("Error al obtener los datos:", e);
+          console.error("Error al obtener los datos:", e);
         });
     }
+
+    function addContentToModal() {
+      const modalContent = document.getElementById("1"); // Selecciona el elemento donde irá el texto
+      modalContent.innerHTML = `
+                <p>Como parte de nuestra estrategia tecnológica, hemos lanzado la plataforma SALTA para promover la participación activa de los usuarios. Permite gestionar perfiles, adjuntar documentos y actualizar objetivos profesionales automáticamente.\n\nOfrecemos un servicio integral y accesible para empleadores y buscadores de empleo. SALTA está disponible 24/7, permitiendo a los usuarios acceder a servicios, consultar información y programar citas virtuales desde sus hogares.</p>
+               
+            `;
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
       var e = document.getElementById("icon-container");
       setTimeout(function () {
         e.style.display = "none";
       }, 5e3);
-    }),
-      fetch("https://agencia-empleo.adaptable.app/videos/6")
-        .then(function (e) {
-          return e.json();
-        })
-        .then(function (e) {
-          var n = document.getElementById("video");
-          n.querySelector("source").setAttribute("src", e.sources[0]),
-            n.load();
-        })
-        .catch(function (e) {
-          return console.error("Error al cargar el archivo JSON:", e);
-        }),
-      document
-        .getElementById("modal-overflow")
-        .addEventListener("shown", function () {
-          t();
-        }),
-      $(document).ready(function () {
-        $(".menu-toggle").click(function () {
-          $(".menu").toggle();
-        });
+
+      // Asocia la función al evento de clic del botón del modal
+      document.querySelector('.btnmg').addEventListener('click', addContentToModal);
+    });
+
+    fetch("https://ae360.vercel.app/assets/videos/fachada.mp4")
+      .then(function (e) {
+        return e.json();
+      })
+      .then(function (e) {
+        var n = document.getElementById("video");
+        n.querySelector("source").setAttribute("src", e.sources[0]),
+          n.load();
+      })
+      .catch(function (e) {
+        return console.error("Error al cargar el archivo JSON:", e);
       });
+
+    $(document).ready(function () {
+      $(".menu-toggle").click(function () {
+        $(".menu").toggle();
+      });
+    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
