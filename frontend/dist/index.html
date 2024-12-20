@@ -36,7 +36,7 @@
         <a-camera>
             <a-look-controls pitchEnabled="false"></a-look-controls>
         </a-camera>
-        <a-videosphere src="#video" rotation="0 290 0"></a-videosphere>
+        <a-videosphere src="https://ae360.vercel.app/assets/videos/fachada.mp4" rotation="0 290 0"></a-videosphere>
         <video id="video" loop muted autoplay playsinline webkit-playsinline="true" crossorigin>
             <source type="video/mp4" src="" />
         </video>
@@ -93,7 +93,7 @@
         }
         var speechSynthesis = window.speechSynthesis;
         var utterance = null;
-
+    
         function toggleVoice() {
             if (speechSynthesis.speaking) {
                 speechSynthesis.cancel();
@@ -101,9 +101,9 @@
                 playVoice();
             }
         }
-
+    
         function playVoice() {
-            fetch("https://agencia-empleo.adaptable.app/videos/1")
+            fetch("")
                 .then(function (e) {
                     return e.json();
                 })
@@ -116,48 +116,45 @@
                     console.error("Error al obtener los datos:", e);
                 });
         }
-
-        function t() {
-            fetch("https://agencia-empleo.adaptable.app/videos/1")
-                .then(function (e) {
-                    return e.json();
-                })
-                .then(function (e) {
-                    document.getElementById("1").innerText = e.description;
-                })
-                .catch(function (e) {
-                    return console.error("Error al obtener los datos:", e);
-                });
+    
+        function addContentToModal() {
+            const modalContent = document.getElementById("1"); // Selecciona el elemento donde irá el texto
+            modalContent.innerHTML = `
+                <p>¡Te damos la bienvenida a la emocionante experiencia de realidad aumentada y virtual de la Agencia para el Empleo del Ayuntamiento de Madrid! Aquí, te guiamos para descubrir tu camino profesional o encontrar el talento perfecto para tu empresa.\n\n¡Prepárate para una experiencia inmersiva única de desarrollo laboral y crecimiento empresarial!</p>
+               
+            `;
         }
+    
         document.addEventListener("DOMContentLoaded", function () {
             var e = document.getElementById("icon-container");
             setTimeout(function () {
                 e.style.display = "none";
             }, 5e3);
-        }),
-            fetch("https://agencia-empleo.adaptable.app/videos/1")
-                .then(function (e) {
-                    return e.json();
-                })
-                .then(function (e) {
-                    var n = document.getElementById("video");
-                    n.querySelector("source").setAttribute("src", e.sources[0]),
-                        n.load();
-                })
-                .catch(function (e) {
-                    return console.error("Error al cargar el archivo JSON:", e);
-                }),
-            document
-                .getElementById("modal-overflow")
-                .addEventListener("shown", function () {
-                    t();
-                }),
-            $(document).ready(function () {
-                $(".menu-toggle").click(function () {
-                    $(".menu").toggle();
-                });
+    
+            // Asocia la función al evento de clic del botón del modal
+            document.querySelector('.btnmg').addEventListener('click', addContentToModal);
+        });
+    
+        fetch("https://ae360.vercel.app/assets/videos/fachada.mp4")
+            .then(function (e) {
+                return e.json();
+            })
+            .then(function (e) {
+                var n = document.getElementById("video");
+                n.querySelector("source").setAttribute("src", e.sources[0]),
+                    n.load();
+            })
+            .catch(function (e) {
+                return console.error("Error al cargar el archivo JSON:", e);
             });
+    
+        $(document).ready(function () {
+            $(".menu-toggle").click(function () {
+                $(".menu").toggle();
+            });
+        });
     </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
 </body>
